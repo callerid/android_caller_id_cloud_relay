@@ -15,7 +15,24 @@
         tools:context="www.callerid.com.androidcalleridcloudrelay.actMain">
 
         <TextView
-            android:id="@+id/textView21"
+            android:id="@+id/lbName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginStart="8dp"
+            android:editable="false"
+            android:text="%Name"
+            android:textColor="@android:color/background_dark"
+            app:layout_constraintHorizontal_bias="0.478"
+            app:layout_constraintLeft_toLeftOf="@+id/lbCallerIDVars"
+            app:layout_constraintRight_toRightOf="@+id/lbCallerIDVars"
+            app:layout_constraintTop_toTopOf="@+id/tbName"
+            android:layout_marginTop="8dp" />
+
+        <TextView
+            android:id="@+id/lbIO"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
@@ -24,15 +41,15 @@
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:editable="false"
-            android:text="%Line"
+            android:text="%IO"
             android:textColor="@android:color/background_dark"
             app:layout_constraintHorizontal_bias="0.476"
-            app:layout_constraintLeft_toLeftOf="@+id/textView11"
-            app:layout_constraintRight_toRightOf="@+id/textView11"
-            app:layout_constraintTop_toTopOf="@+id/editText12" />
+            app:layout_constraintLeft_toLeftOf="@+id/lbCallerIDVars"
+            app:layout_constraintRight_toRightOf="@+id/lbCallerIDVars"
+            app:layout_constraintTop_toTopOf="@+id/tbIO" />
 
         <TextView
-            android:id="@+id/textView23"
+            android:id="@+id/lbSE"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
@@ -41,15 +58,60 @@
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:editable="false"
-            android:text="%Line"
+            android:text="%SE"
             android:textColor="@android:color/background_dark"
             app:layout_constraintHorizontal_bias="0.476"
-            app:layout_constraintLeft_toLeftOf="@+id/textView11"
-            app:layout_constraintRight_toRightOf="@+id/textView11"
-            app:layout_constraintTop_toTopOf="@+id/editText13" />
+            app:layout_constraintLeft_toLeftOf="@+id/lbCallerIDVars"
+            app:layout_constraintRight_toRightOf="@+id/lbCallerIDVars"
+            app:layout_constraintTop_toTopOf="@+id/tbSE" />
+
+        <EditText
+            android:id="@+id/tbSE"
+            android:layout_width="190dp"
+            android:layout_height="35dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="8dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:textSize="14sp"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintLeft_toLeftOf="@+id/lbYourVar"
+            app:layout_constraintRight_toRightOf="@+id/lbYourVar"
+            app:layout_constraintTop_toBottomOf="@+id/tbIO" />
+
+        <EditText
+            android:id="@+id/tbStatus"
+            android:layout_width="190dp"
+            android:layout_height="35dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="8dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:textSize="14sp"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintLeft_toLeftOf="@+id/lbYourVar"
+            app:layout_constraintRight_toRightOf="@+id/lbYourVar"
+            app:layout_constraintTop_toBottomOf="@+id/tbSE" />
+
+        <EditText
+            android:id="@+id/tbDuration"
+            android:layout_width="190dp"
+            android:layout_height="35dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="8dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:textSize="14sp"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintLeft_toLeftOf="@+id/lbYourVar"
+            app:layout_constraintRight_toRightOf="@+id/lbYourVar"
+            app:layout_constraintTop_toBottomOf="@+id/tbStatus" />
 
         <TextView
-            android:id="@+id/textView25"
+            android:id="@+id/lbDuration"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
@@ -58,112 +120,152 @@
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:editable="false"
-            android:text="%Line"
+            android:text="%Duration"
             android:textColor="@android:color/background_dark"
             app:layout_constraintHorizontal_bias="0.476"
-            app:layout_constraintLeft_toLeftOf="@+id/textView11"
-            app:layout_constraintRight_toRightOf="@+id/textView11"
-            app:layout_constraintTop_toTopOf="@+id/editText14" />
-
-        <EditText
-            android:id="@+id/editText14"
-            android:layout_width="159dp"
-            android:layout_height="35dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginRight="8dp"
-            android:layout_marginTop="8dp"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:textSize="14sp"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintLeft_toLeftOf="@+id/textView12"
-            app:layout_constraintRight_toRightOf="@+id/textView12"
-            app:layout_constraintTop_toBottomOf="@+id/editText13" />
-
-        <EditText
-            android:id="@+id/editText19"
-            android:layout_width="159dp"
-            android:layout_height="35dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginRight="8dp"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:textSize="14sp"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintLeft_toLeftOf="@+id/textView12"
-            app:layout_constraintRight_toRightOf="@+id/textView12"
-            android:layout_marginTop="8dp"
-            app:layout_constraintTop_toBottomOf="@+id/editText14" />
-
-        <EditText
-            android:id="@+id/editText20"
-            android:layout_width="159dp"
-            android:layout_height="35dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginRight="8dp"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:textSize="14sp"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintLeft_toLeftOf="@+id/textView12"
-            app:layout_constraintRight_toRightOf="@+id/textView12"
-            android:layout_marginTop="8dp"
-            app:layout_constraintTop_toBottomOf="@+id/editText19" />
+            app:layout_constraintLeft_toLeftOf="@+id/lbCallerIDVars"
+            app:layout_constraintRight_toRightOf="@+id/lbCallerIDVars"
+            app:layout_constraintTop_toTopOf="@+id/tbDuration" />
 
         <TextView
-            android:id="@+id/textView38"
+            android:id="@+id/lbRingNumber"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
             android:layout_marginLeft="8dp"
             android:layout_marginRight="8dp"
             android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
             android:editable="false"
-            android:text="%Line"
+            android:text="%RingNumber"
             android:textColor="@android:color/background_dark"
             app:layout_constraintHorizontal_bias="0.476"
-            app:layout_constraintLeft_toLeftOf="@+id/textView11"
-            app:layout_constraintRight_toRightOf="@+id/textView11"
-            app:layout_constraintTop_toTopOf="@+id/editText20"
-            android:layout_marginTop="8dp" />
+            app:layout_constraintLeft_toLeftOf="@+id/lbCallerIDVars"
+            app:layout_constraintRight_toRightOf="@+id/lbCallerIDVars"
+            app:layout_constraintTop_toTopOf="@+id/tbRingNumber" />
 
         <TextView
-            android:id="@+id/textView40"
+            android:id="@+id/lbRingType"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
             android:layout_marginLeft="8dp"
             android:layout_marginRight="8dp"
             android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
             android:editable="false"
-            android:text="%Line"
+            android:text="%RingType"
             android:textColor="@android:color/background_dark"
             app:layout_constraintHorizontal_bias="0.476"
-            app:layout_constraintLeft_toLeftOf="@+id/textView11"
-            app:layout_constraintRight_toRightOf="@+id/textView11"
-            app:layout_constraintTop_toTopOf="@+id/editText21"
-            android:layout_marginTop="8dp" />
+            app:layout_constraintLeft_toLeftOf="@+id/lbCallerIDVars"
+            app:layout_constraintRight_toRightOf="@+id/lbCallerIDVars"
+            app:layout_constraintTop_toTopOf="@+id/tbRingType" />
+
+        <EditText
+            android:id="@+id/tbRingType"
+            android:layout_width="190dp"
+            android:layout_height="35dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="8dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:textSize="14sp"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintLeft_toLeftOf="@+id/lbYourVar"
+            app:layout_constraintRight_toRightOf="@+id/lbYourVar"
+            app:layout_constraintTop_toBottomOf="@+id/tbRingNumber" />
 
         <TextView
-            android:id="@+id/textView42"
+            android:id="@+id/lbRingTypeD"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:editable="false"
+            android:text="Distinctive Ring"
+            android:textColor="@android:color/background_dark"
+            app:layout_constraintLeft_toLeftOf="@+id/lbDescriptions"
+            app:layout_constraintTop_toTopOf="@+id/tbRingType" />
+
+        <EditText
+            android:id="@+id/tbRingNumber"
+            android:layout_width="190dp"
+            android:layout_height="35dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="10dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:textSize="14sp"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintLeft_toLeftOf="@+id/lbYourVar"
+            app:layout_constraintRight_toRightOf="@+id/lbYourVar"
+            app:layout_constraintTop_toBottomOf="@+id/tbDuration" />
+
+        <TextView
+            android:id="@+id/lbRingNumberD"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:editable="false"
+            android:text="Number of Rings Before Call was Answered"
+            android:textColor="@android:color/background_dark"
+            app:layout_constraintLeft_toLeftOf="@+id/lbDescriptions"
+            app:layout_constraintTop_toTopOf="@+id/tbRingNumber" />
+
+        <TextView
+            android:id="@+id/lbDurationD"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:editable="false"
+            android:text="Length of Call"
+            android:textColor="@android:color/background_dark"
+            app:layout_constraintLeft_toLeftOf="@+id/lbDescriptions"
+            app:layout_constraintTop_toTopOf="@+id/tbDuration" />
+
+        <TextView
+            android:id="@+id/lbStatus"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
             android:layout_marginLeft="8dp"
             android:layout_marginRight="8dp"
             android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
             android:editable="false"
-            android:text="%Line"
+            android:text="%Status"
             android:textColor="@android:color/background_dark"
             app:layout_constraintHorizontal_bias="0.476"
-            app:layout_constraintLeft_toLeftOf="@+id/textView11"
-            app:layout_constraintRight_toRightOf="@+id/textView11"
-            app:layout_constraintTop_toTopOf="@+id/editText22"
-            android:layout_marginTop="8dp" />
+            app:layout_constraintLeft_toLeftOf="@+id/lbCallerIDVars"
+            app:layout_constraintRight_toRightOf="@+id/lbCallerIDVars"
+            app:layout_constraintTop_toTopOf="@+id/tbStatus" />
+
+        <TextView
+            android:id="@+id/lbStatusD"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:editable="false"
+            android:text="Detailed Phone Status"
+            android:textColor="@android:color/background_dark"
+            app:layout_constraintLeft_toLeftOf="@+id/lbDescriptions"
+            app:layout_constraintTop_toTopOf="@+id/tbStatus" />
+
+        <TextView
+            android:id="@+id/lbSED"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:editable="false"
+            android:text="Start or End of Call"
+            android:textColor="@android:color/background_dark"
+            app:layout_constraintLeft_toLeftOf="@+id/lbDescriptions"
+            app:layout_constraintTop_toTopOf="@+id/tbSE" />
 
         <EditText
-            android:id="@+id/editText22"
-            android:layout_width="159dp"
+            android:id="@+id/tbIO"
+            android:layout_width="190dp"
             android:layout_height="35dp"
             android:layout_marginEnd="8dp"
             android:layout_marginRight="8dp"
@@ -171,105 +273,24 @@
             android:inputType="textPersonName"
             android:textSize="14sp"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintLeft_toLeftOf="@+id/textView12"
-            app:layout_constraintRight_toRightOf="@+id/textView12"
-            android:layout_marginTop="8dp"
-            app:layout_constraintTop_toBottomOf="@+id/editText21" />
+            app:layout_constraintLeft_toLeftOf="@+id/lbYourVar"
+            app:layout_constraintRight_toRightOf="@+id/lbYourVar"
+            app:layout_constraintTop_toBottomOf="@+id/tbName" />
 
         <TextView
-            android:id="@+id/textView43"
+            android:id="@+id/lbIOD"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="0dp"
+            android:layout_marginTop="8dp"
             android:editable="false"
-            android:text="Call Line Number"
+            android:text="Inbound or Outbound Call"
             android:textColor="@android:color/background_dark"
-            app:layout_constraintLeft_toLeftOf="@+id/textView13"
-            app:layout_constraintTop_toTopOf="@+id/editText22"
-            android:layout_marginTop="8dp" />
+            app:layout_constraintLeft_toLeftOf="@+id/lbDescriptions"
+            app:layout_constraintTop_toTopOf="@+id/tbIO" />
 
         <EditText
-            android:id="@+id/editText21"
-            android:layout_width="159dp"
-            android:layout_height="35dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginRight="8dp"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:textSize="14sp"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintLeft_toLeftOf="@+id/textView12"
-            app:layout_constraintRight_toRightOf="@+id/textView12"
-            android:layout_marginTop="8dp"
-            app:layout_constraintTop_toBottomOf="@+id/editText20" />
-
-        <TextView
-            android:id="@+id/textView41"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="0dp"
-            android:editable="false"
-            android:text="Call Line Number"
-            android:textColor="@android:color/background_dark"
-            app:layout_constraintLeft_toLeftOf="@+id/textView13"
-            app:layout_constraintTop_toTopOf="@+id/editText21"
-            android:layout_marginTop="8dp" />
-
-        <TextView
-            android:id="@+id/textView39"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="0dp"
-            android:editable="false"
-            android:text="Call Line Number"
-            android:textColor="@android:color/background_dark"
-            app:layout_constraintLeft_toLeftOf="@+id/textView13"
-            app:layout_constraintTop_toTopOf="@+id/editText20"
-            android:layout_marginTop="8dp" />
-
-        <TextView
-            android:id="@+id/textView36"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="8dp"
-            android:layout_marginLeft="8dp"
-            android:layout_marginRight="8dp"
-            android:layout_marginStart="8dp"
-            android:editable="false"
-            android:text="%Line"
-            android:textColor="@android:color/background_dark"
-            app:layout_constraintHorizontal_bias="0.476"
-            app:layout_constraintLeft_toLeftOf="@+id/textView11"
-            app:layout_constraintRight_toRightOf="@+id/textView11"
-            app:layout_constraintTop_toTopOf="@+id/editText19"
-            android:layout_marginTop="8dp" />
-
-        <TextView
-            android:id="@+id/textView37"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:editable="false"
-            android:text="Call Line Number"
-            android:textColor="@android:color/background_dark"
-            app:layout_constraintLeft_toLeftOf="@+id/textView13"
-            android:layout_marginLeft="0dp"
-            app:layout_constraintTop_toTopOf="@+id/editText19"
-            android:layout_marginTop="8dp" />
-
-        <TextView
-            android:id="@+id/textView26"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:editable="false"
-            android:text="Call Line Number"
-            android:textColor="@android:color/background_dark"
-            app:layout_constraintLeft_toLeftOf="@+id/textView13"
-            app:layout_constraintTop_toTopOf="@+id/editText14" />
-
-        <EditText
-            android:id="@+id/editText13"
-            android:layout_width="159dp"
+            android:id="@+id/tbName"
+            android:layout_width="190dp"
             android:layout_height="35dp"
             android:layout_marginEnd="8dp"
             android:layout_marginRight="8dp"
@@ -278,61 +299,35 @@
             android:inputType="textPersonName"
             android:textSize="14sp"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintLeft_toLeftOf="@+id/textView12"
-            app:layout_constraintRight_toRightOf="@+id/textView12"
-            app:layout_constraintTop_toBottomOf="@+id/editText12" />
+            app:layout_constraintLeft_toLeftOf="@+id/lbYourVar"
+            app:layout_constraintRight_toRightOf="@+id/lbYourVar"
+            app:layout_constraintTop_toBottomOf="@+id/tbPhone" />
 
         <TextView
-            android:id="@+id/textView24"
+            android:id="@+id/lbNameD"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:editable="false"
-            android:text="Call Line Number"
+            android:text="Caller ID Name"
             android:textColor="@android:color/background_dark"
-            app:layout_constraintLeft_toLeftOf="@+id/textView13"
-            app:layout_constraintTop_toTopOf="@+id/editText13" />
-
-        <EditText
-            android:id="@+id/editText12"
-            android:layout_width="159dp"
-            android:layout_height="35dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginRight="8dp"
-            android:layout_marginTop="8dp"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:textSize="14sp"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintLeft_toLeftOf="@+id/textView12"
-            app:layout_constraintRight_toRightOf="@+id/textView12"
-            app:layout_constraintTop_toBottomOf="@+id/editText11" />
-
-        <TextView
-            android:id="@+id/textView22"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:editable="false"
-            android:text="Call Line Number"
-            android:textColor="@android:color/background_dark"
-            app:layout_constraintLeft_toLeftOf="@+id/textView13"
-            app:layout_constraintTop_toTopOf="@+id/editText12" />
+            app:layout_constraintLeft_toLeftOf="@+id/lbDescriptions"
+            app:layout_constraintTop_toTopOf="@+id/tbName" />
 
         <CheckBox
-            android:id="@+id/checkBox"
+            android:id="@+id/ckbRequiresAuth"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="16dp"
+            android:layout_marginLeft="20dp"
             android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="14dp"
             android:checked="true"
             android:text="Does your server require authentication?"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <EditText
-            android:id="@+id/editText"
+            android:id="@+id/tbPassword"
             android:layout_width="210dp"
             android:layout_height="41dp"
             android:layout_marginEnd="8dp"
@@ -341,10 +336,10 @@
             android:inputType="textPersonName"
             android:text="Password"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/editText2" />
+            app:layout_constraintTop_toTopOf="@+id/tbUsername" />
 
         <EditText
-            android:id="@+id/editText2"
+            android:id="@+id/tbUsername"
             android:layout_width="210dp"
             android:layout_height="41dp"
             android:layout_marginEnd="8dp"
@@ -352,11 +347,11 @@
             android:ems="10"
             android:inputType="textPersonName"
             android:text="Username"
-            app:layout_constraintRight_toLeftOf="@+id/editText"
-            app:layout_constraintTop_toTopOf="@+id/checkBox" />
+            app:layout_constraintRight_toLeftOf="@+id/tbPassword"
+            app:layout_constraintTop_toTopOf="@+id/ckbRequiresAuth" />
 
         <EditText
-            android:id="@+id/editText3"
+            android:id="@+id/tbSuppliedURL"
             android:layout_width="764dp"
             android:layout_height="43dp"
             android:layout_marginLeft="8dp"
@@ -365,11 +360,11 @@
             android:ems="10"
             android:inputType="textPersonName"
             android:textSize="10sp"
-            app:layout_constraintLeft_toRightOf="@+id/textView3"
-            app:layout_constraintTop_toBottomOf="@+id/radioButton4" />
+            app:layout_constraintLeft_toRightOf="@+id/lbSuppliedURL"
+            app:layout_constraintTop_toBottomOf="@+id/rbBasicUnit" />
 
         <EditText
-            android:id="@+id/editText5"
+            android:id="@+id/tbServer"
             android:layout_width="790dp"
             android:layout_height="41dp"
             android:layout_marginLeft="8dp"
@@ -379,42 +374,43 @@
             android:inputType="textPersonName"
             android:text="http://www.example.com/upload.php"
             android:textSize="10sp"
-            app:layout_constraintLeft_toRightOf="@+id/textView10"
-            app:layout_constraintTop_toBottomOf="@+id/button4" />
+            app:layout_constraintLeft_toRightOf="@+id/lbServer"
+            app:layout_constraintTop_toBottomOf="@+id/btnGenerateURL" />
 
         <RadioButton
-            android:id="@+id/radioButton"
+            android:id="@+id/rbDeluxeUnit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="16dp"
+            android:layout_marginLeft="14dp"
             android:layout_marginStart="16dp"
             android:text="Deluxe Unit"
-            app:layout_constraintLeft_toRightOf="@+id/radioButton4"
-            app:layout_constraintTop_toTopOf="@+id/radioButton4" />
+            app:layout_constraintLeft_toRightOf="@+id/rbBasicUnit"
+            app:layout_constraintTop_toTopOf="@+id/rbBasicUnit"
+            android:layout_marginTop="0dp" />
 
         <RadioButton
-            android:id="@+id/radioButton4"
+            android:id="@+id/rbBasicUnit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="75dp"
             android:layout_marginStart="75dp"
             android:checked="true"
             android:text="Basic Unit"
-            app:layout_constraintLeft_toRightOf="@+id/radioButton3"
-            app:layout_constraintTop_toTopOf="@+id/radioButton2" />
+            app:layout_constraintLeft_toRightOf="@+id/rbUseBuiltURL"
+            app:layout_constraintTop_toTopOf="@+id/rbUseSuppliedURL" />
 
         <RadioButton
-            android:id="@+id/radioButton3"
+            android:id="@+id/rbUseBuiltURL"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="16dp"
             android:layout_marginStart="16dp"
             android:text="Use Built URL"
-            app:layout_constraintLeft_toRightOf="@+id/radioButton2"
-            app:layout_constraintTop_toTopOf="@+id/radioButton2" />
+            app:layout_constraintLeft_toRightOf="@+id/rbUseSuppliedURL"
+            app:layout_constraintTop_toTopOf="@+id/rbUseSuppliedURL" />
 
         <RadioButton
-            android:id="@+id/radioButton2"
+            android:id="@+id/rbUseSuppliedURL"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="16dp"
@@ -423,10 +419,10 @@
             android:checked="true"
             android:text="Use Supplied URL"
             app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/checkBox" />
+            app:layout_constraintTop_toBottomOf="@+id/ckbRequiresAuth" />
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/btnTestURL"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="15dp"
@@ -434,68 +430,83 @@
             android:layout_marginTop="16dp"
             android:text="Test Supplied URL"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editText" />
+            app:layout_constraintTop_toBottomOf="@+id/tbPassword" />
 
         <TextView
-            android:id="@+id/textView"
+            android:id="@+id/lbDevSection"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="16dp"
             android:layout_marginLeft="16dp"
             android:layout_marginRight="16dp"
             android:layout_marginStart="16dp"
-            android:layout_marginTop="60dp"
             android:editable="false"
             android:text="-- Developers Section - Build the relay URL by entering the Cloud Server address and mapping data fields --"
             android:textColor="@android:color/background_dark"
             android:textSize="16sp"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editText3" />
+            app:layout_constraintHorizontal_bias="0.446"
+            android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/dividerSuppliedAndDevSection" />
 
         <TextView
-            android:id="@+id/textView5"
+            android:id="@+id/lbExampleCallText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginRight="0dp"
-            android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:editable="false"
             android:text="Sends example call to URL (Start Record Only)"
             android:textColor="@android:color/background_dark"
-            app:layout_constraintRight_toRightOf="@+id/button"
-            app:layout_constraintTop_toBottomOf="@+id/button" />
+            app:layout_constraintRight_toRightOf="@+id/btnTestURL"
+            app:layout_constraintTop_toBottomOf="@+id/btnTestURL" />
 
         <TextView
-            android:id="@+id/textView9"
+            android:id="@+id/lbLineD"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:editable="false"
             android:text="Call Line Number"
             android:textColor="@android:color/background_dark"
-            app:layout_constraintLeft_toLeftOf="@+id/textView13"
-            app:layout_constraintTop_toTopOf="@+id/editText8" />
+            app:layout_constraintLeft_toLeftOf="@+id/lbDescriptions"
+            app:layout_constraintTop_toTopOf="@+id/tbLine" />
 
         <TextView
-            android:id="@+id/textView14"
+            android:id="@+id/lbLine"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
             android:layout_marginLeft="8dp"
             android:layout_marginRight="8dp"
             android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
             android:editable="false"
             android:text="%Line"
             android:textColor="@android:color/background_dark"
             app:layout_constraintHorizontal_bias="0.504"
-            app:layout_constraintLeft_toLeftOf="@+id/textView11"
-            app:layout_constraintRight_toRightOf="@+id/textView11"
-            app:layout_constraintTop_toTopOf="@+id/editText8" />
+            app:layout_constraintLeft_toLeftOf="@+id/lbCallerIDVars"
+            app:layout_constraintRight_toRightOf="@+id/lbCallerIDVars"
+            app:layout_constraintTop_toTopOf="@+id/tbLine"
+            android:layout_marginTop="8dp" />
 
         <TextView
-            android:id="@+id/textView17"
+            android:id="@+id/lbPhone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginStart="8dp"
+            android:editable="false"
+            android:text="%Phone"
+            android:textColor="@android:color/background_dark"
+            app:layout_constraintLeft_toLeftOf="@+id/lbCallerIDVars"
+            app:layout_constraintRight_toRightOf="@+id/lbCallerIDVars"
+            app:layout_constraintTop_toTopOf="@+id/tbPhone"
+            android:layout_marginTop="8dp" />
+
+        <TextView
+            android:id="@+id/lbTime"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
@@ -504,32 +515,15 @@
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:editable="false"
-            android:text="%Line"
+            android:text="%Time"
             android:textColor="@android:color/background_dark"
-            app:layout_constraintHorizontal_bias="0.504"
-            app:layout_constraintLeft_toLeftOf="@+id/textView11"
-            app:layout_constraintRight_toRightOf="@+id/textView11"
-            app:layout_constraintTop_toTopOf="@+id/editText11" />
-
-        <TextView
-            android:id="@+id/textView19"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="8dp"
-            android:layout_marginLeft="8dp"
-            android:layout_marginRight="8dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:editable="false"
-            android:text="%Line"
-            android:textColor="@android:color/background_dark"
-            app:layout_constraintLeft_toLeftOf="@+id/textView11"
-            app:layout_constraintRight_toRightOf="@+id/textView11"
-            app:layout_constraintTop_toTopOf="@+id/editText10" />
+            app:layout_constraintLeft_toLeftOf="@+id/lbCallerIDVars"
+            app:layout_constraintRight_toRightOf="@+id/lbCallerIDVars"
+            app:layout_constraintTop_toTopOf="@+id/tbTime" />
 
         <EditText
-            android:id="@+id/editText10"
-            android:layout_width="159dp"
+            android:id="@+id/tbTime"
+            android:layout_width="190dp"
             android:layout_height="35dp"
             android:layout_marginEnd="8dp"
             android:layout_marginRight="8dp"
@@ -538,13 +532,13 @@
             android:inputType="textPersonName"
             android:textSize="14sp"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintLeft_toLeftOf="@+id/textView12"
-            app:layout_constraintRight_toRightOf="@+id/textView12"
-            app:layout_constraintTop_toBottomOf="@+id/editText8" />
+            app:layout_constraintLeft_toLeftOf="@+id/lbYourVar"
+            app:layout_constraintRight_toRightOf="@+id/lbYourVar"
+            app:layout_constraintTop_toBottomOf="@+id/tbLine" />
 
         <EditText
-            android:id="@+id/editText11"
-            android:layout_width="159dp"
+            android:id="@+id/tbPhone"
+            android:layout_width="190dp"
             android:layout_height="35dp"
             android:layout_marginEnd="8dp"
             android:layout_marginRight="8dp"
@@ -553,34 +547,34 @@
             android:inputType="textPersonName"
             android:textSize="14sp"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintLeft_toLeftOf="@+id/textView12"
-            app:layout_constraintRight_toRightOf="@+id/textView12"
-            app:layout_constraintTop_toBottomOf="@+id/editText10" />
+            app:layout_constraintLeft_toLeftOf="@+id/lbYourVar"
+            app:layout_constraintRight_toRightOf="@+id/lbYourVar"
+            app:layout_constraintTop_toBottomOf="@+id/tbTime" />
 
         <TextView
-            android:id="@+id/textView18"
+            android:id="@+id/lbTimeD"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:editable="false"
-            android:text="Call Line Number"
+            android:text="Time and Date of Call"
             android:textColor="@android:color/background_dark"
-            app:layout_constraintLeft_toLeftOf="@+id/textView13"
-            app:layout_constraintTop_toTopOf="@+id/editText10" />
+            app:layout_constraintLeft_toLeftOf="@+id/lbDescriptions"
+            app:layout_constraintTop_toTopOf="@+id/tbTime" />
 
         <TextView
-            android:id="@+id/textView20"
+            android:id="@+id/tbPhoneD"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:editable="false"
-            android:text="Call Line Number"
+            android:text="Caller ID Number"
             android:textColor="@android:color/background_dark"
-            app:layout_constraintLeft_toLeftOf="@+id/textView13"
-            app:layout_constraintTop_toTopOf="@+id/editText11" />
+            app:layout_constraintLeft_toLeftOf="@+id/lbDescriptions"
+            app:layout_constraintTop_toTopOf="@+id/tbPhone" />
 
         <TextView
-            android:id="@+id/textView13"
+            android:id="@+id/lbDescriptions"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="32dp"
@@ -588,12 +582,12 @@
             android:editable="false"
             android:text="Descriptions"
             android:textColor="@android:color/background_dark"
-            android:textSize="16sp"
-            app:layout_constraintLeft_toRightOf="@+id/textView12"
-            app:layout_constraintTop_toTopOf="@+id/textView11" />
+            android:textSize="18sp"
+            app:layout_constraintLeft_toRightOf="@+id/lbYourVar"
+            app:layout_constraintTop_toTopOf="@+id/lbCallerIDVars" />
 
         <TextView
-            android:id="@+id/textView12"
+            android:id="@+id/lbYourVar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="32dp"
@@ -601,48 +595,48 @@
             android:editable="false"
             android:text="Your Parameter Variable"
             android:textColor="@android:color/background_dark"
-            android:textSize="16sp"
-            app:layout_constraintLeft_toRightOf="@+id/textView11"
-            app:layout_constraintTop_toTopOf="@+id/textView11" />
+            android:textSize="18sp"
+            app:layout_constraintLeft_toRightOf="@+id/lbCallerIDVars"
+            app:layout_constraintTop_toTopOf="@+id/lbCallerIDVars" />
 
         <TextView
-            android:id="@+id/textView11"
+            android:id="@+id/lbCallerIDVars"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:editable="false"
             android:text="CallerID.com Variables"
             android:textColor="@android:color/background_dark"
-            android:textSize="16sp"
-            app:layout_constraintLeft_toLeftOf="@+id/editText5"
-            app:layout_constraintTop_toBottomOf="@+id/editText5" />
+            android:textSize="18sp"
+            app:layout_constraintLeft_toLeftOf="@+id/tbServer"
+            app:layout_constraintTop_toBottomOf="@+id/tbServer" />
 
         <TextView
-            android:id="@+id/textView10"
+            android:id="@+id/lbServer"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
             android:editable="false"
             android:text="Server:"
             android:textColor="@android:color/background_dark"
-            app:layout_constraintRight_toRightOf="@+id/textView6"
-            app:layout_constraintTop_toBottomOf="@+id/button4" />
+            app:layout_constraintRight_toRightOf="@+id/lbBuiltURL"
+            app:layout_constraintTop_toBottomOf="@+id/btnGenerateURL" />
 
         <TextView
-            android:id="@+id/textView6"
+            android:id="@+id/lbBuiltURL"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="16dp"
             android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="8dp"
             android:editable="false"
             android:text="Built URL:"
             android:textColor="@android:color/background_dark"
             app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView" />
+            app:layout_constraintTop_toTopOf="@+id/lbGeneratedURL" />
 
         <TextView
-            android:id="@+id/textView7"
+            android:id="@+id/lbGeneratedURL"
             android:layout_width="795dp"
             android:layout_height="42dp"
             android:layout_marginLeft="8dp"
@@ -652,11 +646,11 @@
             android:singleLine="false"
             android:text="[ you must generate your URL first ]"
             android:textColor="@android:color/holo_red_dark"
-            app:layout_constraintLeft_toRightOf="@+id/textView6"
-            app:layout_constraintTop_toBottomOf="@+id/textView" />
+            app:layout_constraintLeft_toRightOf="@+id/lbBuiltURL"
+            app:layout_constraintTop_toBottomOf="@+id/lbDevSection" />
 
         <TextView
-            android:id="@+id/textView3"
+            android:id="@+id/lbSuppliedURL"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="16dp"
@@ -666,10 +660,10 @@
             android:text="Supplied URL:"
             android:textColor="@android:color/background_dark"
             app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/radioButton2" />
+            app:layout_constraintTop_toBottomOf="@+id/rbUseSuppliedURL" />
 
         <Button
-            android:id="@+id/button2"
+            android:id="@+id/btnCopyGenRul"
             android:layout_width="148dp"
             android:layout_height="48dp"
             android:layout_marginEnd="24dp"
@@ -677,32 +671,43 @@
             android:layout_marginTop="8dp"
             android:text="Copy Built URL"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView7" />
+            app:layout_constraintTop_toBottomOf="@+id/lbGeneratedURL" />
 
         <Button
-            android:id="@+id/button4"
+            android:id="@+id/btnClearLog"
+            android:layout_width="148dp"
+            android:layout_height="48dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginRight="24dp"
+            android:text="Clear Log"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toTopOf="@+id/tableLog" />
+
+        <Button
+            android:id="@+id/btnGenerateURL"
             android:layout_width="127dp"
             android:layout_height="48dp"
-            android:layout_marginLeft="0dp"
-            android:layout_marginTop="8dp"
             android:text="Generate URL"
-            app:layout_constraintLeft_toLeftOf="@+id/textView7"
-            app:layout_constraintTop_toBottomOf="@+id/textView7" />
+            app:layout_constraintLeft_toLeftOf="@+id/lbGeneratedURL"
+            android:layout_marginLeft="-2dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/lbGeneratedURL" />
 
         <Button
-            android:id="@+id/button3"
-            android:layout_width="82dp"
-            android:layout_height="37dp"
+            android:id="@+id/btnPaste"
+            android:layout_width="88dp"
+            android:layout_height="48dp"
             android:layout_marginEnd="24dp"
             android:layout_marginRight="24dp"
             android:layout_marginTop="8dp"
             android:text="Paste"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editText3" />
+            app:layout_constraintTop_toBottomOf="@+id/tbSuppliedURL" />
 
         <EditText
-            android:id="@+id/editText8"
-            android:layout_width="159dp"
+            android:id="@+id/tbLine"
+            android:layout_width="190dp"
             android:layout_height="35dp"
             android:layout_marginEnd="8dp"
             android:layout_marginRight="8dp"
@@ -711,45 +716,61 @@
             android:inputType="textPersonName"
             android:textSize="14sp"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintLeft_toLeftOf="@+id/textView12"
-            app:layout_constraintRight_toRightOf="@+id/textView12"
-            app:layout_constraintTop_toBottomOf="@+id/textView12" />
+            app:layout_constraintLeft_toLeftOf="@+id/lbYourVar"
+            app:layout_constraintRight_toRightOf="@+id/lbYourVar"
+            app:layout_constraintTop_toBottomOf="@+id/lbYourVar" />
 
         <View
-            android:layout_width="752dp"
+            android:layout_width="match_parent"
             android:layout_height="1dp"
+            android:layout_marginEnd="8dp"
             android:layout_marginLeft="8dp"
             android:layout_marginRight="8dp"
+            android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:background="@android:color/darker_gray"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editText2" />
+            app:layout_constraintTop_toBottomOf="@+id/tbUsername"
+            android:id="@+id/dividerAuthAndSupplied" />
 
         <View
-            android:id="@+id/view"
-            android:layout_width="752dp"
+            android:id="@+id/dividerSuppliedAndDevSection"
+            android:layout_width="match_parent"
             android:layout_height="1dp"
+            android:layout_marginEnd="8dp"
             android:layout_marginLeft="8dp"
             android:layout_marginRight="8dp"
+            android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:background="@android:color/darker_gray"
-            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/button3" />
+            app:layout_constraintTop_toBottomOf="@+id/btnPaste" />
 
         <TextView
-            android:id="@+id/textView27"
+            android:id="@+id/lbExampleURL"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="0dp"
             android:layout_marginTop="8dp"
             android:text="Example:  http://www.example.com/upload.php?line=%Line&amp;number=%Phone"
             android:textColor="@android:color/black"
-            app:layout_constraintLeft_toLeftOf="@+id/editText3"
-            app:layout_constraintTop_toBottomOf="@+id/editText3" />
+            app:layout_constraintLeft_toLeftOf="@+id/tbSuppliedURL"
+            app:layout_constraintTop_toBottomOf="@+id/tbSuppliedURL" />
+
+        <TableLayout
+            android:id="@+id/tableLog"
+            android:layout_width="886dp"
+            android:layout_height="198dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="48dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tbRingType">
+
+        </TableLayout>
 
 
     </android.support.constraint.ConstraintLayout>
