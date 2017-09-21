@@ -1,13 +1,29 @@
 package www.callerid.com.androidcalleridcloudrelay;
 
-import android.support.v4.view.accessibility.AccessibilityNodeInfoCompat;
+import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Base64;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.RadioButton;
+import android.widget.ScrollView;
 import android.widget.TableLayout;
+import android.widget.TableRow;
 import android.widget.TextView;
+
+import java.io.BufferedWriter;
+import java.io.OutputStream;
+import java.io.OutputStreamWriter;
+import java.io.UnsupportedEncodingException;
+import java.net.URL;
+import java.net.URLEncoder;
+import java.util.HashMap;
+import java.util.Map;
+
+import javax.net.ssl.HttpsURLConnection;
+
+import www.callerid.com.androidcalleridcloudrelay.Classes.Poster;
 
 public class actMain extends AppCompatActivity {
 
@@ -78,7 +94,8 @@ public class actMain extends AppCompatActivity {
     private TextView lbRingTypeD;
     private TextView tbRingType;
 
-    private TableLayout tableLog;
+    private TableLayout tableCallLog;
+    private ScrollView svCallLog;
 
     private Button btnClearLog;
 
@@ -89,14 +106,6 @@ public class actMain extends AppCompatActivity {
 
         // Link UI variables
         LinkAllUIControls();
-
-
-
-
-
-
-
-
 
         // Load all settings variables
         // TODO
@@ -177,9 +186,109 @@ public class actMain extends AppCompatActivity {
         lbRingTypeD = (TextView)findViewById(R.id.lbRingTypeD);
         tbRingType = (TextView)findViewById(R.id.tbRingType);
 
-        tableLog = (TableLayout)findViewById(R.id.tableLog);
+        tableCallLog = (TableLayout)findViewById(R.id.tableCallLog);
+        svCallLog = (ScrollView)findViewById(R.id.svCallLog);
 
         btnClearLog = (Button)findViewById(R.id.btnClearLog);
 
     }
+
+    private void addCallToLog(String myLine,String myType,
+                              String myIndicator,String myDuration,
+                              String myCheckSum,String myRings,
+                              String myDateTime,String myNumber,
+                              String myName){
+
+        // Print call to call log
+        TableRow newRow = new TableRow(this);
+        newRow.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.FILL_PARENT,TableRow.LayoutParams.WRAP_CONTENT));
+
+        TextView tv = new TextView(this);
+
+        // Line
+        String line = "" + myLine;
+        if(line.length()==1){
+            line = "0" + line;
+        }
+        tv.setText(line.trim());
+        tv.setPadding(0,0,15,0);
+        newRow.addView(tv);
+
+        // I/O
+        tv = new TextView(this);
+        tv.setText("" + myType);
+        tv.setPadding(0,0,25,0);
+        newRow.addView(tv);
+
+        // Start/End
+        tv = new TextView(this);
+        tv.setText("" + myIndicator);
+        tv.setPadding(0,0,20,0);
+        newRow.addView(tv);
+
+        // Duration
+        tv = new TextView(this);
+        tv.setText("" + myDuration);
+        tv.setPadding(0,0,15,0);
+        newRow.addView(tv);
+
+        // Checksum
+        tv = new TextView(this);
+        tv.setText("" + myCheckSum);
+        tv.setPadding(0,0,20,0);
+        newRow.addView(tv);
+
+        // Ring
+        tv = new TextView(this);
+        tv.setText("" + myRings);
+        tv.setPadding(0,0,25,0);
+        newRow.addView(tv);
+
+        // Date & Time
+        tv = new TextView(this);
+        tv.setText("" + myDateTime);
+        tv.setPadding(0,0,15,0);
+        newRow.addView(tv);
+
+        // Number
+        tv = new TextView(this);
+        tv.setText("" + myNumber);
+        tv.setPadding(0,0,45,0);
+        newRow.addView(tv);
+
+        // Name
+        tv = new TextView(this);
+        tv.setText("" + myName);
+        tv.setPadding(0,0,20,0);
+        newRow.addView(tv);
+
+        // Add row to call log table
+        tableCallLog.addView(newRow);
+
+        // Auto-scroll to bottom
+        svCallLog.post(new Runnable() {
+
+            @Override
+            public void run() {
+                svCallLog.fullScroll(ScrollView.FOCUS_DOWN);
+            }
+        });
+
+    }
+
+    private void PostToCloud(String urlFull, String line, String dateTime, String number, String name, String io,
+                             String se, String status, String duration, String ring){
+
+        Boolean secured = urlFull.contains("https://");
+
+        // Post to Cloud using new thread
+        Thread post = new Thread(new Poster(secured,urlFull,line,dateTime,number,name,io,se,status,duration,ring,
+                tbLine.getText().toString(),tbTime.getText().toString(),tbPhone.getText().toString(),tbName.getText().toString(),
+                tbIO.getText().toString(),tbSE.getText().toString(),tbStatus.getText().toString(),tbDuration.getText().toString(),tbRingNumber.getText().toString(),
+                tbRingType.getText().toString(),ckbRequiresAuth.isChecked(),tbUsername.getText().toString(),tbPassword.getText().toString()));
+
+        post.start();
+
+    }
+
 }
