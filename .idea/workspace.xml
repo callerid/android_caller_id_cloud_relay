@@ -15,12 +15,13 @@
   </component>
   <component name="BookmarkManager">
     <bookmark url="file://$PROJECT_DIR$/app/src/main/java/www/callerid/com/androidcalleridcloudrelay/Classes/Poster.java" />
+    <bookmark url="file://$PROJECT_DIR$/app/src/main/java/www/callerid/com/androidcalleridcloudrelay/actMain.java" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5a0596e4-9ce8-415c-b408-b9565ec1374f" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/www/callerid/com/androidcalleridcloudrelay/actMain.java" afterPath="$PROJECT_DIR$/app/src/main/java/www/callerid/com/androidcalleridcloudrelay/actMain.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_act_main.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_act_main.xml" />
     </list>
     <ignored path="Android Caller ID Cloud Relay.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -68,18 +69,37 @@
       <file leaf-file-name="actMain.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/www/callerid/com/androidcalleridcloudrelay/actMain.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="695">
-              <caret line="545" column="4" selection-start-line="545" selection-start-column="4" selection-end-line="545" selection-end-column="4" />
+            <state relative-caret-position="155">
+              <caret line="517" column="0" selection-start-line="517" selection-start-column="0" selection-end-line="517" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#onCreate#0;class#actMain#0" expanded="false" />
+                <element signature="method#onResume#0;class#actMain#0" expanded="false" />
+                <element signature="e#4590#4591#0" expanded="true" />
+                <element signature="e#4628#4629#0" expanded="true" />
+                <element signature="method#onStart#0;class#actMain#0" expanded="false" />
+                <element signature="method#onPause#0;class#actMain#0" expanded="false" />
+                <element signature="method#onDestroy#0;class#actMain#0" expanded="false" />
                 <element signature="method#LinkAllUIControls#0;class#actMain#0" expanded="false" />
                 <element signature="method#changeURL#0;class#actMain#0" expanded="false" />
                 <element signature="method#toggleDevSection#0;class#actMain#0" expanded="false" />
                 <element signature="method#changeUnit#0;class#actMain#0" expanded="false" />
                 <element signature="method#toggleDeluxe#0;class#actMain#0" expanded="false" />
-                <element signature="method#addCallToLog#0;class#actMain#0" expanded="false" />
                 <element signature="method#PostToCloud#0;class#actMain#0" expanded="false" />
+                <element signature="e#19400#19542#0" expanded="true" />
+                <element signature="e#19541#19542#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UDPListen.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/www/callerid/com/androidcalleridcloudrelay/Classes/UDPListen.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="389">
+              <caret line="98" column="0" selection-start-line="98" selection-start-column="0" selection-end-line="98" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -1943,9 +1963,11 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/www/callerid/com/androidcalleridcloudrelay/Classes/Poster.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_act_main.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/www/callerid/com/androidcalleridcloudrelay/Classes/ServiceCallbacks.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/www/callerid/com/androidcalleridcloudrelay/Classes/UDPListen.java" />
+        <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/www/callerid/com/androidcalleridcloudrelay/actMain.java" />
       </list>
     </option>
@@ -1991,6 +2013,84 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="AndroidCallerIDCloudRelay" />
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AndroidCallerIDCloudRelay" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AndroidCallerIDCloudRelay" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidSourceTypeNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AndroidCallerIDCloudRelay" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidSourceTypeNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="androidcalleridcloudrelay" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AndroidCallerIDCloudRelay" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidSourceTypeNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="androidcalleridcloudrelay" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Classes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AndroidCallerIDCloudRelay" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="manifests" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidManifestsGroupNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
@@ -2349,7 +2449,7 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Android Model" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39976957" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.39976957" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -2404,7 +2504,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="18" />
+      <option name="time" value="35" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -2427,13 +2527,20 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#onCreate#0;class#actMain#0" expanded="false" />
+            <element signature="method#onResume#0;class#actMain#0" expanded="false" />
+            <element signature="e#4590#4591#0" expanded="true" />
+            <element signature="e#4628#4629#0" expanded="true" />
+            <element signature="method#onStart#0;class#actMain#0" expanded="false" />
+            <element signature="method#onPause#0;class#actMain#0" expanded="false" />
+            <element signature="method#onDestroy#0;class#actMain#0" expanded="false" />
             <element signature="method#LinkAllUIControls#0;class#actMain#0" expanded="false" />
             <element signature="method#changeURL#0;class#actMain#0" expanded="false" />
             <element signature="method#toggleDevSection#0;class#actMain#0" expanded="false" />
             <element signature="method#changeUnit#0;class#actMain#0" expanded="false" />
             <element signature="method#toggleDeluxe#0;class#actMain#0" expanded="false" />
-            <element signature="method#addCallToLog#0;class#actMain#0" expanded="false" />
             <element signature="method#PostToCloud#0;class#actMain#0" expanded="false" />
+            <element signature="e#19400#19542#0" expanded="true" />
+            <element signature="e#19541#19542#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2456,13 +2563,20 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#onCreate#0;class#actMain#0" expanded="false" />
+            <element signature="method#onResume#0;class#actMain#0" expanded="false" />
+            <element signature="e#4590#4591#0" expanded="true" />
+            <element signature="e#4628#4629#0" expanded="true" />
+            <element signature="method#onStart#0;class#actMain#0" expanded="false" />
+            <element signature="method#onPause#0;class#actMain#0" expanded="false" />
+            <element signature="method#onDestroy#0;class#actMain#0" expanded="false" />
             <element signature="method#LinkAllUIControls#0;class#actMain#0" expanded="false" />
             <element signature="method#changeURL#0;class#actMain#0" expanded="false" />
             <element signature="method#toggleDevSection#0;class#actMain#0" expanded="false" />
             <element signature="method#changeUnit#0;class#actMain#0" expanded="false" />
             <element signature="method#toggleDeluxe#0;class#actMain#0" expanded="false" />
-            <element signature="method#addCallToLog#0;class#actMain#0" expanded="false" />
             <element signature="method#PostToCloud#0;class#actMain#0" expanded="false" />
+            <element signature="e#19400#19542#0" expanded="true" />
+            <element signature="e#19541#19542#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2485,13 +2599,20 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#onCreate#0;class#actMain#0" expanded="false" />
+            <element signature="method#onResume#0;class#actMain#0" expanded="false" />
+            <element signature="e#4590#4591#0" expanded="true" />
+            <element signature="e#4628#4629#0" expanded="true" />
+            <element signature="method#onStart#0;class#actMain#0" expanded="false" />
+            <element signature="method#onPause#0;class#actMain#0" expanded="false" />
+            <element signature="method#onDestroy#0;class#actMain#0" expanded="false" />
             <element signature="method#LinkAllUIControls#0;class#actMain#0" expanded="false" />
             <element signature="method#changeURL#0;class#actMain#0" expanded="false" />
             <element signature="method#toggleDevSection#0;class#actMain#0" expanded="false" />
             <element signature="method#changeUnit#0;class#actMain#0" expanded="false" />
             <element signature="method#toggleDeluxe#0;class#actMain#0" expanded="false" />
-            <element signature="method#addCallToLog#0;class#actMain#0" expanded="false" />
             <element signature="method#PostToCloud#0;class#actMain#0" expanded="false" />
+            <element signature="e#19400#19542#0" expanded="true" />
+            <element signature="e#19541#19542#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2514,13 +2635,20 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#onCreate#0;class#actMain#0" expanded="false" />
+            <element signature="method#onResume#0;class#actMain#0" expanded="false" />
+            <element signature="e#4590#4591#0" expanded="true" />
+            <element signature="e#4628#4629#0" expanded="true" />
+            <element signature="method#onStart#0;class#actMain#0" expanded="false" />
+            <element signature="method#onPause#0;class#actMain#0" expanded="false" />
+            <element signature="method#onDestroy#0;class#actMain#0" expanded="false" />
             <element signature="method#LinkAllUIControls#0;class#actMain#0" expanded="false" />
             <element signature="method#changeURL#0;class#actMain#0" expanded="false" />
             <element signature="method#toggleDevSection#0;class#actMain#0" expanded="false" />
             <element signature="method#changeUnit#0;class#actMain#0" expanded="false" />
             <element signature="method#toggleDeluxe#0;class#actMain#0" expanded="false" />
-            <element signature="method#addCallToLog#0;class#actMain#0" expanded="false" />
             <element signature="method#PostToCloud#0;class#actMain#0" expanded="false" />
+            <element signature="e#19400#19542#0" expanded="true" />
+            <element signature="e#19541#19542#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2543,13 +2671,20 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#onCreate#0;class#actMain#0" expanded="false" />
+            <element signature="method#onResume#0;class#actMain#0" expanded="false" />
+            <element signature="e#4590#4591#0" expanded="true" />
+            <element signature="e#4628#4629#0" expanded="true" />
+            <element signature="method#onStart#0;class#actMain#0" expanded="false" />
+            <element signature="method#onPause#0;class#actMain#0" expanded="false" />
+            <element signature="method#onDestroy#0;class#actMain#0" expanded="false" />
             <element signature="method#LinkAllUIControls#0;class#actMain#0" expanded="false" />
             <element signature="method#changeURL#0;class#actMain#0" expanded="false" />
             <element signature="method#toggleDevSection#0;class#actMain#0" expanded="false" />
             <element signature="method#changeUnit#0;class#actMain#0" expanded="false" />
             <element signature="method#toggleDeluxe#0;class#actMain#0" expanded="false" />
-            <element signature="method#addCallToLog#0;class#actMain#0" expanded="false" />
             <element signature="method#PostToCloud#0;class#actMain#0" expanded="false" />
+            <element signature="e#19400#19542#0" expanded="true" />
+            <element signature="e#19541#19542#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2572,13 +2707,20 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#onCreate#0;class#actMain#0" expanded="false" />
+            <element signature="method#onResume#0;class#actMain#0" expanded="false" />
+            <element signature="e#4590#4591#0" expanded="true" />
+            <element signature="e#4628#4629#0" expanded="true" />
+            <element signature="method#onStart#0;class#actMain#0" expanded="false" />
+            <element signature="method#onPause#0;class#actMain#0" expanded="false" />
+            <element signature="method#onDestroy#0;class#actMain#0" expanded="false" />
             <element signature="method#LinkAllUIControls#0;class#actMain#0" expanded="false" />
             <element signature="method#changeURL#0;class#actMain#0" expanded="false" />
             <element signature="method#toggleDevSection#0;class#actMain#0" expanded="false" />
             <element signature="method#changeUnit#0;class#actMain#0" expanded="false" />
             <element signature="method#toggleDeluxe#0;class#actMain#0" expanded="false" />
-            <element signature="method#addCallToLog#0;class#actMain#0" expanded="false" />
             <element signature="method#PostToCloud#0;class#actMain#0" expanded="false" />
+            <element signature="e#19400#19542#0" expanded="true" />
+            <element signature="e#19541#19542#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2601,13 +2743,20 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#onCreate#0;class#actMain#0" expanded="false" />
+            <element signature="method#onResume#0;class#actMain#0" expanded="false" />
+            <element signature="e#4590#4591#0" expanded="true" />
+            <element signature="e#4628#4629#0" expanded="true" />
+            <element signature="method#onStart#0;class#actMain#0" expanded="false" />
+            <element signature="method#onPause#0;class#actMain#0" expanded="false" />
+            <element signature="method#onDestroy#0;class#actMain#0" expanded="false" />
             <element signature="method#LinkAllUIControls#0;class#actMain#0" expanded="false" />
             <element signature="method#changeURL#0;class#actMain#0" expanded="false" />
             <element signature="method#toggleDevSection#0;class#actMain#0" expanded="false" />
             <element signature="method#changeUnit#0;class#actMain#0" expanded="false" />
             <element signature="method#toggleDeluxe#0;class#actMain#0" expanded="false" />
-            <element signature="method#addCallToLog#0;class#actMain#0" expanded="false" />
             <element signature="method#PostToCloud#0;class#actMain#0" expanded="false" />
+            <element signature="e#19400#19542#0" expanded="true" />
+            <element signature="e#19541#19542#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2617,17 +2766,6 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="66" selection-start-line="4" selection-start-column="66" selection-end-line="4" selection-end-column="66" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-manifest">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/www/callerid/com/androidcalleridcloudrelay/Classes/Poster.java">
@@ -2659,20 +2797,64 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/www/callerid/com/androidcalleridcloudrelay/Classes/ServiceCallbacks.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="59" selection-start-line="0" selection-start-column="59" selection-end-line="0" selection-end-column="59" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Android/Sdk/sources/android-25/android/widget/TextView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="688">
+          <caret line="251" column="13" selection-start-line="251" selection-start-column="13" selection-end-line="251" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="22" column="44" selection-start-line="22" selection-start-column="44" selection-end-line="22" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-manifest">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/www/callerid/com/androidcalleridcloudrelay/Classes/UDPListen.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="389">
+          <caret line="98" column="0" selection-start-line="98" selection-start-column="0" selection-end-line="98" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/www/callerid/com/androidcalleridcloudrelay/actMain.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="695">
-          <caret line="545" column="4" selection-start-line="545" selection-start-column="4" selection-end-line="545" selection-end-column="4" />
+        <state relative-caret-position="155">
+          <caret line="517" column="0" selection-start-line="517" selection-start-column="0" selection-end-line="517" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#onCreate#0;class#actMain#0" expanded="false" />
+            <element signature="method#onResume#0;class#actMain#0" expanded="false" />
+            <element signature="e#4590#4591#0" expanded="true" />
+            <element signature="e#4628#4629#0" expanded="true" />
+            <element signature="method#onStart#0;class#actMain#0" expanded="false" />
+            <element signature="method#onPause#0;class#actMain#0" expanded="false" />
+            <element signature="method#onDestroy#0;class#actMain#0" expanded="false" />
             <element signature="method#LinkAllUIControls#0;class#actMain#0" expanded="false" />
             <element signature="method#changeURL#0;class#actMain#0" expanded="false" />
             <element signature="method#toggleDevSection#0;class#actMain#0" expanded="false" />
             <element signature="method#changeUnit#0;class#actMain#0" expanded="false" />
             <element signature="method#toggleDeluxe#0;class#actMain#0" expanded="false" />
-            <element signature="method#addCallToLog#0;class#actMain#0" expanded="false" />
             <element signature="method#PostToCloud#0;class#actMain#0" expanded="false" />
+            <element signature="e#19400#19542#0" expanded="true" />
+            <element signature="e#19541#19542#0" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -1,10 +1,13 @@
 package www.callerid.com.androidcalleridcloudrelay;
 
+import android.app.Activity;
+import android.content.ComponentName;
+import android.content.Context;
+import android.content.Intent;
+import android.content.ServiceConnection;
 import android.graphics.Color;
-import android.net.Uri;
-import android.support.v7.app.AppCompatActivity;
+import android.os.IBinder;
 import android.os.Bundle;
-import android.util.Base64;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -14,20 +17,22 @@ import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
 
-import java.io.BufferedWriter;
-import java.io.OutputStream;
-import java.io.OutputStreamWriter;
-import java.io.UnsupportedEncodingException;
-import java.net.URL;
-import java.net.URLEncoder;
-import java.util.HashMap;
-import java.util.Map;
-
-import javax.net.ssl.HttpsURLConnection;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import www.callerid.com.androidcalleridcloudrelay.Classes.Poster;
+import www.callerid.com.androidcalleridcloudrelay.Classes.ServiceCallbacks;
+import www.callerid.com.androidcalleridcloudrelay.Classes.UDPListen;
 
-public class actMain extends AppCompatActivity {
+public class actMain extends Activity implements ServiceCallbacks {
+
+    // UDP listen requirements
+    private UDPListen mService;
+    private boolean mBound = false;
+    private String inString = "Waiting for Calls.";
+
+    // Required for memory capturing during app in background
+    private boolean isInFront;
 
     // Create all UI variables
     private CheckBox ckbRequiresAuth;
@@ -103,6 +108,8 @@ public class actMain extends AppCompatActivity {
 
     private Button btnClearLog;
 
+    // ---------------------------------------------------------------------------------------------------- Activity Functions
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -130,6 +137,59 @@ public class actMain extends AppCompatActivity {
         ckbRequiresAuth_Click.onClick(new View(this));
         changeURL(rbUseSuppliedURL.isChecked());
         changeUnit(rbDeluxeUnit.isChecked());
+
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        isInFront = true;
+    }
+
+    // Setup connection/binder to service
+    private ServiceConnection mConnection = new ServiceConnection() {
+
+        @Override
+        public void onServiceConnected(ComponentName componentName, IBinder iBinder) {
+
+            UDPListen.LocalBinder binder = (UDPListen.LocalBinder) iBinder;
+            mService = binder.getService();
+            mBound = true;
+            mService.setCallbacks(actMain.this);
+
+        }
+
+        @Override
+        public void onServiceDisconnected(ComponentName componentName) {
+            mBound = false;
+        }
+
+    };
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+
+        // bind to Service
+        Intent intent = new Intent(this, UDPListen.class);
+        mBound = bindService(intent, mConnection, Context.BIND_AUTO_CREATE);
+
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        isInFront = false;
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+
+        // end listener Service
+        Intent intent = new Intent(this, UDPListen.class);
+        stopService(intent);
+        unbindService(mConnection);
 
     }
 
@@ -455,11 +515,7 @@ public class actMain extends AppCompatActivity {
         TextView tv = new TextView(this);
 
         // Line
-        String line = "" + myLine;
-        if(line.length()==1){
-            line = "0" + line;
-        }
-        tv.setText(line.trim());
+        tv.setText("" + myLine);
         tv.setPadding(0,0,15,0);
         newRow.addView(tv);
 
@@ -543,6 +599,97 @@ public class actMain extends AppCompatActivity {
 
     // ------------------------------------------------------------------------------------------------ UDP LOWER Level Code
 
-    
+    // Link Display to Update so the UI gets updated through interface
+    @Override
+    public void getUDP(String rString){
+
+        inString = rString;
+
+        runOnUiThread(new Runnable() {
+
+            @Override
+            public void run() {
+                handleUDP(inString,isInFront);
+            }
+        });
+
+    }
+
+    private void handleUDP(String received, boolean isInFront){
+
+        // Handle UDP
+        // Setup variables for use
+        String myData = received;
+
+        Integer myLine = 0;
+        String myType="";
+        String myIndicator="";
+
+        // Unused in this app but available for other custom apps
+        String myDuration="";
+        String myCheckSum="";
+        String myRings="";
+        //------------------------------------------------------
+
+        String myDateTime="";
+        String myNumber="";
+        String myName="";
+
+        // Check if matches a call record
+        Pattern myPattern = Pattern.compile(".*(\\d\\d) ([IO]) ([ES]) (\\d{4}) ([GB]) (.)(\\d) (\\d\\d/\\d\\d \\d\\d:\\d\\d [AP]M) (.{8,15})(.*)");
+        Matcher matcher = myPattern.matcher(myData);
+
+        if(matcher.find()){
+
+            myLine = Integer.parseInt(matcher.group(1));
+            myType = matcher.group(2);
+
+            if(myType.equals("I")||myType.equals("O")){
+
+                myIndicator = matcher.group(3);
+
+                // Unused in this app but available for other custom apps
+                myDuration = matcher.group(4);
+                myCheckSum = matcher.group(5);
+                myRings = matcher.group(6);
+                //------------------------------------------------------
+
+                myDateTime = matcher.group(8);
+                myNumber = matcher.group(9);
+                myName = matcher.group(10);
+
+                String theLineNumber = myLine.toString();
+                if(theLineNumber.length() == 1) theLineNumber = "0" + theLineNumber;
+
+                // Add to log
+                addCallToLog(theLineNumber,myType,myIndicator,myDuration,myCheckSum,myRings,myDateTime,myNumber,myName);
+
+            }
+
+        }
+
+        // Check to see if call information is from a DETAILED record
+        Pattern myPatternDetailed = Pattern.compile(".*(\\d\\d) ([NFR]) {13}(\\d\\d/\\d\\d \\d\\d:\\d\\d:\\d\\d)");
+        Matcher matcherDetailed = myPatternDetailed.matcher(myData);
+
+        if(matcherDetailed.find()){
+
+            myLine = Integer.parseInt(matcherDetailed.group(1));
+            myType = matcherDetailed.group(2);
+
+            if(myType.equals("N")||myType.equals("F")||myType.equals("R")){
+                myDateTime = matcherDetailed.group(3);
+            }
+
+            String theLineNumber = myLine.toString();
+            if(theLineNumber.length() == 1) theLineNumber = "0" + theLineNumber;
+
+            // Add to log
+            addCallToLog(theLineNumber,myType,"","","","",myDateTime,"","");
+
+        }
+
+    }
+
 
 }
