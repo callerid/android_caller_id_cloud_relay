@@ -1,9 +1,11 @@
 package www.callerid.com.androidcalleridcloudrelay;
 
+import android.graphics.Color;
 import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Base64;
+import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.RadioButton;
@@ -41,6 +43,8 @@ public class actMain extends AppCompatActivity {
     private TextView tbSuppliedURL;
     private TextView lbSuppliedURL;
     private Button btnPaste;
+
+    private TextView lbDevSection;
 
     private TextView lbBuiltURL;
     private TextView lbGeneratedURL;
@@ -113,11 +117,23 @@ public class actMain extends AppCompatActivity {
         // Start UDP listener
         // TODO
 
-        // Add event handlers
-        // TODO
+        // Attach event handlers
+        ckbRequiresAuth.setOnClickListener(ckbRequiresAuth_Click);
+
+        rbUseBuiltURL.setOnClickListener(rbChangeToBuilt);
+        rbUseSuppliedURL.setOnClickListener(rbChangeToSupplied);
+
+        rbDeluxeUnit.setOnClickListener(rbChangeToDeluxe);
+        rbBasicUnit.setOnClickListener(rbChangeToBasic);
+
+        // Update UI based on loaded in values
+        ckbRequiresAuth_Click.onClick(new View(this));
+        changeURL(rbUseSuppliedURL.isChecked());
+        changeUnit(rbDeluxeUnit.isChecked());
 
     }
 
+    // ----------------------------------------------------------------------------------- Link UI controls to JAVA variables
     private void LinkAllUIControls(){
 
         ckbRequiresAuth = (CheckBox) findViewById(R.id.ckbRequiresAuth);
@@ -129,6 +145,8 @@ public class actMain extends AppCompatActivity {
         rbDeluxeUnit = (RadioButton)findViewById(R.id.rbDeluxeUnit);
         rbBasicUnit = (RadioButton)findViewById(R.id.rbBasicUnit);
         btnTestURL = (Button)findViewById(R.id.btnTestURL);
+
+        lbDevSection = (TextView)findViewById(R.id.lbDevSection);
 
         tbSuppliedURL = (TextView)findViewById(R.id.tbSuppliedURL);
         lbSuppliedURL = (TextView)findViewById(R.id.lbSuppliedURL);
@@ -192,6 +210,237 @@ public class actMain extends AppCompatActivity {
         btnClearLog = (Button)findViewById(R.id.btnClearLog);
 
     }
+
+    // ------------------------------------------------------------------------------------------------------- Event Handlers
+    private View.OnClickListener ckbRequiresAuth_Click = new View.OnClickListener() {
+        public void onClick(View v) {
+            // Toggle auth parameters
+            tbUsername.setEnabled(ckbRequiresAuth.isChecked());
+            tbPassword.setEnabled(ckbRequiresAuth.isChecked());
+        }
+    };
+
+    private View.OnClickListener rbChangeToSupplied = new View.OnClickListener() {
+        public void onClick(View v) {
+            changeURL(true);
+        }
+    };
+    private View.OnClickListener rbChangeToBuilt = new View.OnClickListener() {
+        public void onClick(View v) {
+            changeURL(false);
+        }
+    };
+
+    private View.OnClickListener rbChangeToDeluxe = new View.OnClickListener() {
+        public void onClick(View v) {
+            changeUnit(true);
+        }
+    };
+    private View.OnClickListener rbChangeToBasic = new View.OnClickListener() {
+        public void onClick(View v) {
+            changeUnit(false);
+        }
+    };
+
+    // --------------------------------------------------------------------------------------------------------- UI Updating
+
+    private void changeURL(boolean isSupplied){
+
+        if(isSupplied){
+
+            rbUseSuppliedURL.setChecked(true);
+            rbUseBuiltURL.setChecked(false);
+            toggleDevSection(false);
+
+        }
+        else{
+
+            rbUseSuppliedURL.setChecked(false);
+            rbUseBuiltURL.setChecked(true);
+            toggleDevSection(true);
+
+        }
+
+    }
+
+    private void toggleDevSection(boolean isSupplied){
+
+        if(isSupplied){
+
+            lbDevSection.setTextColor(Color.GRAY);
+            lbBuiltURL.setTextColor(Color.GRAY);
+            lbGeneratedURL.setTextColor(Color.GRAY);
+            btnGenerateURL.setEnabled(false);
+            lbServer.setTextColor(Color.GRAY);
+
+            tbServer.setTextColor(Color.GRAY);
+            tbServer.setEnabled(false);
+
+            lbCallerIDVars.setTextColor(Color.GRAY);
+            lbYourVars.setTextColor(Color.GRAY);
+            lbDescriptions.setTextColor(Color.GRAY);
+
+            lbLine.setTextColor(Color.GRAY);
+            lbLineD.setTextColor(Color.GRAY);
+            tbLine.setTextColor(Color.GRAY);
+            tbLine.setEnabled(false);
+
+            lbTime.setTextColor(Color.GRAY);
+            lbTimeD.setTextColor(Color.GRAY);
+            tbTime.setTextColor(Color.GRAY);
+            tbTime.setEnabled(false);
+
+            lbPhone.setTextColor(Color.GRAY);
+            lbPhoneD.setTextColor(Color.GRAY);
+            tbPhone.setTextColor(Color.GRAY);
+            tbPhone.setEnabled(false);
+
+            lbName.setTextColor(Color.GRAY);
+            lbNameD.setTextColor(Color.GRAY);
+            tbName.setTextColor(Color.GRAY);
+            tbName.setEnabled(false);
+
+            toggleDeluxe(rbDeluxeUnit.isChecked());
+
+        }
+        else{
+
+            if(lbGeneratedURL.getText().toString().contains("must generate")){
+                lbGeneratedURL.setTextColor(Color.RED);
+            }
+            else{
+                lbGeneratedURL.setTextColor(Color.GREEN);
+            }
+
+            lbDevSection.setTextColor(Color.BLACK);
+            lbBuiltURL.setTextColor(Color.BLACK);
+            btnGenerateURL.setEnabled(true);
+            lbServer.setTextColor(Color.BLACK);
+
+            tbServer.setTextColor(Color.BLACK);
+            tbServer.setEnabled(true);
+
+            lbCallerIDVars.setTextColor(Color.BLACK);
+            lbYourVars.setTextColor(Color.BLACK);
+            lbDescriptions.setTextColor(Color.BLACK);
+
+            lbLine.setTextColor(Color.BLACK);
+            lbLineD.setTextColor(Color.BLACK);
+            tbLine.setTextColor(Color.BLACK);
+            tbLine.setEnabled(true);
+
+            lbTime.setTextColor(Color.BLACK);
+            lbTimeD.setTextColor(Color.BLACK);
+            tbTime.setTextColor(Color.BLACK);
+            tbTime.setEnabled(true);
+
+            lbPhone.setTextColor(Color.BLACK);
+            lbPhoneD.setTextColor(Color.BLACK);
+            tbPhone.setTextColor(Color.BLACK);
+            tbPhone.setEnabled(true);
+
+            lbName.setTextColor(Color.BLACK);
+            lbNameD.setTextColor(Color.BLACK);
+            tbName.setTextColor(Color.BLACK);
+            tbName.setEnabled(true);
+
+            toggleDeluxe(rbDeluxeUnit.isChecked());
+
+        }
+
+    }
+
+    private void changeUnit(boolean isDeluxe){
+
+        if(isDeluxe){
+
+            rbDeluxeUnit.setChecked(true);
+            rbBasicUnit.setChecked(false);
+            toggleDeluxe(true);
+
+        }
+        else{
+
+            rbDeluxeUnit.setChecked(false);
+            rbBasicUnit.setChecked(true);
+            toggleDeluxe(false);
+
+        }
+
+    }
+
+    private void toggleDeluxe(boolean isDeluxe){
+
+        if(isDeluxe){
+
+            lbIO.setTextColor(Color.BLACK);
+            lbIOD.setTextColor(Color.BLACK);
+            tbIO.setTextColor(Color.BLACK);
+            tbIO.setEnabled(true);
+
+            lbSE.setTextColor(Color.BLACK);
+            lbSED.setTextColor(Color.BLACK);
+            tbSE.setTextColor(Color.BLACK);
+            tbSE.setEnabled(true);
+
+            lbStatus.setTextColor(Color.BLACK);
+            lbStatusD.setTextColor(Color.BLACK);
+            tbStatus.setTextColor(Color.BLACK);
+            tbStatus.setEnabled(true);
+
+            lbDuration.setTextColor(Color.BLACK);
+            lbDurationD.setTextColor(Color.BLACK);
+            tbDuration.setTextColor(Color.BLACK);
+            tbDuration.setEnabled(true);
+
+            lbRingNumber.setTextColor(Color.BLACK);
+            lbRingNumberD.setTextColor(Color.BLACK);
+            tbRingNumber.setTextColor(Color.BLACK);
+            tbRingNumber.setEnabled(true);
+
+            lbRingType.setTextColor(Color.BLACK);
+            lbRingTypeD.setTextColor(Color.BLACK);
+            tbRingType.setTextColor(Color.BLACK);
+            tbRingType.setEnabled(true);
+
+        }
+        else{
+
+            lbIO.setTextColor(Color.GRAY);
+            lbIOD.setTextColor(Color.GRAY);
+            tbIO.setTextColor(Color.GRAY);
+            tbIO.setEnabled(false);
+
+            lbSE.setTextColor(Color.GRAY);
+            lbSED.setTextColor(Color.GRAY);
+            tbSE.setTextColor(Color.GRAY);
+            tbSE.setEnabled(false);
+
+            lbStatus.setTextColor(Color.GRAY);
+            lbStatusD.setTextColor(Color.GRAY);
+            tbStatus.setTextColor(Color.GRAY);
+            tbStatus.setEnabled(false);
+
+            lbDuration.setTextColor(Color.GRAY);
+            lbDurationD.setTextColor(Color.GRAY);
+            tbDuration.setTextColor(Color.GRAY);
+            tbDuration.setEnabled(false);
+
+            lbRingNumber.setTextColor(Color.GRAY);
+            lbRingNumberD.setTextColor(Color.GRAY);
+            tbRingNumber.setTextColor(Color.GRAY);
+            tbRingNumber.setEnabled(false);
+
+            lbRingType.setTextColor(Color.GRAY);
+            lbRingTypeD.setTextColor(Color.GRAY);
+            tbRingType.setTextColor(Color.GRAY);
+            tbRingType.setEnabled(false);
+
+        }
+
+    }
+
+    // --------------------------------------------------------------------------------------------------- Call Log Features
 
     private void addCallToLog(String myLine,String myType,
                               String myIndicator,String myDuration,
@@ -276,6 +525,7 @@ public class actMain extends AppCompatActivity {
 
     }
 
+    // ------------------------------------------------------------------------------------------- Actual POST to Cloud code
     private void PostToCloud(String urlFull, String line, String dateTime, String number, String name, String io,
                              String se, String status, String duration, String ring){
 
@@ -290,5 +540,9 @@ public class actMain extends AppCompatActivity {
         post.start();
 
     }
+
+    // ------------------------------------------------------------------------------------------------ UDP LOWER Level Code
+
+    
 
 }
