@@ -5,6 +5,7 @@ import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.content.ServiceConnection;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.IBinder;
 import android.os.Bundle;
@@ -119,10 +120,7 @@ public class actMain extends Activity implements ServiceCallbacks {
         LinkAllUIControls();
 
         // Load all settings variables
-        // TODO
-
-        // Start UDP listener
-        // TODO
+        restoreSettings();
 
         // Attach event handlers
         ckbRequiresAuth.setOnClickListener(ckbRequiresAuth_Click);
@@ -190,6 +188,101 @@ public class actMain extends Activity implements ServiceCallbacks {
         Intent intent = new Intent(this, UDPListen.class);
         stopService(intent);
         unbindService(mConnection);
+
+    }
+
+    @Override
+    protected void onStop(){
+        super.onStop();
+
+        // Save user prefs
+        saveSettings();
+
+    }
+    // ------------------------------------------------------------------------------------------------------------- Settings
+
+    // Setting vars
+    public static final String PREFS_NAME = "Cloud_Relay_Saved_Prefs";
+    private String savedRequireAuth = "spRequiresAuth";
+    private String savedUserName = "spUsername";
+    private String savedPassword = "spPassword";
+    private String savedIsSupplied = "spIsSupplied";
+    private String savedIsDeluxe = "spIsDeluxe";
+    private String savedBuiltURL = "spBuiltURL";
+    private String savedServer = "spServer";
+    private String savedParam_Line = "spParamLine";
+    private String savedParam_Time = "spParamTime";
+    private String savedParam_Phone = "spParamPhone";
+    private String savedParam_Name = "spParamName";
+    private String savedParam_IO = "spParamIO";
+    private String savedParam_SE = "spParamSE";
+    private String savedParam_Status = "spParamStatus";
+    private String savedParam_Duration = "spParamDuration";
+    private String savedParam_RingNumber = "spParamRingNumber";
+    private String savedParam_RingType = "spParamRingType";
+
+    private void saveSettings(){
+
+        SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
+        SharedPreferences.Editor editor = settings.edit();
+
+        editor.putBoolean(savedRequireAuth, ckbRequiresAuth.isChecked());
+        editor.putString(savedUserName, tbUsername.getText().toString());
+        editor.putString(savedPassword,tbPassword.getText().toString());
+
+        editor.putBoolean(savedIsSupplied,rbUseSuppliedURL.isChecked());
+        editor.putBoolean(savedIsDeluxe,rbDeluxeUnit.isChecked());
+
+        editor.putString(savedBuiltURL,lbBuiltURL.getText().toString());
+        editor.putString(savedServer,tbServer.getText().toString());
+        editor.putString(savedParam_Line,tbLine.getText().toString());
+        editor.putString(savedParam_Time,tbTime.getText().toString());
+        editor.putString(savedParam_Phone,tbPhone.getText().toString());
+        editor.putString(savedParam_Name,tbName.getText().toString());
+        editor.putString(savedParam_IO,tbIO.getText().toString());
+        editor.putString(savedParam_SE,tbSE.getText().toString());
+        editor.putString(savedParam_Status,tbStatus.getText().toString());
+        editor.putString(savedParam_Duration,tbDuration.getText().toString());
+        editor.putString(savedParam_RingNumber,tbRingNumber.getText().toString());
+        editor.putString(savedParam_RingType,tbRingType.getText().toString());
+
+        // Commit the edits!
+        editor.commit();
+    }
+
+    private void restoreSettings(){
+
+        // Restore preferences
+        SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
+
+        // Auth
+        ckbRequiresAuth.setChecked(settings.getBoolean(savedRequireAuth,true));
+        tbUsername.setText(settings.getString(savedUserName,""));
+        tbPassword.setText(settings.getString(savedPassword,""));
+
+        // Unit Type
+        rbDeluxeUnit.setChecked(settings.getBoolean(savedIsDeluxe,false));
+        rbBasicUnit.setChecked(!settings.getBoolean(savedIsDeluxe,false));
+
+        // Supplied
+        rbUseSuppliedURL.setChecked(settings.getBoolean(savedIsSupplied,true));
+        rbUseBuiltURL.setChecked(!settings.getBoolean(savedIsSupplied,true));
+
+        // Dev Section
+        lbGeneratedURL.setText(settings.getString(savedBuiltURL,""));
+        tbServer.setText(settings.getString(savedServer,""));
+
+        // Params
+        tbLine.setText(settings.getString(savedParam_Line,""));
+        tbTime.setText(settings.getString(savedParam_Time,""));
+        tbPhone.setText(settings.getString(savedParam_Phone,""));
+        tbName.setText(settings.getString(savedParam_Name,""));
+        tbIO.setText(settings.getString(savedParam_IO,""));
+        tbSE.setText(settings.getString(savedParam_SE,""));
+        tbStatus.setText(settings.getString(savedParam_Status,""));
+        tbDuration.setText(settings.getString(savedParam_Duration,""));
+        tbRingNumber.setText(settings.getString(savedParam_RingNumber,""));
+        tbRingType.setText(settings.getString(savedParam_RingType,""));
 
     }
 
@@ -325,7 +418,7 @@ public class actMain extends Activity implements ServiceCallbacks {
 
     private void toggleDevSection(boolean isSupplied){
 
-        if(isSupplied){
+        if(!isSupplied){
 
             lbDevSection.setTextColor(Color.GRAY);
             lbBuiltURL.setTextColor(Color.GRAY);
@@ -359,6 +452,36 @@ public class actMain extends Activity implements ServiceCallbacks {
             lbNameD.setTextColor(Color.GRAY);
             tbName.setTextColor(Color.GRAY);
             tbName.setEnabled(false);
+
+            lbIO.setTextColor(Color.GRAY);
+            lbIOD.setTextColor(Color.GRAY);
+            tbIO.setTextColor(Color.GRAY);
+            tbIO.setEnabled(false);
+
+            lbSE.setTextColor(Color.GRAY);
+            lbSED.setTextColor(Color.GRAY);
+            tbSE.setTextColor(Color.GRAY);
+            tbSE.setEnabled(false);
+
+            lbStatus.setTextColor(Color.GRAY);
+            lbStatusD.setTextColor(Color.GRAY);
+            tbStatus.setTextColor(Color.GRAY);
+            tbStatus.setEnabled(false);
+
+            lbDuration.setTextColor(Color.GRAY);
+            lbDurationD.setTextColor(Color.GRAY);
+            tbDuration.setTextColor(Color.GRAY);
+            tbDuration.setEnabled(false);
+
+            lbRingNumber.setTextColor(Color.GRAY);
+            lbRingNumberD.setTextColor(Color.GRAY);
+            tbRingNumber.setTextColor(Color.GRAY);
+            tbRingNumber.setEnabled(false);
+
+            lbRingType.setTextColor(Color.GRAY);
+            lbRingTypeD.setTextColor(Color.GRAY);
+            tbRingType.setTextColor(Color.GRAY);
+            tbRingType.setEnabled(false);
 
             toggleDeluxe(rbDeluxeUnit.isChecked());
 
@@ -430,6 +553,8 @@ public class actMain extends Activity implements ServiceCallbacks {
     }
 
     private void toggleDeluxe(boolean isDeluxe){
+
+        if(rbUseSuppliedURL.isChecked()) return;
 
         if(isDeluxe){
 
@@ -515,55 +640,55 @@ public class actMain extends Activity implements ServiceCallbacks {
         TextView tv = new TextView(this);
 
         // Line
-        tv.setText("" + myLine);
+        tv.setText(myLine);
         tv.setPadding(0,0,15,0);
         newRow.addView(tv);
 
         // I/O
         tv = new TextView(this);
-        tv.setText("" + myType);
+        tv.setText(myType);
         tv.setPadding(0,0,25,0);
         newRow.addView(tv);
 
         // Start/End
         tv = new TextView(this);
-        tv.setText("" + myIndicator);
+        tv.setText(myIndicator);
         tv.setPadding(0,0,20,0);
         newRow.addView(tv);
 
         // Duration
         tv = new TextView(this);
-        tv.setText("" + myDuration);
+        tv.setText(myDuration);
         tv.setPadding(0,0,15,0);
         newRow.addView(tv);
 
         // Checksum
         tv = new TextView(this);
-        tv.setText("" + myCheckSum);
+        tv.setText(myCheckSum);
         tv.setPadding(0,0,20,0);
         newRow.addView(tv);
 
         // Ring
         tv = new TextView(this);
-        tv.setText("" + myRings);
+        tv.setText(myRings);
         tv.setPadding(0,0,25,0);
         newRow.addView(tv);
 
         // Date & Time
         tv = new TextView(this);
-        tv.setText("" + myDateTime);
+        tv.setText(myDateTime);
         tv.setPadding(0,0,15,0);
         newRow.addView(tv);
 
         // Number
         tv = new TextView(this);
-        tv.setText("" + myNumber);
+        tv.setText(myNumber);
         tv.setPadding(0,0,45,0);
         newRow.addView(tv);
 
         // Name
         tv = new TextView(this);
-        tv.setText("" + myName);
+        tv.setText(myName);
         tv.setPadding(0,0,20,0);
         newRow.addView(tv);
 
@@ -621,19 +746,15 @@ public class actMain extends Activity implements ServiceCallbacks {
         // Setup variables for use
         String myData = received;
 
-        Integer myLine = 0;
-        String myType="";
-        String myIndicator="";
-
-        // Unused in this app but available for other custom apps
-        String myDuration="";
-        String myCheckSum="";
-        String myRings="";
-        //------------------------------------------------------
-
-        String myDateTime="";
-        String myNumber="";
-        String myName="";
+        Integer myLine;
+        String myType;
+        String myIndicator;
+        String myDuration;
+        String myCheckSum;
+        String myRings;
+        String myDateTime = "";
+        String myNumber;
+        String myName;
 
         // Check if matches a call record
         Pattern myPattern = Pattern.compile(".*(\\d\\d) ([IO]) ([ES]) (\\d{4}) ([GB]) (.)(\\d) (\\d\\d/\\d\\d \\d\\d:\\d\\d [AP]M) (.{8,15})(.*)");

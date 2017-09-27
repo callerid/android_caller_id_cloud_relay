@@ -20,7 +20,6 @@
   <component name="ChangeListManager">
     <list default="true" id="5a0596e4-9ce8-415c-b408-b9565ec1374f" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/www/callerid/com/androidcalleridcloudrelay/actMain.java" afterPath="$PROJECT_DIR$/app/src/main/java/www/callerid/com/androidcalleridcloudrelay/actMain.java" />
     </list>
     <ignored path="Android Caller ID Cloud Relay.iws" />
@@ -55,51 +54,42 @@
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="activity_act_main.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_act_main.xml">
+          <provider selected="true" editor-type-id="android-designer2">
+            <state />
+          </provider>
           <provider editor-type-id="text-editor">
             <state relative-caret-position="9605">
               <caret line="565" column="37" selection-start-line="565" selection-start-column="29" selection-end-line="565" selection-end-column="37" />
               <folding />
             </state>
           </provider>
-          <provider selected="true" editor-type-id="android-designer2">
-            <state />
-          </provider>
         </entry>
       </file>
       <file leaf-file-name="actMain.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/www/callerid/com/androidcalleridcloudrelay/actMain.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="155">
-              <caret line="517" column="0" selection-start-line="517" selection-start-column="0" selection-end-line="517" selection-end-column="0" />
+            <state relative-caret-position="138">
+              <caret line="252" column="34" selection-start-line="252" selection-start-column="34" selection-end-line="252" selection-end-column="34" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="method#onCreate#0;class#actMain#0" expanded="false" />
                 <element signature="method#onResume#0;class#actMain#0" expanded="false" />
-                <element signature="e#4590#4591#0" expanded="true" />
-                <element signature="e#4628#4629#0" expanded="true" />
+                <element signature="class#4170:4642" expanded="false" />
+                <element signature="method#onServiceConnected#0;class#4170:4642" expanded="false" />
                 <element signature="method#onStart#0;class#actMain#0" expanded="false" />
                 <element signature="method#onPause#0;class#actMain#0" expanded="false" />
                 <element signature="method#onDestroy#0;class#actMain#0" expanded="false" />
+                <element signature="method#onStop#0;class#actMain#0" expanded="false" />
+                <element signature="method#saveSettings#0;class#actMain#0" expanded="false" />
+                <element signature="method#restoreSettings#0;class#actMain#0" expanded="false" />
                 <element signature="method#LinkAllUIControls#0;class#actMain#0" expanded="false" />
                 <element signature="method#changeURL#0;class#actMain#0" expanded="false" />
                 <element signature="method#toggleDevSection#0;class#actMain#0" expanded="false" />
                 <element signature="method#changeUnit#0;class#actMain#0" expanded="false" />
                 <element signature="method#toggleDeluxe#0;class#actMain#0" expanded="false" />
+                <element signature="method#addCallToLog#0;class#actMain#0" expanded="false" />
                 <element signature="method#PostToCloud#0;class#actMain#0" expanded="false" />
-                <element signature="e#19400#19542#0" expanded="true" />
-                <element signature="e#19541#19542#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UDPListen.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/www/callerid/com/androidcalleridcloudrelay/Classes/UDPListen.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="389">
-              <caret line="98" column="0" selection-start-line="98" selection-start-column="0" selection-end-line="98" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="method#getUDP#0;class#actMain#0" expanded="false" />
+                <element signature="method#handleUDP#0;class#actMain#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -2003,10 +1993,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="PackagesPane" />
       <pane id="ProjectPane" />
-      <pane id="Scratches" />
       <pane id="AndroidView">
         <subPane>
           <PATH>
@@ -2015,86 +2004,9 @@
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="AndroidCallerIDCloudRelay" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="AndroidCallerIDCloudRelay" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidSourceTypeNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="AndroidCallerIDCloudRelay" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidSourceTypeNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="androidcalleridcloudrelay" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="AndroidCallerIDCloudRelay" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidSourceTypeNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="androidcalleridcloudrelay" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Classes" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="AndroidCallerIDCloudRelay" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="manifests" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidManifestsGroupNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -2449,7 +2361,7 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Android Model" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.39976957" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39976957" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -2510,15 +2422,64 @@
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_act_main.xml">
+      <provider selected="true" editor-type-id="android-designer2">
+        <state />
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="9605">
+          <caret line="565" column="37" selection-start-line="565" selection-start-column="29" selection-end-line="565" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/www/callerid/com/androidcalleridcloudrelay/actMain.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#onResume#0;class#actMain#0" expanded="false" />
+            <element signature="class#4170:4642" expanded="false" />
+            <element signature="method#onServiceConnected#0;class#4170:4642" expanded="false" />
+            <element signature="method#onStart#0;class#actMain#0" expanded="false" />
+            <element signature="method#onPause#0;class#actMain#0" expanded="false" />
+            <element signature="method#onDestroy#0;class#actMain#0" expanded="false" />
+            <element signature="method#onStop#0;class#actMain#0" expanded="false" />
+            <element signature="method#saveSettings#0;class#actMain#0" expanded="false" />
+            <element signature="method#restoreSettings#0;class#actMain#0" expanded="false" />
+            <element signature="method#LinkAllUIControls#0;class#actMain#0" expanded="false" />
+            <element signature="method#changeURL#0;class#actMain#0" expanded="false" />
+            <element signature="method#toggleDevSection#0;class#actMain#0" expanded="false" />
+            <element signature="method#changeUnit#0;class#actMain#0" expanded="false" />
+            <element signature="method#toggleDeluxe#0;class#actMain#0" expanded="false" />
+            <element signature="method#addCallToLog#0;class#actMain#0" expanded="false" />
+            <element signature="method#PostToCloud#0;class#actMain#0" expanded="false" />
+            <element signature="method#getUDP#0;class#actMain#0" expanded="false" />
+            <element signature="method#handleUDP#0;class#actMain#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/www/callerid/com/androidcalleridcloudrelay/Classes/UDPListen.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1428">
+          <caret line="98" column="0" selection-start-line="98" selection-start-column="0" selection-end-line="98" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_act_main.xml">
+      <provider selected="true" editor-type-id="android-designer2">
+        <state />
+      </provider>
       <provider editor-type-id="text-editor">
         <state relative-caret-position="10880">
           <caret line="640" column="37" selection-start-line="640" selection-start-column="29" selection-end-line="640" selection-end-column="37" />
           <folding />
         </state>
       </provider>
-      <provider selected="true" editor-type-id="android-designer2">
-        <state />
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/www/callerid/com/androidcalleridcloudrelay/actMain.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -2526,35 +2487,38 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#onCreate#0;class#actMain#0" expanded="false" />
             <element signature="method#onResume#0;class#actMain#0" expanded="false" />
-            <element signature="e#4590#4591#0" expanded="true" />
-            <element signature="e#4628#4629#0" expanded="true" />
+            <element signature="class#4170:4642" expanded="false" />
+            <element signature="method#onServiceConnected#0;class#4170:4642" expanded="false" />
             <element signature="method#onStart#0;class#actMain#0" expanded="false" />
             <element signature="method#onPause#0;class#actMain#0" expanded="false" />
             <element signature="method#onDestroy#0;class#actMain#0" expanded="false" />
+            <element signature="method#onStop#0;class#actMain#0" expanded="false" />
+            <element signature="method#saveSettings#0;class#actMain#0" expanded="false" />
+            <element signature="method#restoreSettings#0;class#actMain#0" expanded="false" />
             <element signature="method#LinkAllUIControls#0;class#actMain#0" expanded="false" />
             <element signature="method#changeURL#0;class#actMain#0" expanded="false" />
             <element signature="method#toggleDevSection#0;class#actMain#0" expanded="false" />
             <element signature="method#changeUnit#0;class#actMain#0" expanded="false" />
             <element signature="method#toggleDeluxe#0;class#actMain#0" expanded="false" />
+            <element signature="method#addCallToLog#0;class#actMain#0" expanded="false" />
             <element signature="method#PostToCloud#0;class#actMain#0" expanded="false" />
-            <element signature="e#19400#19542#0" expanded="true" />
-            <element signature="e#19541#19542#0" expanded="true" />
+            <element signature="method#getUDP#0;class#actMain#0" expanded="false" />
+            <element signature="method#handleUDP#0;class#actMain#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_act_main.xml">
+      <provider selected="true" editor-type-id="android-designer2">
+        <state />
+      </provider>
       <provider editor-type-id="text-editor">
         <state relative-caret-position="10863">
           <caret line="639" column="37" selection-start-line="639" selection-start-column="29" selection-end-line="639" selection-end-column="37" />
           <folding />
         </state>
       </provider>
-      <provider selected="true" editor-type-id="android-designer2">
-        <state />
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/www/callerid/com/androidcalleridcloudrelay/actMain.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -2562,35 +2526,38 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#onCreate#0;class#actMain#0" expanded="false" />
             <element signature="method#onResume#0;class#actMain#0" expanded="false" />
-            <element signature="e#4590#4591#0" expanded="true" />
-            <element signature="e#4628#4629#0" expanded="true" />
+            <element signature="class#4170:4642" expanded="false" />
+            <element signature="method#onServiceConnected#0;class#4170:4642" expanded="false" />
             <element signature="method#onStart#0;class#actMain#0" expanded="false" />
             <element signature="method#onPause#0;class#actMain#0" expanded="false" />
             <element signature="method#onDestroy#0;class#actMain#0" expanded="false" />
+            <element signature="method#onStop#0;class#actMain#0" expanded="false" />
+            <element signature="method#saveSettings#0;class#actMain#0" expanded="false" />
+            <element signature="method#restoreSettings#0;class#actMain#0" expanded="false" />
             <element signature="method#LinkAllUIControls#0;class#actMain#0" expanded="false" />
             <element signature="method#changeURL#0;class#actMain#0" expanded="false" />
             <element signature="method#toggleDevSection#0;class#actMain#0" expanded="false" />
             <element signature="method#changeUnit#0;class#actMain#0" expanded="false" />
             <element signature="method#toggleDeluxe#0;class#actMain#0" expanded="false" />
+            <element signature="method#addCallToLog#0;class#actMain#0" expanded="false" />
             <element signature="method#PostToCloud#0;class#actMain#0" expanded="false" />
-            <element signature="e#19400#19542#0" expanded="true" />
-            <element signature="e#19541#19542#0" expanded="true" />
+            <element signature="method#getUDP#0;class#actMain#0" expanded="false" />
+            <element signature="method#handleUDP#0;class#actMain#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_act_main.xml">
+      <provider selected="true" editor-type-id="android-designer2">
+        <state />
+      </provider>
       <provider editor-type-id="text-editor">
         <state relative-caret-position="10863">
           <caret line="639" column="37" selection-start-line="639" selection-start-column="29" selection-end-line="639" selection-end-column="37" />
           <folding />
         </state>
       </provider>
-      <provider selected="true" editor-type-id="android-designer2">
-        <state />
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/www/callerid/com/androidcalleridcloudrelay/actMain.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -2598,35 +2565,38 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#onCreate#0;class#actMain#0" expanded="false" />
             <element signature="method#onResume#0;class#actMain#0" expanded="false" />
-            <element signature="e#4590#4591#0" expanded="true" />
-            <element signature="e#4628#4629#0" expanded="true" />
+            <element signature="class#4170:4642" expanded="false" />
+            <element signature="method#onServiceConnected#0;class#4170:4642" expanded="false" />
             <element signature="method#onStart#0;class#actMain#0" expanded="false" />
             <element signature="method#onPause#0;class#actMain#0" expanded="false" />
             <element signature="method#onDestroy#0;class#actMain#0" expanded="false" />
+            <element signature="method#onStop#0;class#actMain#0" expanded="false" />
+            <element signature="method#saveSettings#0;class#actMain#0" expanded="false" />
+            <element signature="method#restoreSettings#0;class#actMain#0" expanded="false" />
             <element signature="method#LinkAllUIControls#0;class#actMain#0" expanded="false" />
             <element signature="method#changeURL#0;class#actMain#0" expanded="false" />
             <element signature="method#toggleDevSection#0;class#actMain#0" expanded="false" />
             <element signature="method#changeUnit#0;class#actMain#0" expanded="false" />
             <element signature="method#toggleDeluxe#0;class#actMain#0" expanded="false" />
+            <element signature="method#addCallToLog#0;class#actMain#0" expanded="false" />
             <element signature="method#PostToCloud#0;class#actMain#0" expanded="false" />
-            <element signature="e#19400#19542#0" expanded="true" />
-            <element signature="e#19541#19542#0" expanded="true" />
+            <element signature="method#getUDP#0;class#actMain#0" expanded="false" />
+            <element signature="method#handleUDP#0;class#actMain#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_act_main.xml">
+      <provider selected="true" editor-type-id="android-designer2">
+        <state />
+      </provider>
       <provider editor-type-id="text-editor">
         <state relative-caret-position="10863">
           <caret line="639" column="37" selection-start-line="639" selection-start-column="29" selection-end-line="639" selection-end-column="37" />
           <folding />
         </state>
       </provider>
-      <provider selected="true" editor-type-id="android-designer2">
-        <state />
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/www/callerid/com/androidcalleridcloudrelay/actMain.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -2634,35 +2604,38 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#onCreate#0;class#actMain#0" expanded="false" />
             <element signature="method#onResume#0;class#actMain#0" expanded="false" />
-            <element signature="e#4590#4591#0" expanded="true" />
-            <element signature="e#4628#4629#0" expanded="true" />
+            <element signature="class#4170:4642" expanded="false" />
+            <element signature="method#onServiceConnected#0;class#4170:4642" expanded="false" />
             <element signature="method#onStart#0;class#actMain#0" expanded="false" />
             <element signature="method#onPause#0;class#actMain#0" expanded="false" />
             <element signature="method#onDestroy#0;class#actMain#0" expanded="false" />
+            <element signature="method#onStop#0;class#actMain#0" expanded="false" />
+            <element signature="method#saveSettings#0;class#actMain#0" expanded="false" />
+            <element signature="method#restoreSettings#0;class#actMain#0" expanded="false" />
             <element signature="method#LinkAllUIControls#0;class#actMain#0" expanded="false" />
             <element signature="method#changeURL#0;class#actMain#0" expanded="false" />
             <element signature="method#toggleDevSection#0;class#actMain#0" expanded="false" />
             <element signature="method#changeUnit#0;class#actMain#0" expanded="false" />
             <element signature="method#toggleDeluxe#0;class#actMain#0" expanded="false" />
+            <element signature="method#addCallToLog#0;class#actMain#0" expanded="false" />
             <element signature="method#PostToCloud#0;class#actMain#0" expanded="false" />
-            <element signature="e#19400#19542#0" expanded="true" />
-            <element signature="e#19541#19542#0" expanded="true" />
+            <element signature="method#getUDP#0;class#actMain#0" expanded="false" />
+            <element signature="method#handleUDP#0;class#actMain#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_act_main.xml">
+      <provider selected="true" editor-type-id="android-designer2">
+        <state />
+      </provider>
       <provider editor-type-id="text-editor">
         <state relative-caret-position="10863">
           <caret line="639" column="37" selection-start-line="639" selection-start-column="29" selection-end-line="639" selection-end-column="37" />
           <folding />
         </state>
       </provider>
-      <provider selected="true" editor-type-id="android-designer2">
-        <state />
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/www/callerid/com/androidcalleridcloudrelay/actMain.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -2670,35 +2643,38 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#onCreate#0;class#actMain#0" expanded="false" />
             <element signature="method#onResume#0;class#actMain#0" expanded="false" />
-            <element signature="e#4590#4591#0" expanded="true" />
-            <element signature="e#4628#4629#0" expanded="true" />
+            <element signature="class#4170:4642" expanded="false" />
+            <element signature="method#onServiceConnected#0;class#4170:4642" expanded="false" />
             <element signature="method#onStart#0;class#actMain#0" expanded="false" />
             <element signature="method#onPause#0;class#actMain#0" expanded="false" />
             <element signature="method#onDestroy#0;class#actMain#0" expanded="false" />
+            <element signature="method#onStop#0;class#actMain#0" expanded="false" />
+            <element signature="method#saveSettings#0;class#actMain#0" expanded="false" />
+            <element signature="method#restoreSettings#0;class#actMain#0" expanded="false" />
             <element signature="method#LinkAllUIControls#0;class#actMain#0" expanded="false" />
             <element signature="method#changeURL#0;class#actMain#0" expanded="false" />
             <element signature="method#toggleDevSection#0;class#actMain#0" expanded="false" />
             <element signature="method#changeUnit#0;class#actMain#0" expanded="false" />
             <element signature="method#toggleDeluxe#0;class#actMain#0" expanded="false" />
+            <element signature="method#addCallToLog#0;class#actMain#0" expanded="false" />
             <element signature="method#PostToCloud#0;class#actMain#0" expanded="false" />
-            <element signature="e#19400#19542#0" expanded="true" />
-            <element signature="e#19541#19542#0" expanded="true" />
+            <element signature="method#getUDP#0;class#actMain#0" expanded="false" />
+            <element signature="method#handleUDP#0;class#actMain#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_act_main.xml">
+      <provider selected="true" editor-type-id="android-designer2">
+        <state />
+      </provider>
       <provider editor-type-id="text-editor">
         <state relative-caret-position="10863">
           <caret line="639" column="37" selection-start-line="639" selection-start-column="29" selection-end-line="639" selection-end-column="37" />
           <folding />
         </state>
       </provider>
-      <provider selected="true" editor-type-id="android-designer2">
-        <state />
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/www/callerid/com/androidcalleridcloudrelay/actMain.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -2706,35 +2682,38 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#onCreate#0;class#actMain#0" expanded="false" />
             <element signature="method#onResume#0;class#actMain#0" expanded="false" />
-            <element signature="e#4590#4591#0" expanded="true" />
-            <element signature="e#4628#4629#0" expanded="true" />
+            <element signature="class#4170:4642" expanded="false" />
+            <element signature="method#onServiceConnected#0;class#4170:4642" expanded="false" />
             <element signature="method#onStart#0;class#actMain#0" expanded="false" />
             <element signature="method#onPause#0;class#actMain#0" expanded="false" />
             <element signature="method#onDestroy#0;class#actMain#0" expanded="false" />
+            <element signature="method#onStop#0;class#actMain#0" expanded="false" />
+            <element signature="method#saveSettings#0;class#actMain#0" expanded="false" />
+            <element signature="method#restoreSettings#0;class#actMain#0" expanded="false" />
             <element signature="method#LinkAllUIControls#0;class#actMain#0" expanded="false" />
             <element signature="method#changeURL#0;class#actMain#0" expanded="false" />
             <element signature="method#toggleDevSection#0;class#actMain#0" expanded="false" />
             <element signature="method#changeUnit#0;class#actMain#0" expanded="false" />
             <element signature="method#toggleDeluxe#0;class#actMain#0" expanded="false" />
+            <element signature="method#addCallToLog#0;class#actMain#0" expanded="false" />
             <element signature="method#PostToCloud#0;class#actMain#0" expanded="false" />
-            <element signature="e#19400#19542#0" expanded="true" />
-            <element signature="e#19541#19542#0" expanded="true" />
+            <element signature="method#getUDP#0;class#actMain#0" expanded="false" />
+            <element signature="method#handleUDP#0;class#actMain#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_act_main.xml">
+      <provider selected="true" editor-type-id="android-designer2">
+        <state />
+      </provider>
       <provider editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
-      <provider selected="true" editor-type-id="android-designer2">
-        <state />
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/www/callerid/com/androidcalleridcloudrelay/actMain.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -2742,21 +2721,24 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#onCreate#0;class#actMain#0" expanded="false" />
             <element signature="method#onResume#0;class#actMain#0" expanded="false" />
-            <element signature="e#4590#4591#0" expanded="true" />
-            <element signature="e#4628#4629#0" expanded="true" />
+            <element signature="class#4170:4642" expanded="false" />
+            <element signature="method#onServiceConnected#0;class#4170:4642" expanded="false" />
             <element signature="method#onStart#0;class#actMain#0" expanded="false" />
             <element signature="method#onPause#0;class#actMain#0" expanded="false" />
             <element signature="method#onDestroy#0;class#actMain#0" expanded="false" />
+            <element signature="method#onStop#0;class#actMain#0" expanded="false" />
+            <element signature="method#saveSettings#0;class#actMain#0" expanded="false" />
+            <element signature="method#restoreSettings#0;class#actMain#0" expanded="false" />
             <element signature="method#LinkAllUIControls#0;class#actMain#0" expanded="false" />
             <element signature="method#changeURL#0;class#actMain#0" expanded="false" />
             <element signature="method#toggleDevSection#0;class#actMain#0" expanded="false" />
             <element signature="method#changeUnit#0;class#actMain#0" expanded="false" />
             <element signature="method#toggleDeluxe#0;class#actMain#0" expanded="false" />
+            <element signature="method#addCallToLog#0;class#actMain#0" expanded="false" />
             <element signature="method#PostToCloud#0;class#actMain#0" expanded="false" />
-            <element signature="e#19400#19542#0" expanded="true" />
-            <element signature="e#19541#19542#0" expanded="true" />
+            <element signature="method#getUDP#0;class#actMain#0" expanded="false" />
+            <element signature="method#handleUDP#0;class#actMain#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -2778,22 +2760,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_act_main.xml">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="9605">
-          <caret line="565" column="37" selection-start-line="565" selection-start-column="29" selection-end-line="565" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="android-designer2">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/AppData/Local/Android/Sdk/sources/android-25/android/graphics/Color.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="280">
           <caret line="41" column="38" selection-start-line="41" selection-start-column="38" selection-end-line="41" selection-end-column="38" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2801,7 +2771,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="59" selection-start-line="0" selection-start-column="59" selection-end-line="0" selection-end-column="59" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2809,7 +2778,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="688">
           <caret line="251" column="13" selection-start-line="251" selection-start-column="13" selection-end-line="251" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2826,7 +2794,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/www/callerid/com/androidcalleridcloudrelay/Classes/UDPListen.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="389">
+        <state relative-caret-position="1428">
           <caret line="98" column="0" selection-start-line="98" selection-start-column="0" selection-end-line="98" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -2834,27 +2802,41 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_act_main.xml">
+      <provider selected="true" editor-type-id="android-designer2">
+        <state />
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="9605">
+          <caret line="565" column="37" selection-start-line="565" selection-start-column="29" selection-end-line="565" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/www/callerid/com/androidcalleridcloudrelay/actMain.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="155">
-          <caret line="517" column="0" selection-start-line="517" selection-start-column="0" selection-end-line="517" selection-end-column="0" />
+        <state relative-caret-position="138">
+          <caret line="252" column="34" selection-start-line="252" selection-start-column="34" selection-end-line="252" selection-end-column="34" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#onCreate#0;class#actMain#0" expanded="false" />
             <element signature="method#onResume#0;class#actMain#0" expanded="false" />
-            <element signature="e#4590#4591#0" expanded="true" />
-            <element signature="e#4628#4629#0" expanded="true" />
+            <element signature="class#4170:4642" expanded="false" />
+            <element signature="method#onServiceConnected#0;class#4170:4642" expanded="false" />
             <element signature="method#onStart#0;class#actMain#0" expanded="false" />
             <element signature="method#onPause#0;class#actMain#0" expanded="false" />
             <element signature="method#onDestroy#0;class#actMain#0" expanded="false" />
+            <element signature="method#onStop#0;class#actMain#0" expanded="false" />
+            <element signature="method#saveSettings#0;class#actMain#0" expanded="false" />
+            <element signature="method#restoreSettings#0;class#actMain#0" expanded="false" />
             <element signature="method#LinkAllUIControls#0;class#actMain#0" expanded="false" />
             <element signature="method#changeURL#0;class#actMain#0" expanded="false" />
             <element signature="method#toggleDevSection#0;class#actMain#0" expanded="false" />
             <element signature="method#changeUnit#0;class#actMain#0" expanded="false" />
             <element signature="method#toggleDeluxe#0;class#actMain#0" expanded="false" />
+            <element signature="method#addCallToLog#0;class#actMain#0" expanded="false" />
             <element signature="method#PostToCloud#0;class#actMain#0" expanded="false" />
-            <element signature="e#19400#19542#0" expanded="true" />
-            <element signature="e#19541#19542#0" expanded="true" />
+            <element signature="method#getUDP#0;class#actMain#0" expanded="false" />
+            <element signature="method#handleUDP#0;class#actMain#0" expanded="false" />
           </folding>
         </state>
       </provider>
