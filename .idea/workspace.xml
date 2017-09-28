@@ -20,7 +20,6 @@
   <component name="ChangeListManager">
     <list default="true" id="5a0596e4-9ce8-415c-b408-b9565ec1374f" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/www/callerid/com/androidcalleridcloudrelay/Classes/Poster.java" afterPath="$PROJECT_DIR$/app/src/main/java/www/callerid/com/androidcalleridcloudrelay/Classes/Poster.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/www/callerid/com/androidcalleridcloudrelay/actMain.java" afterPath="$PROJECT_DIR$/app/src/main/java/www/callerid/com/androidcalleridcloudrelay/actMain.java" />
     </list>
     <ignored path="Android Caller ID Cloud Relay.iws" />
@@ -69,8 +68,8 @@
       <file leaf-file-name="actMain.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/www/callerid/com/androidcalleridcloudrelay/actMain.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="414">
-              <caret line="1021" column="30" selection-start-line="1021" selection-start-column="30" selection-end-line="1021" selection-end-column="30" />
+            <state relative-caret-position="293">
+              <caret line="923" column="27" selection-start-line="923" selection-start-column="27" selection-end-line="923" selection-end-column="27" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#onCreate#0;class#actMain#0" expanded="false" />
@@ -98,7 +97,7 @@
                 <element signature="method#copyUrl#0;class#actMain#0" expanded="false" />
                 <element signature="method#getUDP#0;class#actMain#0" expanded="false" />
                 <element signature="method#handleUDP#0;class#actMain#0" expanded="false" />
-                <marker date="1506611680840" expanded="false" signature="8446:9217" ph="{...}" />
+                <marker date="1506614704043" expanded="false" signature="8446:9217" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -1966,8 +1965,8 @@
         <option value="$PROJECT_DIR$/app/src/main/java/www/callerid/com/androidcalleridcloudrelay/Classes/ServiceCallbacks.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/www/callerid/com/androidcalleridcloudrelay/Classes/UDPListen.java" />
         <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/www/callerid/com/androidcalleridcloudrelay/actMain.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/www/callerid/com/androidcalleridcloudrelay/Classes/Poster.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/www/callerid/com/androidcalleridcloudrelay/actMain.java" />
       </list>
     </option>
   </component>
@@ -2489,7 +2488,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="46" />
+      <option name="time" value="48" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -2547,7 +2546,7 @@
             <element signature="method#copyUrl#0;class#actMain#0" expanded="false" />
             <element signature="method#getUDP#0;class#actMain#0" expanded="false" />
             <element signature="method#handleUDP#0;class#actMain#0" expanded="false" />
-            <marker date="1506611680840" expanded="false" signature="8446:9217" ph="{...}" />
+            <marker date="1506614704043" expanded="false" signature="8446:9217" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -2601,7 +2600,7 @@
             <element signature="method#copyUrl#0;class#actMain#0" expanded="false" />
             <element signature="method#getUDP#0;class#actMain#0" expanded="false" />
             <element signature="method#handleUDP#0;class#actMain#0" expanded="false" />
-            <marker date="1506611680840" expanded="false" signature="8446:9217" ph="{...}" />
+            <marker date="1506614704043" expanded="false" signature="8446:9217" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -2648,7 +2647,7 @@
             <element signature="method#copyUrl#0;class#actMain#0" expanded="false" />
             <element signature="method#getUDP#0;class#actMain#0" expanded="false" />
             <element signature="method#handleUDP#0;class#actMain#0" expanded="false" />
-            <marker date="1506611680840" expanded="false" signature="8446:9217" ph="{...}" />
+            <marker date="1506614704043" expanded="false" signature="8446:9217" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -2695,7 +2694,7 @@
             <element signature="method#copyUrl#0;class#actMain#0" expanded="false" />
             <element signature="method#getUDP#0;class#actMain#0" expanded="false" />
             <element signature="method#handleUDP#0;class#actMain#0" expanded="false" />
-            <marker date="1506611680840" expanded="false" signature="8446:9217" ph="{...}" />
+            <marker date="1506614704043" expanded="false" signature="8446:9217" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -2742,7 +2741,7 @@
             <element signature="method#copyUrl#0;class#actMain#0" expanded="false" />
             <element signature="method#getUDP#0;class#actMain#0" expanded="false" />
             <element signature="method#handleUDP#0;class#actMain#0" expanded="false" />
-            <marker date="1506611680840" expanded="false" signature="8446:9217" ph="{...}" />
+            <marker date="1506614704043" expanded="false" signature="8446:9217" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -2789,7 +2788,7 @@
             <element signature="method#copyUrl#0;class#actMain#0" expanded="false" />
             <element signature="method#getUDP#0;class#actMain#0" expanded="false" />
             <element signature="method#handleUDP#0;class#actMain#0" expanded="false" />
-            <marker date="1506611680840" expanded="false" signature="8446:9217" ph="{...}" />
+            <marker date="1506614704043" expanded="false" signature="8446:9217" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -2836,7 +2835,7 @@
             <element signature="method#copyUrl#0;class#actMain#0" expanded="false" />
             <element signature="method#getUDP#0;class#actMain#0" expanded="false" />
             <element signature="method#handleUDP#0;class#actMain#0" expanded="false" />
-            <marker date="1506611680840" expanded="false" signature="8446:9217" ph="{...}" />
+            <marker date="1506614704043" expanded="false" signature="8446:9217" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -2883,7 +2882,7 @@
             <element signature="method#copyUrl#0;class#actMain#0" expanded="false" />
             <element signature="method#getUDP#0;class#actMain#0" expanded="false" />
             <element signature="method#handleUDP#0;class#actMain#0" expanded="false" />
-            <marker date="1506611680840" expanded="false" signature="8446:9217" ph="{...}" />
+            <marker date="1506614704043" expanded="false" signature="8446:9217" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -2956,8 +2955,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/www/callerid/com/androidcalleridcloudrelay/actMain.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="1021" column="30" selection-start-line="1021" selection-start-column="30" selection-end-line="1021" selection-end-column="30" />
+        <state relative-caret-position="293">
+          <caret line="923" column="27" selection-start-line="923" selection-start-column="27" selection-end-line="923" selection-end-column="27" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#onCreate#0;class#actMain#0" expanded="false" />
@@ -2985,7 +2984,7 @@
             <element signature="method#copyUrl#0;class#actMain#0" expanded="false" />
             <element signature="method#getUDP#0;class#actMain#0" expanded="false" />
             <element signature="method#handleUDP#0;class#actMain#0" expanded="false" />
-            <marker date="1506611680840" expanded="false" signature="8446:9217" ph="{...}" />
+            <marker date="1506614704043" expanded="false" signature="8446:9217" ph="{...}" />
           </folding>
         </state>
       </provider>

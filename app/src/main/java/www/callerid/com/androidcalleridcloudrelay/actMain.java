@@ -947,61 +947,61 @@ public class actMain extends Activity implements ServiceCallbacks {
         int parameters = 0;
 
         Matcher m = linePattern.matcher(allParams);
-        if (m.matches()) {
+        if (m.find()) {
             tbLine.setText(m.group(2));
             parameters++;
         }
 
         m = timePattern.matcher(allParams);
-        if (m.matches()) {
+        if (m.find()) {
             tbTime.setText(m.group(2));
             parameters++;
         }
 
         m = phonePattern.matcher(allParams);
-        if (m.matches()) {
+        if (m.find()) {
             tbPhone.setText(m.group(2));
             parameters++;
         }
 
         m = namePattern.matcher(allParams);
-        if (m.matches()) {
+        if (m.find()) {
             tbName.setText(m.group(2));
             parameters++;
         }
 
         m = ioPattern.matcher(allParams);
-        if (m.matches()) {
+        if (m.find()) {
             tbIO.setText(m.group(2));
             parameters++;
         }
 
         m = sePattern.matcher(allParams);
-        if (m.matches()) {
+        if (m.find()) {
             tbSE.setText(m.group(2));
             parameters++;
         }
 
         m = statusPattern.matcher(allParams);
-        if (m.matches()) {
+        if (m.find()) {
             tbStatus.setText(m.group(2));
             parameters++;
         }
 
         m = durationPattern.matcher(allParams);
-        if (m.matches()) {
+        if (m.find()) {
             tbDuration.setText(m.group(2));
             parameters++;
         }
 
         m = ringNumberPattern.matcher(allParams);
-        if (m.matches()) {
+        if (m.find()) {
             tbRingNumber.setText(m.group(2));
             parameters++;
         }
 
         m = ringTypePattern.matcher(allParams);
-        if (m.matches()) {
+        if (m.find()) {
             tbRingType.setText(m.group(2));
             parameters++;
         }
