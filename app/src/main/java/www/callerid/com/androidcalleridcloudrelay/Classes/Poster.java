@@ -7,6 +7,8 @@ import java.io.OutputStream;
 import java.io.OutputStreamWriter;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.net.URLEncoder;
+import java.nio.charset.StandardCharsets;
 
 import javax.net.ssl.HttpsURLConnection;
 
@@ -103,20 +105,6 @@ public class Poster implements Runnable {
 
         try{
 
-            urlFull = urlFull.replace("%Line",line);
-            urlFull = urlFull.replace("%Time",dateTime);
-            urlFull = urlFull.replace("%Phone",number);
-            urlFull = urlFull.replace("%Name",name);
-            urlFull = urlFull.replace("%IO",io);
-            urlFull = urlFull.replace("%SE",se);
-            urlFull = urlFull.replace("%Status",status);
-            urlFull = urlFull.replace("%Duration",duration);
-
-            if(ring.length()>1){
-                urlFull = urlFull.replace("%RingNumber",ring.substring(0,1));
-                urlFull = urlFull.replace("%RingType",ring.substring(1,2));
-            }
-
             Uri.Builder builder = new Uri.Builder();
 
             if(userVarLine.length()>0){
@@ -161,6 +149,9 @@ public class Poster implements Runnable {
 
             String query = builder.build().getEncodedQuery();
 
+            String[] urlParts = urlFull.split("\\?");
+            urlFull = urlParts[0] + "?" + query;
+
             URL url = new URL(urlFull);
 
             String authentication = username+":"+password;
@@ -177,6 +168,7 @@ public class Poster implements Runnable {
                 conn.setReadTimeout(10000);
                 conn.setConnectTimeout(15000);
                 conn.setRequestMethod("POST");
+                conn.setRequestProperty( "Content-Type", "application/x-www-form-urlencoded");
                 conn.setDoInput(true);
                 conn.setDoOutput(true);
 
@@ -204,10 +196,11 @@ public class Poster implements Runnable {
 
                 conn.setReadTimeout(10000);
                 conn.setConnectTimeout(15000);
-                conn.setRequestMethod("POST");
+                conn.setInstanceFollowRedirects( false );
+                conn.setRequestMethod( "POST" );
+                conn.setRequestProperty( "Content-Type", "application/x-www-form-urlencoded");
                 conn.setDoInput(true);
                 conn.setDoOutput(true);
-                conn.setInstanceFollowRedirects(false);
 
                 OutputStream os = conn.getOutputStream();
                 BufferedWriter writer = new BufferedWriter(

@@ -143,6 +143,9 @@ public class actMain extends Activity implements ServiceCallbacks {
         rbBasicUnit.setOnClickListener(rbChangeToBasic);
         btnGenerateURL.setOnClickListener(btnGenerateURL_Click);
         btnPaste.setOnClickListener(btnPaste_Click);
+        btnTestURL.setOnClickListener(btnTestURL_Click);
+        btnCopyGenURL.setOnClickListener(btnCopyGenURL_Click);
+        btnClearLog.setOnClickListener(btnClearLog_Click);
 
         // Update UI based on restored settings values
         ckbRequiresAuth_Click.onClick(new View(this));
@@ -213,7 +216,7 @@ public class actMain extends Activity implements ServiceCallbacks {
 
     }
 
-    //
+    // --------------------------------------------------------------------------------------------------- Database Functions
 
     private void startupDatabase(){
 
@@ -225,6 +228,7 @@ public class actMain extends Activity implements ServiceCallbacks {
                 "line TEXT," +
                 "io TEXT," +
                 "se TEXT," +
+                "checksum TEXT," +
                 "duration TEXT," +
                 "ring TEXT," +
                 "number TEXT," +
@@ -252,6 +256,7 @@ public class actMain extends Activity implements ServiceCallbacks {
             String phone = results.getString(results.getColumnIndex("number"));
             String name = results.getString(results.getColumnIndex("name"));
             String io = results.getString(results.getColumnIndex("io"));
+            String cksum = results.getString(results.getColumnIndex("checksum"));
             String se = results.getString(results.getColumnIndex("se"));
             String status = results.getString(results.getColumnIndex("io"));
             String duration = results.getString(results.getColumnIndex("duration"));
@@ -263,7 +268,7 @@ public class actMain extends Activity implements ServiceCallbacks {
                 addCallToLog(line,status,"","","","",datetime,"","");
             }
             else{
-                addCallToLog(line,io,se,duration,"",ring,datetime,phone,name);
+                addCallToLog(line,io,se,duration,cksum,ring,datetime,phone,name);
             }
         }
     }
@@ -279,6 +284,7 @@ public class actMain extends Activity implements ServiceCallbacks {
                 "line," +
                 "io," +
                 "se," +
+                "checksum," +
                 "duration," +
                 "ring," +
                 "theDateTime," +
@@ -290,6 +296,7 @@ public class actMain extends Activity implements ServiceCallbacks {
                 "'" + myLine + "'," +
                 "'" + myType + "'," +
                 "'" + myIndicator + "'," +
+                "'" + myCheckSum + "'," +
                 "'" + myDuration + "'," +
                 "'" + myRings + "'," +
                 "'" + myDateTime + "'," +
@@ -299,6 +306,12 @@ public class actMain extends Activity implements ServiceCallbacks {
                 ");";
 
         myDatabase.execSQL(insertQuery);
+
+    }
+
+    private void clearDatabase(){
+
+        myDatabase.execSQL("DELETE FROM callLog;");
 
     }
 
@@ -342,7 +355,7 @@ public class actMain extends Activity implements ServiceCallbacks {
         editor.putBoolean(savedIsSupplied,rbUseSuppliedURL.isChecked());
         editor.putBoolean(savedIsDeluxe,rbDeluxeUnit.isChecked());
 
-        editor.putString(savedBuiltURL,lbBuiltURL.getText().toString());
+        editor.putString(savedBuiltURL,lbGeneratedURL.getText().toString());
         editor.putString(savedServer,tbServer.getText().toString());
         editor.putString(savedParam_Line,tbLine.getText().toString());
         editor.putString(savedParam_Time,tbTime.getText().toString());
@@ -516,6 +529,26 @@ public class actMain extends Activity implements ServiceCallbacks {
         }
     };
 
+    private View.OnClickListener btnTestURL_Click = new View.OnClickListener() {
+        public void onClick(View v) {
+            testCall();
+        }
+    };
+
+    private View.OnClickListener btnCopyGenURL_Click = new View.OnClickListener() {
+        public void onClick(View v) {
+            copyUrl();
+        }
+    };
+
+    private View.OnClickListener btnClearLog_Click = new View.OnClickListener() {
+        public void onClick(View v) {
+            // Clear database and display changes
+            clearDatabase();
+            tableCallLog.removeAllViews();
+        }
+    };
+
     // --------------------------------------------------------------------------------------------------------- UI Updating
 
     private void changeURL(boolean isSupplied){
@@ -540,6 +573,11 @@ public class actMain extends Activity implements ServiceCallbacks {
     private void toggleDevSection(boolean isSupplied){
 
         if(!isSupplied){
+
+            lbSuppliedURL.setTextColor(Color.BLACK);
+            tbSuppliedURL.setEnabled(true);
+            String testBtnText = "Test Supplied URL";
+            btnTestURL.setText(testBtnText);
 
             lbDevSection.setTextColor(Color.GRAY);
             lbBuiltURL.setTextColor(Color.GRAY);
@@ -609,7 +647,12 @@ public class actMain extends Activity implements ServiceCallbacks {
         }
         else{
 
-            if(lbGeneratedURL.getText().toString().contains("must generate")){
+            lbSuppliedURL.setTextColor(Color.GRAY);
+            tbSuppliedURL.setEnabled(false);
+            String testBtnText = "Test Built URL";
+            btnTestURL.setText(testBtnText);
+
+            if(!lbGeneratedURL.getText().toString().contains("http")){
                 lbGeneratedURL.setTextColor(Color.RED);
             }
             else{
@@ -844,6 +887,24 @@ public class actMain extends Activity implements ServiceCallbacks {
 
     }
 
+    private void testCall(){
+
+        String url = rbUseSuppliedURL.isChecked() ? tbSuppliedURL.getText().toString() : lbGeneratedURL.getText().toString();
+
+        postToCloud(url, "01", "01/01 12:00 PM", "770-263-7111", "CallerID.com", "I", "S", "n/a", "0000", "A0");
+
+        if (rbUseSuppliedURL.isChecked())
+        {
+            // -- TODO show message "Example Call Sent to Supplied URL. An example Start of call record was sent to the Supplied URL."
+
+        }
+        else
+        {
+            // -- TODO show message "Example Call Sent to Built URL. An example Start of call record was sent to your custom built URL."
+
+        }
+    }
+
     // ------------------------------------------------------------------------------- Regex Patterns for Parsing Pasted URL
 
     // Patterns for parsing pasted URL
@@ -962,13 +1023,12 @@ public class actMain extends Activity implements ServiceCallbacks {
 
         StringBuilder genUrl = new StringBuilder();
 
-        if(tbServer.getText().toString()==""){
+        if(tbServer.getText().toString().isEmpty()){
 
             String failed = "[ previous generation failed - fill out server ]";
             lbGeneratedURL.setText(failed);
 
             tbServer.setHighlightColor(Color.RED);
-            tbServer.setTextColor(Color.BLACK);
 
             // -- TODO show failed message ""Server Cannot be blank. Please input your Cloud Server."
 
@@ -977,7 +1037,7 @@ public class actMain extends Activity implements ServiceCallbacks {
         }
 
         tbServer.setHighlightColor(Color.WHITE);
-        tbServer.setTextColor(Color.GREEN);
+        tbServer.setTextColor(Color.BLACK);
 
         String urlStart = tbServer.getText().toString() + "?";
         genUrl.append(urlStart);
@@ -1077,6 +1137,14 @@ public class actMain extends Activity implements ServiceCallbacks {
 
         lbGeneratedURL.setTextColor(Color.GREEN);
         lbGeneratedURL.setText(genUrl.toString().substring(0,genUrl.toString().length()-1));
+
+    }
+
+    private void copyUrl(){
+
+        ClipboardManager clipboard = (ClipboardManager) getSystemService(CLIPBOARD_SERVICE);
+        ClipData clip = ClipData.newPlainText("label", lbGeneratedURL.getText().toString());
+        clipboard.setPrimaryClip(clip);
 
     }
 
