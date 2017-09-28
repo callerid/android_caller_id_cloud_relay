@@ -139,12 +139,16 @@ public class Poster implements Runnable {
                 builder.appendQueryParameter(userVarDuration, duration);
             }
 
-            if(userVarRingNumber.length()>1){
-                builder.appendQueryParameter(userVarRingNumber, ring.substring(0,1));
+            if(userVarRingType.length()>1){
+                if(ring.length()>1){
+                    builder.appendQueryParameter(userVarRingType, ring.substring(0,1));
+                }
             }
 
-            if(userVarRingType.length()>1){
-                builder.appendQueryParameter(userVarRingType, ring.substring(1,2));
+            if(userVarRingNumber.length()>1){
+                if(ring.length()>0){
+                    builder.appendQueryParameter(userVarRingNumber, ring.substring(1,2));
+                }
             }
 
             String query = builder.build().getEncodedQuery();

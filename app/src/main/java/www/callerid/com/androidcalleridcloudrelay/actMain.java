@@ -1195,7 +1195,7 @@ public class actMain extends Activity implements ServiceCallbacks {
                 // Unused in this app but available for other custom apps
                 myDuration = matcher.group(4);
                 myCheckSum = matcher.group(5);
-                myRings = matcher.group(6);
+                myRings = matcher.group(6) + matcher.group(7);
                 //------------------------------------------------------
 
                 myDateTime = matcher.group(8);
