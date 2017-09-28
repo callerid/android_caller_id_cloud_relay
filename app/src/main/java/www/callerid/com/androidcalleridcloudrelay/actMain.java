@@ -126,11 +126,11 @@ public class actMain extends Activity implements ServiceCallbacks {
         // Database startup
         startupDatabase();
 
-        // Load database
-        loadUpLog();
-
         // Link UI variables
         LinkAllUIControls();
+
+        // Load database
+        loadUpLog();
 
         // Load all settings variables
         restoreSettings();
@@ -241,13 +241,11 @@ public class actMain extends Activity implements ServiceCallbacks {
 
     private void loadUpLog(){
 
-        Cursor results = myDatabase.rawQuery("SELECT * FROM callLog LIMIT 100;",null);
+        Cursor results = myDatabase.rawQuery("SELECT * FROM callLog ORDER BY id ASC LIMIT 100;",null);
 
         if(results.getCount()<1) {
             return;
         }
-
-        results.moveToFirst();
 
         while(results.moveToNext()){
 
@@ -287,7 +285,7 @@ public class actMain extends Activity implements ServiceCallbacks {
                 "checksum," +
                 "duration," +
                 "ring," +
-                "theDateTime," +
+                "datetime," +
                 "number," +
                 "name " +
 

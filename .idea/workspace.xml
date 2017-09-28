@@ -13,6 +13,9 @@
       </config>
     </shared>
   </component>
+  <component name="AndroidLogFilters">
+    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
+  </component>
   <component name="BookmarkManager">
     <bookmark url="file://$PROJECT_DIR$/app/src/main/java/www/callerid/com/androidcalleridcloudrelay/Classes/Poster.java" />
     <bookmark url="file://$PROJECT_DIR$/app/src/main/java/www/callerid/com/androidcalleridcloudrelay/actMain.java" />
@@ -21,6 +24,7 @@
     <list default="true" id="5a0596e4-9ce8-415c-b408-b9565ec1374f" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/www/callerid/com/androidcalleridcloudrelay/actMain.java" afterPath="$PROJECT_DIR$/app/src/main/java/www/callerid/com/androidcalleridcloudrelay/actMain.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_act_main.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_act_main.xml" />
     </list>
     <ignored path="Android Caller ID Cloud Relay.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -52,7 +56,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="activity_act_main.xml" pinned="false" current-in-tab="false">
+      <file leaf-file-name="activity_act_main.xml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_act_main.xml">
           <provider selected="true" editor-type-id="android-designer2">
             <state />
@@ -61,44 +65,6 @@
             <state relative-caret-position="9605">
               <caret line="565" column="37" selection-start-line="565" selection-start-column="29" selection-end-line="565" selection-end-column="37" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="actMain.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/www/callerid/com/androidcalleridcloudrelay/actMain.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="293">
-              <caret line="923" column="27" selection-start-line="923" selection-start-column="27" selection-end-line="923" selection-end-column="27" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="method#onCreate#0;class#actMain#0" expanded="false" />
-                <element signature="method#onResume#0;class#actMain#0" expanded="false" />
-                <element signature="class#4791:5263" expanded="false" />
-                <element signature="method#onStart#0;class#actMain#0" expanded="false" />
-                <element signature="method#onPause#0;class#actMain#0" expanded="false" />
-                <element signature="method#onDestroy#0;class#actMain#0" expanded="false" />
-                <element signature="method#onStop#0;class#actMain#0" expanded="false" />
-                <element signature="method#startupDatabase#0;class#actMain#0" expanded="false" />
-                <element signature="method#loadUpLog#0;class#actMain#0" expanded="false" />
-                <element signature="method#clearDatabase#0;class#actMain#0" expanded="false" />
-                <element signature="method#saveSettings#0;class#actMain#0" expanded="false" />
-                <element signature="method#restoreSettings#0;class#actMain#0" expanded="false" />
-                <element signature="method#LinkAllUIControls#0;class#actMain#0" expanded="false" />
-                <element signature="method#changeURL#0;class#actMain#0" expanded="false" />
-                <element signature="method#toggleDevSection#0;class#actMain#0" expanded="false" />
-                <element signature="method#changeUnit#0;class#actMain#0" expanded="false" />
-                <element signature="method#toggleDeluxe#0;class#actMain#0" expanded="false" />
-                <element signature="method#addCallToLog#0;class#actMain#0" expanded="false" />
-                <element signature="method#postToCloud#0;class#actMain#0" expanded="false" />
-                <element signature="method#testCall#0;class#actMain#0" expanded="false" />
-                <element signature="method#pasteUrl#0;class#actMain#0" expanded="false" />
-                <element signature="method#generateURL#0;class#actMain#0" expanded="false" />
-                <element signature="method#copyUrl#0;class#actMain#0" expanded="false" />
-                <element signature="method#getUDP#0;class#actMain#0" expanded="false" />
-                <element signature="method#handleUDP#0;class#actMain#0" expanded="false" />
-                <marker date="1506614704043" expanded="false" signature="8446:9217" ph="{...}" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -1961,12 +1927,12 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_act_main.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/www/callerid/com/androidcalleridcloudrelay/Classes/ServiceCallbacks.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/www/callerid/com/androidcalleridcloudrelay/Classes/UDPListen.java" />
         <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/www/callerid/com/androidcalleridcloudrelay/Classes/Poster.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/www/callerid/com/androidcalleridcloudrelay/actMain.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_act_main.xml" />
       </list>
     </option>
   </component>
@@ -2421,7 +2387,7 @@
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32949308" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -2488,7 +2454,15 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="48" />
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/www/callerid/com/androidcalleridcloudrelay/Classes/Poster.java</url>
+          <line>154</line>
+          <properties />
+          <option name="timeStamp" value="49" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="52" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -2529,7 +2503,7 @@
             <element signature="method#onDestroy#0;class#actMain#0" expanded="false" />
             <element signature="method#onStop#0;class#actMain#0" expanded="false" />
             <element signature="method#startupDatabase#0;class#actMain#0" expanded="false" />
-            <element signature="method#loadUpLog#0;class#actMain#0" expanded="false" />
+            <element signature="method#insertIntoDatabase#0;class#actMain#0" expanded="false" />
             <element signature="method#clearDatabase#0;class#actMain#0" expanded="false" />
             <element signature="method#saveSettings#0;class#actMain#0" expanded="false" />
             <element signature="method#restoreSettings#0;class#actMain#0" expanded="false" />
@@ -2546,7 +2520,6 @@
             <element signature="method#copyUrl#0;class#actMain#0" expanded="false" />
             <element signature="method#getUDP#0;class#actMain#0" expanded="false" />
             <element signature="method#handleUDP#0;class#actMain#0" expanded="false" />
-            <marker date="1506614704043" expanded="false" signature="8446:9217" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -2583,7 +2556,7 @@
             <element signature="method#onDestroy#0;class#actMain#0" expanded="false" />
             <element signature="method#onStop#0;class#actMain#0" expanded="false" />
             <element signature="method#startupDatabase#0;class#actMain#0" expanded="false" />
-            <element signature="method#loadUpLog#0;class#actMain#0" expanded="false" />
+            <element signature="method#insertIntoDatabase#0;class#actMain#0" expanded="false" />
             <element signature="method#clearDatabase#0;class#actMain#0" expanded="false" />
             <element signature="method#saveSettings#0;class#actMain#0" expanded="false" />
             <element signature="method#restoreSettings#0;class#actMain#0" expanded="false" />
@@ -2600,7 +2573,6 @@
             <element signature="method#copyUrl#0;class#actMain#0" expanded="false" />
             <element signature="method#getUDP#0;class#actMain#0" expanded="false" />
             <element signature="method#handleUDP#0;class#actMain#0" expanded="false" />
-            <marker date="1506614704043" expanded="false" signature="8446:9217" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -2630,7 +2602,7 @@
             <element signature="method#onDestroy#0;class#actMain#0" expanded="false" />
             <element signature="method#onStop#0;class#actMain#0" expanded="false" />
             <element signature="method#startupDatabase#0;class#actMain#0" expanded="false" />
-            <element signature="method#loadUpLog#0;class#actMain#0" expanded="false" />
+            <element signature="method#insertIntoDatabase#0;class#actMain#0" expanded="false" />
             <element signature="method#clearDatabase#0;class#actMain#0" expanded="false" />
             <element signature="method#saveSettings#0;class#actMain#0" expanded="false" />
             <element signature="method#restoreSettings#0;class#actMain#0" expanded="false" />
@@ -2647,7 +2619,6 @@
             <element signature="method#copyUrl#0;class#actMain#0" expanded="false" />
             <element signature="method#getUDP#0;class#actMain#0" expanded="false" />
             <element signature="method#handleUDP#0;class#actMain#0" expanded="false" />
-            <marker date="1506614704043" expanded="false" signature="8446:9217" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -2677,7 +2648,7 @@
             <element signature="method#onDestroy#0;class#actMain#0" expanded="false" />
             <element signature="method#onStop#0;class#actMain#0" expanded="false" />
             <element signature="method#startupDatabase#0;class#actMain#0" expanded="false" />
-            <element signature="method#loadUpLog#0;class#actMain#0" expanded="false" />
+            <element signature="method#insertIntoDatabase#0;class#actMain#0" expanded="false" />
             <element signature="method#clearDatabase#0;class#actMain#0" expanded="false" />
             <element signature="method#saveSettings#0;class#actMain#0" expanded="false" />
             <element signature="method#restoreSettings#0;class#actMain#0" expanded="false" />
@@ -2694,7 +2665,6 @@
             <element signature="method#copyUrl#0;class#actMain#0" expanded="false" />
             <element signature="method#getUDP#0;class#actMain#0" expanded="false" />
             <element signature="method#handleUDP#0;class#actMain#0" expanded="false" />
-            <marker date="1506614704043" expanded="false" signature="8446:9217" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -2724,7 +2694,7 @@
             <element signature="method#onDestroy#0;class#actMain#0" expanded="false" />
             <element signature="method#onStop#0;class#actMain#0" expanded="false" />
             <element signature="method#startupDatabase#0;class#actMain#0" expanded="false" />
-            <element signature="method#loadUpLog#0;class#actMain#0" expanded="false" />
+            <element signature="method#insertIntoDatabase#0;class#actMain#0" expanded="false" />
             <element signature="method#clearDatabase#0;class#actMain#0" expanded="false" />
             <element signature="method#saveSettings#0;class#actMain#0" expanded="false" />
             <element signature="method#restoreSettings#0;class#actMain#0" expanded="false" />
@@ -2741,7 +2711,6 @@
             <element signature="method#copyUrl#0;class#actMain#0" expanded="false" />
             <element signature="method#getUDP#0;class#actMain#0" expanded="false" />
             <element signature="method#handleUDP#0;class#actMain#0" expanded="false" />
-            <marker date="1506614704043" expanded="false" signature="8446:9217" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -2771,7 +2740,7 @@
             <element signature="method#onDestroy#0;class#actMain#0" expanded="false" />
             <element signature="method#onStop#0;class#actMain#0" expanded="false" />
             <element signature="method#startupDatabase#0;class#actMain#0" expanded="false" />
-            <element signature="method#loadUpLog#0;class#actMain#0" expanded="false" />
+            <element signature="method#insertIntoDatabase#0;class#actMain#0" expanded="false" />
             <element signature="method#clearDatabase#0;class#actMain#0" expanded="false" />
             <element signature="method#saveSettings#0;class#actMain#0" expanded="false" />
             <element signature="method#restoreSettings#0;class#actMain#0" expanded="false" />
@@ -2788,7 +2757,6 @@
             <element signature="method#copyUrl#0;class#actMain#0" expanded="false" />
             <element signature="method#getUDP#0;class#actMain#0" expanded="false" />
             <element signature="method#handleUDP#0;class#actMain#0" expanded="false" />
-            <marker date="1506614704043" expanded="false" signature="8446:9217" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -2818,7 +2786,7 @@
             <element signature="method#onDestroy#0;class#actMain#0" expanded="false" />
             <element signature="method#onStop#0;class#actMain#0" expanded="false" />
             <element signature="method#startupDatabase#0;class#actMain#0" expanded="false" />
-            <element signature="method#loadUpLog#0;class#actMain#0" expanded="false" />
+            <element signature="method#insertIntoDatabase#0;class#actMain#0" expanded="false" />
             <element signature="method#clearDatabase#0;class#actMain#0" expanded="false" />
             <element signature="method#saveSettings#0;class#actMain#0" expanded="false" />
             <element signature="method#restoreSettings#0;class#actMain#0" expanded="false" />
@@ -2835,7 +2803,6 @@
             <element signature="method#copyUrl#0;class#actMain#0" expanded="false" />
             <element signature="method#getUDP#0;class#actMain#0" expanded="false" />
             <element signature="method#handleUDP#0;class#actMain#0" expanded="false" />
-            <marker date="1506614704043" expanded="false" signature="8446:9217" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -2865,7 +2832,7 @@
             <element signature="method#onDestroy#0;class#actMain#0" expanded="false" />
             <element signature="method#onStop#0;class#actMain#0" expanded="false" />
             <element signature="method#startupDatabase#0;class#actMain#0" expanded="false" />
-            <element signature="method#loadUpLog#0;class#actMain#0" expanded="false" />
+            <element signature="method#insertIntoDatabase#0;class#actMain#0" expanded="false" />
             <element signature="method#clearDatabase#0;class#actMain#0" expanded="false" />
             <element signature="method#saveSettings#0;class#actMain#0" expanded="false" />
             <element signature="method#restoreSettings#0;class#actMain#0" expanded="false" />
@@ -2882,7 +2849,6 @@
             <element signature="method#copyUrl#0;class#actMain#0" expanded="false" />
             <element signature="method#getUDP#0;class#actMain#0" expanded="false" />
             <element signature="method#handleUDP#0;class#actMain#0" expanded="false" />
-            <marker date="1506614704043" expanded="false" signature="8446:9217" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -2934,20 +2900,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_act_main.xml">
-      <provider selected="true" editor-type-id="android-designer2">
-        <state />
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="9605">
-          <caret line="565" column="37" selection-start-line="565" selection-start-column="29" selection-end-line="565" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/www/callerid/com/androidcalleridcloudrelay/Classes/Poster.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="482">
+        <state relative-caret-position="-459">
           <caret line="107" column="12" selection-start-line="107" selection-start-column="12" selection-end-line="107" selection-end-column="12" />
           <folding />
         </state>
@@ -2955,8 +2910,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/www/callerid/com/androidcalleridcloudrelay/actMain.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="293">
-          <caret line="923" column="27" selection-start-line="923" selection-start-column="27" selection-end-line="923" selection-end-column="27" />
+        <state relative-caret-position="330">
+          <caret line="248" column="0" selection-start-line="248" selection-start-column="0" selection-end-line="248" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#onCreate#0;class#actMain#0" expanded="false" />
@@ -2967,7 +2922,7 @@
             <element signature="method#onDestroy#0;class#actMain#0" expanded="false" />
             <element signature="method#onStop#0;class#actMain#0" expanded="false" />
             <element signature="method#startupDatabase#0;class#actMain#0" expanded="false" />
-            <element signature="method#loadUpLog#0;class#actMain#0" expanded="false" />
+            <element signature="method#insertIntoDatabase#0;class#actMain#0" expanded="false" />
             <element signature="method#clearDatabase#0;class#actMain#0" expanded="false" />
             <element signature="method#saveSettings#0;class#actMain#0" expanded="false" />
             <element signature="method#restoreSettings#0;class#actMain#0" expanded="false" />
@@ -2984,8 +2939,18 @@
             <element signature="method#copyUrl#0;class#actMain#0" expanded="false" />
             <element signature="method#getUDP#0;class#actMain#0" expanded="false" />
             <element signature="method#handleUDP#0;class#actMain#0" expanded="false" />
-            <marker date="1506614704043" expanded="false" signature="8446:9217" ph="{...}" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_act_main.xml">
+      <provider selected="true" editor-type-id="android-designer2">
+        <state />
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="9605">
+          <caret line="565" column="37" selection-start-line="565" selection-start-column="29" selection-end-line="565" selection-end-column="37" />
+          <folding />
         </state>
       </provider>
     </entry>
