@@ -637,16 +637,19 @@
 
         <TextView
             android:id="@+id/lbGeneratedURL"
-            android:layout_width="795dp"
+            android:layout_width="690dp"
             android:layout_height="42dp"
             android:layout_marginLeft="8dp"
+            android:layout_marginRight="0dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="16dp"
             android:editable="false"
             android:singleLine="false"
             android:text="[ you must generate your URL first ]"
             android:textColor="@android:color/holo_red_dark"
+            android:textSize="12sp"
             app:layout_constraintLeft_toRightOf="@+id/lbBuiltURL"
+            app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/lbDevSection" />
 
         <TextView

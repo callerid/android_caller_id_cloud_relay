@@ -326,6 +326,7 @@ public class actMain extends Activity implements ServiceCallbacks {
     private String savedIsDeluxe = "spIsDeluxe";
 
     private String savedBuiltURL = "spBuiltURL";
+    private String savedSuppliedURL = "spSuppliedURL";
     private String savedServer = "spServer";
 
     private String savedParam_Line = "spParamLine";
@@ -353,6 +354,7 @@ public class actMain extends Activity implements ServiceCallbacks {
         editor.putBoolean(savedIsSupplied,rbUseSuppliedURL.isChecked());
         editor.putBoolean(savedIsDeluxe,rbDeluxeUnit.isChecked());
 
+        editor.putString(savedSuppliedURL,tbSuppliedURL.getText().toString());
         editor.putString(savedBuiltURL,lbGeneratedURL.getText().toString());
         editor.putString(savedServer,tbServer.getText().toString());
         editor.putString(savedParam_Line,tbLine.getText().toString());
@@ -387,6 +389,7 @@ public class actMain extends Activity implements ServiceCallbacks {
         // Supplied
         rbUseSuppliedURL.setChecked(settings.getBoolean(savedIsSupplied,true));
         rbUseBuiltURL.setChecked(!settings.getBoolean(savedIsSupplied,true));
+        tbSuppliedURL.setText(settings.getString(savedSuppliedURL,""));
 
         // Dev Section
         lbGeneratedURL.setText(settings.getString(savedBuiltURL,""));
