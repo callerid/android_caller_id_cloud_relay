@@ -19,6 +19,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5a0596e4-9ce8-415c-b408-b9565ec1374f" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/www/callerid/com/androidcalleridcloudrelay/actMain.java" afterPath="$PROJECT_DIR$/app/src/main/java/www/callerid/com/androidcalleridcloudrelay/actMain.java" />
     </list>
     <ignored path="Android Caller ID Cloud Relay.iws" />
@@ -67,19 +68,19 @@
       <file leaf-file-name="actMain.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/www/callerid/com/androidcalleridcloudrelay/actMain.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="423">
-              <caret line="757" column="78" selection-start-line="757" selection-start-column="78" selection-end-line="757" selection-end-column="78" />
+            <state relative-caret-position="644">
+              <caret line="1099" column="62" selection-start-line="1099" selection-start-column="62" selection-end-line="1099" selection-end-column="62" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="method#onCreate#0;class#actMain#0" expanded="false" />
                 <element signature="method#onResume#0;class#actMain#0" expanded="false" />
-                <element signature="class#4368:4840" expanded="false" />
-                <element signature="e#4794#4795#0" expanded="true" />
-                <element signature="e#4832#4833#0" expanded="true" />
+                <element signature="class#4612:5084" expanded="false" />
                 <element signature="method#onStart#0;class#actMain#0" expanded="false" />
                 <element signature="method#onPause#0;class#actMain#0" expanded="false" />
                 <element signature="method#onDestroy#0;class#actMain#0" expanded="false" />
                 <element signature="method#onStop#0;class#actMain#0" expanded="false" />
+                <element signature="method#startupDatabase#0;class#actMain#0" expanded="false" />
+                <element signature="method#loadUpLog#0;class#actMain#0" expanded="false" />
+                <element signature="method#insertIntoDatabase#0;class#actMain#0" expanded="false" />
                 <element signature="method#saveSettings#0;class#actMain#0" expanded="false" />
                 <element signature="method#restoreSettings#0;class#actMain#0" expanded="false" />
                 <element signature="method#LinkAllUIControls#0;class#actMain#0" expanded="false" />
@@ -1996,8 +1997,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane" />
       <pane id="AndroidView">
         <subPane>
@@ -2007,51 +2008,9 @@
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="AndroidCallerIDCloudRelay" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="AndroidCallerIDCloudRelay" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidSourceTypeNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="AndroidCallerIDCloudRelay" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidSourceTypeNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="androidcalleridcloudrelay" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -2395,8 +2354,8 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -2406,8 +2365,8 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Android Model" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39976957" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39976957" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -2471,6 +2430,17 @@
         <state />
       </provider>
       <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_act_main.xml">
+      <provider selected="true" editor-type-id="android-designer2">
+        <state />
+      </provider>
+      <provider editor-type-id="text-editor">
         <state relative-caret-position="9605">
           <caret line="565" column="37" selection-start-line="565" selection-start-column="29" selection-end-line="565" selection-end-column="37" />
           <folding />
@@ -2483,15 +2453,15 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#onCreate#0;class#actMain#0" expanded="false" />
             <element signature="method#onResume#0;class#actMain#0" expanded="false" />
-            <element signature="class#4368:4840" expanded="false" />
-            <element signature="e#4794#4795#0" expanded="true" />
-            <element signature="e#4832#4833#0" expanded="true" />
+            <element signature="class#4612:5084" expanded="false" />
             <element signature="method#onStart#0;class#actMain#0" expanded="false" />
             <element signature="method#onPause#0;class#actMain#0" expanded="false" />
             <element signature="method#onDestroy#0;class#actMain#0" expanded="false" />
             <element signature="method#onStop#0;class#actMain#0" expanded="false" />
+            <element signature="method#startupDatabase#0;class#actMain#0" expanded="false" />
+            <element signature="method#loadUpLog#0;class#actMain#0" expanded="false" />
+            <element signature="method#insertIntoDatabase#0;class#actMain#0" expanded="false" />
             <element signature="method#saveSettings#0;class#actMain#0" expanded="false" />
             <element signature="method#restoreSettings#0;class#actMain#0" expanded="false" />
             <element signature="method#LinkAllUIControls#0;class#actMain#0" expanded="false" />
@@ -2513,9 +2483,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1428">
           <caret line="98" column="0" selection-start-line="98" selection-start-column="0" selection-end-line="98" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2536,15 +2503,15 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#onCreate#0;class#actMain#0" expanded="false" />
             <element signature="method#onResume#0;class#actMain#0" expanded="false" />
-            <element signature="class#4368:4840" expanded="false" />
-            <element signature="e#4794#4795#0" expanded="true" />
-            <element signature="e#4832#4833#0" expanded="true" />
+            <element signature="class#4612:5084" expanded="false" />
             <element signature="method#onStart#0;class#actMain#0" expanded="false" />
             <element signature="method#onPause#0;class#actMain#0" expanded="false" />
             <element signature="method#onDestroy#0;class#actMain#0" expanded="false" />
             <element signature="method#onStop#0;class#actMain#0" expanded="false" />
+            <element signature="method#startupDatabase#0;class#actMain#0" expanded="false" />
+            <element signature="method#loadUpLog#0;class#actMain#0" expanded="false" />
+            <element signature="method#insertIntoDatabase#0;class#actMain#0" expanded="false" />
             <element signature="method#saveSettings#0;class#actMain#0" expanded="false" />
             <element signature="method#restoreSettings#0;class#actMain#0" expanded="false" />
             <element signature="method#LinkAllUIControls#0;class#actMain#0" expanded="false" />
@@ -2579,15 +2546,15 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#onCreate#0;class#actMain#0" expanded="false" />
             <element signature="method#onResume#0;class#actMain#0" expanded="false" />
-            <element signature="class#4368:4840" expanded="false" />
-            <element signature="e#4794#4795#0" expanded="true" />
-            <element signature="e#4832#4833#0" expanded="true" />
+            <element signature="class#4612:5084" expanded="false" />
             <element signature="method#onStart#0;class#actMain#0" expanded="false" />
             <element signature="method#onPause#0;class#actMain#0" expanded="false" />
             <element signature="method#onDestroy#0;class#actMain#0" expanded="false" />
             <element signature="method#onStop#0;class#actMain#0" expanded="false" />
+            <element signature="method#startupDatabase#0;class#actMain#0" expanded="false" />
+            <element signature="method#loadUpLog#0;class#actMain#0" expanded="false" />
+            <element signature="method#insertIntoDatabase#0;class#actMain#0" expanded="false" />
             <element signature="method#saveSettings#0;class#actMain#0" expanded="false" />
             <element signature="method#restoreSettings#0;class#actMain#0" expanded="false" />
             <element signature="method#LinkAllUIControls#0;class#actMain#0" expanded="false" />
@@ -2622,15 +2589,15 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#onCreate#0;class#actMain#0" expanded="false" />
             <element signature="method#onResume#0;class#actMain#0" expanded="false" />
-            <element signature="class#4368:4840" expanded="false" />
-            <element signature="e#4794#4795#0" expanded="true" />
-            <element signature="e#4832#4833#0" expanded="true" />
+            <element signature="class#4612:5084" expanded="false" />
             <element signature="method#onStart#0;class#actMain#0" expanded="false" />
             <element signature="method#onPause#0;class#actMain#0" expanded="false" />
             <element signature="method#onDestroy#0;class#actMain#0" expanded="false" />
             <element signature="method#onStop#0;class#actMain#0" expanded="false" />
+            <element signature="method#startupDatabase#0;class#actMain#0" expanded="false" />
+            <element signature="method#loadUpLog#0;class#actMain#0" expanded="false" />
+            <element signature="method#insertIntoDatabase#0;class#actMain#0" expanded="false" />
             <element signature="method#saveSettings#0;class#actMain#0" expanded="false" />
             <element signature="method#restoreSettings#0;class#actMain#0" expanded="false" />
             <element signature="method#LinkAllUIControls#0;class#actMain#0" expanded="false" />
@@ -2665,15 +2632,15 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#onCreate#0;class#actMain#0" expanded="false" />
             <element signature="method#onResume#0;class#actMain#0" expanded="false" />
-            <element signature="class#4368:4840" expanded="false" />
-            <element signature="e#4794#4795#0" expanded="true" />
-            <element signature="e#4832#4833#0" expanded="true" />
+            <element signature="class#4612:5084" expanded="false" />
             <element signature="method#onStart#0;class#actMain#0" expanded="false" />
             <element signature="method#onPause#0;class#actMain#0" expanded="false" />
             <element signature="method#onDestroy#0;class#actMain#0" expanded="false" />
             <element signature="method#onStop#0;class#actMain#0" expanded="false" />
+            <element signature="method#startupDatabase#0;class#actMain#0" expanded="false" />
+            <element signature="method#loadUpLog#0;class#actMain#0" expanded="false" />
+            <element signature="method#insertIntoDatabase#0;class#actMain#0" expanded="false" />
             <element signature="method#saveSettings#0;class#actMain#0" expanded="false" />
             <element signature="method#restoreSettings#0;class#actMain#0" expanded="false" />
             <element signature="method#LinkAllUIControls#0;class#actMain#0" expanded="false" />
@@ -2708,15 +2675,15 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#onCreate#0;class#actMain#0" expanded="false" />
             <element signature="method#onResume#0;class#actMain#0" expanded="false" />
-            <element signature="class#4368:4840" expanded="false" />
-            <element signature="e#4794#4795#0" expanded="true" />
-            <element signature="e#4832#4833#0" expanded="true" />
+            <element signature="class#4612:5084" expanded="false" />
             <element signature="method#onStart#0;class#actMain#0" expanded="false" />
             <element signature="method#onPause#0;class#actMain#0" expanded="false" />
             <element signature="method#onDestroy#0;class#actMain#0" expanded="false" />
             <element signature="method#onStop#0;class#actMain#0" expanded="false" />
+            <element signature="method#startupDatabase#0;class#actMain#0" expanded="false" />
+            <element signature="method#loadUpLog#0;class#actMain#0" expanded="false" />
+            <element signature="method#insertIntoDatabase#0;class#actMain#0" expanded="false" />
             <element signature="method#saveSettings#0;class#actMain#0" expanded="false" />
             <element signature="method#restoreSettings#0;class#actMain#0" expanded="false" />
             <element signature="method#LinkAllUIControls#0;class#actMain#0" expanded="false" />
@@ -2751,15 +2718,15 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#onCreate#0;class#actMain#0" expanded="false" />
             <element signature="method#onResume#0;class#actMain#0" expanded="false" />
-            <element signature="class#4368:4840" expanded="false" />
-            <element signature="e#4794#4795#0" expanded="true" />
-            <element signature="e#4832#4833#0" expanded="true" />
+            <element signature="class#4612:5084" expanded="false" />
             <element signature="method#onStart#0;class#actMain#0" expanded="false" />
             <element signature="method#onPause#0;class#actMain#0" expanded="false" />
             <element signature="method#onDestroy#0;class#actMain#0" expanded="false" />
             <element signature="method#onStop#0;class#actMain#0" expanded="false" />
+            <element signature="method#startupDatabase#0;class#actMain#0" expanded="false" />
+            <element signature="method#loadUpLog#0;class#actMain#0" expanded="false" />
+            <element signature="method#insertIntoDatabase#0;class#actMain#0" expanded="false" />
             <element signature="method#saveSettings#0;class#actMain#0" expanded="false" />
             <element signature="method#restoreSettings#0;class#actMain#0" expanded="false" />
             <element signature="method#LinkAllUIControls#0;class#actMain#0" expanded="false" />
@@ -2794,15 +2761,15 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#onCreate#0;class#actMain#0" expanded="false" />
             <element signature="method#onResume#0;class#actMain#0" expanded="false" />
-            <element signature="class#4368:4840" expanded="false" />
-            <element signature="e#4794#4795#0" expanded="true" />
-            <element signature="e#4832#4833#0" expanded="true" />
+            <element signature="class#4612:5084" expanded="false" />
             <element signature="method#onStart#0;class#actMain#0" expanded="false" />
             <element signature="method#onPause#0;class#actMain#0" expanded="false" />
             <element signature="method#onDestroy#0;class#actMain#0" expanded="false" />
             <element signature="method#onStop#0;class#actMain#0" expanded="false" />
+            <element signature="method#startupDatabase#0;class#actMain#0" expanded="false" />
+            <element signature="method#loadUpLog#0;class#actMain#0" expanded="false" />
+            <element signature="method#insertIntoDatabase#0;class#actMain#0" expanded="false" />
             <element signature="method#saveSettings#0;class#actMain#0" expanded="false" />
             <element signature="method#restoreSettings#0;class#actMain#0" expanded="false" />
             <element signature="method#LinkAllUIControls#0;class#actMain#0" expanded="false" />
@@ -2845,28 +2812,32 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="688">
           <caret line="251" column="13" selection-start-line="251" selection-start-column="13" selection-end-line="251" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+      <provider editor-type-id="android-manifest">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
           <caret line="22" column="44" selection-start-line="22" selection-start-column="44" selection-end-line="22" selection-end-column="44" />
           <folding />
         </state>
       </provider>
-      <provider editor-type-id="android-manifest">
-        <state />
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/www/callerid/com/androidcalleridcloudrelay/Classes/UDPListen.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1428">
           <caret line="98" column="0" selection-start-line="98" selection-start-column="0" selection-end-line="98" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/www/callerid/com/androidcalleridcloudrelay/Classes/Poster.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1826">
+          <caret line="193" column="45" selection-start-line="193" selection-start-column="45" selection-end-line="193" selection-end-column="45" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -2881,29 +2852,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/www/callerid/com/androidcalleridcloudrelay/Classes/Poster.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1826">
-          <caret line="193" column="45" selection-start-line="193" selection-start-column="45" selection-end-line="193" selection-end-column="45" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/www/callerid/com/androidcalleridcloudrelay/actMain.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="423">
-          <caret line="757" column="78" selection-start-line="757" selection-start-column="78" selection-end-line="757" selection-end-column="78" />
+        <state relative-caret-position="644">
+          <caret line="1099" column="62" selection-start-line="1099" selection-start-column="62" selection-end-line="1099" selection-end-column="62" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#onCreate#0;class#actMain#0" expanded="false" />
             <element signature="method#onResume#0;class#actMain#0" expanded="false" />
-            <element signature="class#4368:4840" expanded="false" />
-            <element signature="e#4794#4795#0" expanded="true" />
-            <element signature="e#4832#4833#0" expanded="true" />
+            <element signature="class#4612:5084" expanded="false" />
             <element signature="method#onStart#0;class#actMain#0" expanded="false" />
             <element signature="method#onPause#0;class#actMain#0" expanded="false" />
             <element signature="method#onDestroy#0;class#actMain#0" expanded="false" />
             <element signature="method#onStop#0;class#actMain#0" expanded="false" />
+            <element signature="method#startupDatabase#0;class#actMain#0" expanded="false" />
+            <element signature="method#loadUpLog#0;class#actMain#0" expanded="false" />
+            <element signature="method#insertIntoDatabase#0;class#actMain#0" expanded="false" />
             <element signature="method#saveSettings#0;class#actMain#0" expanded="false" />
             <element signature="method#restoreSettings#0;class#actMain#0" expanded="false" />
             <element signature="method#LinkAllUIControls#0;class#actMain#0" expanded="false" />

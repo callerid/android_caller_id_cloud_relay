@@ -8,6 +8,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.ServiceConnection;
 import android.content.SharedPreferences;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Color;
 import android.os.IBinder;
 import android.os.Bundle;
@@ -33,6 +35,9 @@ public class actMain extends Activity implements ServiceCallbacks {
     private UDPListen mService;
     private boolean mBound = false;
     private String inString = "Waiting for Calls.";
+
+    // Database
+    static public SQLiteDatabase myDatabase;
 
     // Required for memory capturing during app in background
     private boolean isInFront;
@@ -118,6 +123,12 @@ public class actMain extends Activity implements ServiceCallbacks {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_act_main);
 
+        // Database startup
+        startupDatabase();
+
+        // Load database
+        loadUpLog();
+
         // Link UI variables
         LinkAllUIControls();
 
@@ -201,6 +212,96 @@ public class actMain extends Activity implements ServiceCallbacks {
         saveSettings();
 
     }
+
+    //
+
+    private void startupDatabase(){
+
+        myDatabase = openOrCreateDatabase("cloud_relay_db", MODE_PRIVATE, null);
+
+        // Create tables with needed formats
+        String creationQuery = "CREATE TABLE IF NOT EXISTS callLog (id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL," +
+                "datetime TEXT," +
+                "line TEXT," +
+                "io TEXT," +
+                "se TEXT," +
+                "duration TEXT," +
+                "ring TEXT," +
+                "number TEXT," +
+                "name TEXT" +
+                ");";
+
+        myDatabase.execSQL(creationQuery);
+
+    }
+
+    private void loadUpLog(){
+
+        Cursor results = myDatabase.rawQuery("SELECT * FROM callLog LIMIT 100;",null);
+
+        if(results.getCount()<1) {
+            return;
+        }
+
+        results.moveToFirst();
+
+        while(results.moveToNext()){
+
+            String line = results.getString(results.getColumnIndex("line"));
+            String datetime = results.getString(results.getColumnIndex("datetime"));
+            String phone = results.getString(results.getColumnIndex("number"));
+            String name = results.getString(results.getColumnIndex("name"));
+            String io = results.getString(results.getColumnIndex("io"));
+            String se = results.getString(results.getColumnIndex("se"));
+            String status = results.getString(results.getColumnIndex("io"));
+            String duration = results.getString(results.getColumnIndex("duration"));
+            String ring = results.getString(results.getColumnIndex("ring"));
+
+            Boolean isDetailed = (io.equals("R") || io.equals("F") || io.equals("N"));
+
+            if(isDetailed){
+                addCallToLog(line,status,"","","","",datetime,"","");
+            }
+            else{
+                addCallToLog(line,io,se,duration,"",ring,datetime,phone,name);
+            }
+        }
+    }
+
+    private void insertIntoDatabase(String myLine,String myType,
+                                    String myIndicator,String myDuration,
+                                    String myCheckSum,String myRings,
+                                    String myDateTime,String myNumber,
+                                    String myName){
+
+        String insertQuery = "INSERT INTO callLog (" +
+
+                "line," +
+                "io," +
+                "se," +
+                "duration," +
+                "ring," +
+                "theDateTime," +
+                "number," +
+                "name " +
+
+                ") VALUES (" +
+
+                "'" + myLine + "'," +
+                "'" + myType + "'," +
+                "'" + myIndicator + "'," +
+                "'" + myDuration + "'," +
+                "'" + myRings + "'," +
+                "'" + myDateTime + "'," +
+                "'" + myNumber + "'," +
+                "'" + myName + "'" +
+
+                ");";
+
+        myDatabase.execSQL(insertQuery);
+
+    }
+
     // ---------------------------------------------------------------------------------------------------- Setting Variables
 
     // Setting vars
@@ -1041,6 +1142,9 @@ public class actMain extends Activity implements ServiceCallbacks {
                 // Add to log
                 addCallToLog(theLineNumber,myType,myIndicator,myDuration,myCheckSum,myRings,myDateTime,myNumber,myName);
 
+                // Insert to database
+                insertIntoDatabase(theLineNumber,myType,myIndicator,myDuration,myCheckSum,myRings,myDateTime,myNumber,myName);
+
             }
 
         }
@@ -1065,6 +1169,9 @@ public class actMain extends Activity implements ServiceCallbacks {
 
             // Add to log
             addCallToLog(theLineNumber,myType,"","","","",myDateTime,"","");
+
+            // Insert to database
+            insertIntoDatabase(theLineNumber,myType,"","","","",myDateTime,"","");
 
             isDetailed = true;
 
