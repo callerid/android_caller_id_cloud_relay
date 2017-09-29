@@ -1,10 +1,12 @@
 package www.callerid.com.androidcalleridcloudrelay;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.ClipData;
 import android.content.ClipboardManager;
 import android.content.ComponentName;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.ServiceConnection;
 import android.content.SharedPreferences;
@@ -38,6 +40,9 @@ public class actMain extends Activity implements ServiceCallbacks {
 
     // Database
     static public SQLiteDatabase myDatabase;
+
+    // Popup builder
+    AlertDialog.Builder dlgAlert;
 
     // Required for memory capturing during app in background
     private boolean isInFront;
@@ -129,6 +134,9 @@ public class actMain extends Activity implements ServiceCallbacks {
         // Link UI variables
         LinkAllUIControls();
 
+        // Prepare popup messenger
+        dlgAlert  = new AlertDialog.Builder(this);
+
         // Load database
         loadUpLog();
 
@@ -214,6 +222,22 @@ public class actMain extends Activity implements ServiceCallbacks {
         // Save user prefs
         saveSettings();
 
+    }
+
+    // ------------------------------------------------------------------------------------------------------ Popup Functions
+
+    private void popupMessage(String message,String title){
+        dlgAlert  = new AlertDialog.Builder(this);
+        dlgAlert.setMessage(message);
+        dlgAlert.setTitle(title);
+        dlgAlert.setPositiveButton("Ok",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        //dismiss the dialog
+                    }
+                });
+        dlgAlert.setCancelable(true);
+        dlgAlert.create().show();
     }
 
     // --------------------------------------------------------------------------------------------------- Database Functions
@@ -812,7 +836,7 @@ public class actMain extends Activity implements ServiceCallbacks {
         // I/O
         tv = new TextView(this);
         tv.setText(myType);
-        tv.setPadding(0,0,25,0);
+        tv.setPadding(0,0,20,0);
         newRow.addView(tv);
 
         // Start/End
@@ -830,7 +854,7 @@ public class actMain extends Activity implements ServiceCallbacks {
         // Checksum
         tv = new TextView(this);
         tv.setText(myCheckSum);
-        tv.setPadding(0,0,20,0);
+        tv.setPadding(0,0,15,0);
         newRow.addView(tv);
 
         // Ring
@@ -842,7 +866,7 @@ public class actMain extends Activity implements ServiceCallbacks {
         // Date & Time
         tv = new TextView(this);
         tv.setText(myDateTime);
-        tv.setPadding(0,0,15,0);
+        tv.setPadding(0,0,18,0);
         newRow.addView(tv);
 
         // Number
@@ -896,13 +920,12 @@ public class actMain extends Activity implements ServiceCallbacks {
 
         if (rbUseSuppliedURL.isChecked())
         {
-            // -- TODO show message "Example Call Sent to Supplied URL. An example Start of call record was sent to the Supplied URL."
+            popupMessage("An example Start of call record was sent to the Supplied URL.","Example Call Sent to Supplied URL");
 
         }
         else
         {
-            // -- TODO show message "Example Call Sent to Built URL. An example Start of call record was sent to your custom built URL."
-
+            popupMessage("An example Start of call record was sent to your custom built URL.","Example Call Sent to Built URL");
         }
     }
 
@@ -926,12 +949,19 @@ public class actMain extends Activity implements ServiceCallbacks {
 
         ClipboardManager clipboard = (ClipboardManager)getSystemService(CLIPBOARD_SERVICE);
         ClipData clipData = clipboard.getPrimaryClip();
+
+        if(clipData == null){
+
+            popupMessage("Clipboard does not contain correct format or any text.","Cannot Paste");
+            return;
+        }
+
         ClipData.Item item = clipData.getItemAt(0);
         String fullURL = item.getText().toString();
 
         if (!fullURL.contains("?"))
         {
-            // -- TODO show message "Incorrect format. The text on clipboard does not contain a '?' which is required."
+            popupMessage("The text on clipboard does not contain a '?' which is required.","Incorrect format.");
             return;
         }
 
@@ -941,7 +971,7 @@ public class actMain extends Activity implements ServiceCallbacks {
 
         if (allParams.isEmpty())
         {
-            // -- TODO show message "No Parameters Found. The text on clipboard does not contain text after '?'."
+            popupMessage("The text on clipboard does not contain text after '?'.","No Parameters Found.");
             return;
         }
 
@@ -1009,12 +1039,12 @@ public class actMain extends Activity implements ServiceCallbacks {
 
         if (parameters < 1)
         {
-            // -- TODO show message "No Parameters Parsed. There were no parameters that could be parsed."
+            popupMessage("There were no parameters that could be parsed.","No Parameters Parsed.");
 
         }
         else
         {
-            // -- TODO show message "Paste Complete. Clipboard text succesfully parsed into your Developer Section."
+            popupMessage("Clipboard text succesfully parsed into your Developer Section.","Paste Complete.");
 
             tbSuppliedURL.setText(fullURL);
         }
@@ -1031,7 +1061,7 @@ public class actMain extends Activity implements ServiceCallbacks {
 
             tbServer.setHighlightColor(Color.RED);
 
-            // -- TODO show failed message ""Server Cannot be blank. Please input your Cloud Server."
+            popupMessage("Please input your Cloud Server.","Server Cannot be blank.");
 
             return;
 
@@ -1131,7 +1161,7 @@ public class actMain extends Activity implements ServiceCallbacks {
             String failed = "[previous generation failed - use at least one parameter]";
             lbGeneratedURL.setText(failed);
 
-            // -- TODO show message ""No Parameters Set. You must use at least one parameter."
+            popupMessage("You must use at least one parameter.","No Parameters Set.");
 
             return;
         }
