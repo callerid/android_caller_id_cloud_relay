@@ -22,10 +22,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5a0596e4-9ce8-415c-b408-b9565ec1374f" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/ic_launcher_round.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/ic_launcher_round.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/ic_launcher_round.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/ic_launcher.png" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/ic_launcher.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/ic_launcher.png" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/ic_launcher.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/ic_launcher.png" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/ic_launcher.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/ic_launcher.png" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/ic_launcher.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/www/callerid/com/androidcalleridcloudrelay/Classes/Poster.java" afterPath="$PROJECT_DIR$/app/src/main/java/www/callerid/com/androidcalleridcloudrelay/Classes/Poster.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/www/callerid/com/androidcalleridcloudrelay/actMain.java" afterPath="$PROJECT_DIR$/app/src/main/java/www/callerid/com/androidcalleridcloudrelay/actMain.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_act_main.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_act_main.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
     </list>
     <ignored path="Android Caller ID Cloud Relay.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -56,47 +64,7 @@
     <favorites_list name="Android Caller ID Cloud Relay" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="actMain.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/www/callerid/com/androidcalleridcloudrelay/actMain.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="178">
-              <caret line="954" column="79" selection-start-line="954" selection-start-column="79" selection-end-line="954" selection-end-column="79" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="method#onCreate#0;class#actMain#0" expanded="false" />
-                <element signature="method#onResume#0;class#actMain#0" expanded="false" />
-                <element signature="class#5006:5478" expanded="false" />
-                <element signature="method#onStart#0;class#actMain#0" expanded="false" />
-                <element signature="method#onPause#0;class#actMain#0" expanded="false" />
-                <element signature="method#onDestroy#0;class#actMain#0" expanded="false" />
-                <element signature="method#onStop#0;class#actMain#0" expanded="false" />
-                <element signature="method#popupMessage#0;class#actMain#0" expanded="false" />
-                <element signature="e#6554#6755#0" expanded="true" />
-                <element signature="e#6754#6755#0" expanded="true" />
-                <element signature="method#startupDatabase#0;class#actMain#0" expanded="false" />
-                <element signature="method#loadUpLog#0;class#actMain#0" expanded="false" />
-                <element signature="method#insertIntoDatabase#0;class#actMain#0" expanded="false" />
-                <element signature="method#clearDatabase#0;class#actMain#0" expanded="false" />
-                <element signature="method#saveSettings#0;class#actMain#0" expanded="false" />
-                <element signature="method#restoreSettings#0;class#actMain#0" expanded="false" />
-                <element signature="method#LinkAllUIControls#0;class#actMain#0" expanded="false" />
-                <element signature="method#changeURL#0;class#actMain#0" expanded="false" />
-                <element signature="method#toggleDevSection#0;class#actMain#0" expanded="false" />
-                <element signature="method#changeUnit#0;class#actMain#0" expanded="false" />
-                <element signature="method#toggleDeluxe#0;class#actMain#0" expanded="false" />
-                <element signature="method#addCallToLog#0;class#actMain#0" expanded="false" />
-                <element signature="method#postToCloud#0;class#actMain#0" expanded="false" />
-                <element signature="method#testCall#0;class#actMain#0" expanded="false" />
-                <element signature="method#copyUrl#0;class#actMain#0" expanded="false" />
-                <element signature="method#getUDP#0;class#actMain#0" expanded="false" />
-                <element signature="method#handleUDP#0;class#actMain#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -1956,10 +1924,10 @@
       <list>
         <option value="$PROJECT_DIR$/app/src/main/java/www/callerid/com/androidcalleridcloudrelay/Classes/ServiceCallbacks.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/www/callerid/com/androidcalleridcloudrelay/Classes/UDPListen.java" />
-        <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/www/callerid/com/androidcalleridcloudrelay/Classes/Poster.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_act_main.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/www/callerid/com/androidcalleridcloudrelay/actMain.java" />
+        <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
       </list>
     </option>
   </component>
@@ -2011,19 +1979,9 @@
               <option name="myItemId" value="app" />
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
             </PATH_ELEMENT>
-          </PATH>
-          <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="AndroidCallerIDCloudRelay" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidSourceTypeNode" />
+              <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -2036,12 +1994,22 @@
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidSourceTypeNode" />
+              <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="androidcalleridcloudrelay" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidPsiDirectoryNode" />
+              <option name="myItemId" value="mipmap" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderTypeNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AndroidCallerIDCloudRelay" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -2054,16 +2022,8 @@
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidSourceTypeNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="androidcalleridcloudrelay" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidPsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Classes" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+              <option name="myItemId" value="manifests" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidManifestsGroupNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
@@ -2406,7 +2366,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1696" height="1026" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32949308" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -2422,7 +2382,7 @@
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1405868" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1405868" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Android Model" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
@@ -2527,6 +2487,8 @@
             <element signature="method#addCallToLog#0;class#actMain#0" expanded="false" />
             <element signature="method#postToCloud#0;class#actMain#0" expanded="false" />
             <element signature="method#testCall#0;class#actMain#0" expanded="false" />
+            <element signature="method#pasteUrl#0;class#actMain#0" expanded="false" />
+            <element signature="method#generateURL#0;class#actMain#0" expanded="false" />
             <element signature="method#copyUrl#0;class#actMain#0" expanded="false" />
             <element signature="method#getUDP#0;class#actMain#0" expanded="false" />
             <element signature="method#handleUDP#0;class#actMain#0" expanded="false" />
@@ -2586,6 +2548,8 @@
             <element signature="method#addCallToLog#0;class#actMain#0" expanded="false" />
             <element signature="method#postToCloud#0;class#actMain#0" expanded="false" />
             <element signature="method#testCall#0;class#actMain#0" expanded="false" />
+            <element signature="method#pasteUrl#0;class#actMain#0" expanded="false" />
+            <element signature="method#generateURL#0;class#actMain#0" expanded="false" />
             <element signature="method#copyUrl#0;class#actMain#0" expanded="false" />
             <element signature="method#getUDP#0;class#actMain#0" expanded="false" />
             <element signature="method#handleUDP#0;class#actMain#0" expanded="false" />
@@ -2641,6 +2605,8 @@
             <element signature="method#addCallToLog#0;class#actMain#0" expanded="false" />
             <element signature="method#postToCloud#0;class#actMain#0" expanded="false" />
             <element signature="method#testCall#0;class#actMain#0" expanded="false" />
+            <element signature="method#pasteUrl#0;class#actMain#0" expanded="false" />
+            <element signature="method#generateURL#0;class#actMain#0" expanded="false" />
             <element signature="method#copyUrl#0;class#actMain#0" expanded="false" />
             <element signature="method#getUDP#0;class#actMain#0" expanded="false" />
             <element signature="method#handleUDP#0;class#actMain#0" expanded="false" />
@@ -2689,6 +2655,8 @@
             <element signature="method#addCallToLog#0;class#actMain#0" expanded="false" />
             <element signature="method#postToCloud#0;class#actMain#0" expanded="false" />
             <element signature="method#testCall#0;class#actMain#0" expanded="false" />
+            <element signature="method#pasteUrl#0;class#actMain#0" expanded="false" />
+            <element signature="method#generateURL#0;class#actMain#0" expanded="false" />
             <element signature="method#copyUrl#0;class#actMain#0" expanded="false" />
             <element signature="method#getUDP#0;class#actMain#0" expanded="false" />
             <element signature="method#handleUDP#0;class#actMain#0" expanded="false" />
@@ -2737,6 +2705,8 @@
             <element signature="method#addCallToLog#0;class#actMain#0" expanded="false" />
             <element signature="method#postToCloud#0;class#actMain#0" expanded="false" />
             <element signature="method#testCall#0;class#actMain#0" expanded="false" />
+            <element signature="method#pasteUrl#0;class#actMain#0" expanded="false" />
+            <element signature="method#generateURL#0;class#actMain#0" expanded="false" />
             <element signature="method#copyUrl#0;class#actMain#0" expanded="false" />
             <element signature="method#getUDP#0;class#actMain#0" expanded="false" />
             <element signature="method#handleUDP#0;class#actMain#0" expanded="false" />
@@ -2785,6 +2755,8 @@
             <element signature="method#addCallToLog#0;class#actMain#0" expanded="false" />
             <element signature="method#postToCloud#0;class#actMain#0" expanded="false" />
             <element signature="method#testCall#0;class#actMain#0" expanded="false" />
+            <element signature="method#pasteUrl#0;class#actMain#0" expanded="false" />
+            <element signature="method#generateURL#0;class#actMain#0" expanded="false" />
             <element signature="method#copyUrl#0;class#actMain#0" expanded="false" />
             <element signature="method#getUDP#0;class#actMain#0" expanded="false" />
             <element signature="method#handleUDP#0;class#actMain#0" expanded="false" />
@@ -2833,6 +2805,8 @@
             <element signature="method#addCallToLog#0;class#actMain#0" expanded="false" />
             <element signature="method#postToCloud#0;class#actMain#0" expanded="false" />
             <element signature="method#testCall#0;class#actMain#0" expanded="false" />
+            <element signature="method#pasteUrl#0;class#actMain#0" expanded="false" />
+            <element signature="method#generateURL#0;class#actMain#0" expanded="false" />
             <element signature="method#copyUrl#0;class#actMain#0" expanded="false" />
             <element signature="method#getUDP#0;class#actMain#0" expanded="false" />
             <element signature="method#handleUDP#0;class#actMain#0" expanded="false" />
@@ -2881,6 +2855,8 @@
             <element signature="method#addCallToLog#0;class#actMain#0" expanded="false" />
             <element signature="method#postToCloud#0;class#actMain#0" expanded="false" />
             <element signature="method#testCall#0;class#actMain#0" expanded="false" />
+            <element signature="method#pasteUrl#0;class#actMain#0" expanded="false" />
+            <element signature="method#generateURL#0;class#actMain#0" expanded="false" />
             <element signature="method#copyUrl#0;class#actMain#0" expanded="false" />
             <element signature="method#getUDP#0;class#actMain#0" expanded="false" />
             <element signature="method#handleUDP#0;class#actMain#0" expanded="false" />
@@ -2929,6 +2905,8 @@
             <element signature="method#addCallToLog#0;class#actMain#0" expanded="false" />
             <element signature="method#postToCloud#0;class#actMain#0" expanded="false" />
             <element signature="method#testCall#0;class#actMain#0" expanded="false" />
+            <element signature="method#pasteUrl#0;class#actMain#0" expanded="false" />
+            <element signature="method#generateURL#0;class#actMain#0" expanded="false" />
             <element signature="method#copyUrl#0;class#actMain#0" expanded="false" />
             <element signature="method#getUDP#0;class#actMain#0" expanded="false" />
             <element signature="method#handleUDP#0;class#actMain#0" expanded="false" />
@@ -2965,17 +2943,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
-      <provider editor-type-id="android-manifest">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" column="44" selection-start-line="22" selection-start-column="44" selection-end-line="22" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/www/callerid/com/androidcalleridcloudrelay/Classes/UDPListen.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1428">
@@ -3002,10 +2969,31 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/ic_launcher_round.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/ic_launcher.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+      <provider editor-type-id="android-manifest">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="42" selection-start-line="8" selection-start-column="42" selection-end-line="8" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/www/callerid/com/androidcalleridcloudrelay/actMain.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="178">
-          <caret line="954" column="79" selection-start-line="954" selection-start-column="79" selection-end-line="954" selection-end-column="79" />
+        <state relative-caret-position="4556">
+          <caret line="947" column="27" selection-start-line="947" selection-start-column="27" selection-end-line="947" selection-end-column="27" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#onCreate#0;class#actMain#0" expanded="false" />
@@ -3032,6 +3020,8 @@
             <element signature="method#addCallToLog#0;class#actMain#0" expanded="false" />
             <element signature="method#postToCloud#0;class#actMain#0" expanded="false" />
             <element signature="method#testCall#0;class#actMain#0" expanded="false" />
+            <element signature="method#pasteUrl#0;class#actMain#0" expanded="false" />
+            <element signature="method#generateURL#0;class#actMain#0" expanded="false" />
             <element signature="method#copyUrl#0;class#actMain#0" expanded="false" />
             <element signature="method#getUDP#0;class#actMain#0" expanded="false" />
             <element signature="method#handleUDP#0;class#actMain#0" expanded="false" />

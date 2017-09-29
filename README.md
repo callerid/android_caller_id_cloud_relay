@@ -8,7 +8,8 @@
 	
 ----------------------------------
 
-	This app listens in on port 3520 for UDP Call Records sent from a CallerID.com unit. The app then takes this info and sends it to a user-defined Cloud Server.
+	This app listens in on port 3520 for UDP Call Records sent from a CallerID.com unit. 
+	The app then takes this info and sends it to a user-defined Cloud Server.
 	
 	
 ----------------------------------
