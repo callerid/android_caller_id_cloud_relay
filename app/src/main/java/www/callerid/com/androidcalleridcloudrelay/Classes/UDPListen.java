@@ -6,6 +6,7 @@ import android.net.wifi.WifiManager;
 import android.os.Binder;
 import android.os.IBinder;
 import android.os.PowerManager;
+import android.util.Log;
 
 import java.net.DatagramPacket;
 import java.net.DatagramSocket;
@@ -77,22 +78,27 @@ public class UDPListen extends Service {
             try{
 
                 socket = new DatagramSocket(null);
-                SocketAddress address = new InetSocketAddress("255.255.255.255",3520);
+                SocketAddress address = new InetSocketAddress("0.0.0.0",3520);
                 socket.setReuseAddress(true);
                 socket.setBroadcast(true);
                 socket.bind(address);
 
-                byte[] buffer = new byte[65507];
                 Boolean looping = true;
                 while (looping) {
+                    byte[] buffer = new byte[83];
                     DatagramPacket dp = new DatagramPacket(buffer, buffer.length);
                     try {
 
                         socket.receive(dp);
-                        recString = new String(dp.getData(), 0, dp.getLength());
+                        if(dp.getLength() == 52 || dp.getLength() == 83){
 
-                        // Send UDP packet information to MainActivity through interface
-                        serviceCallbacks.getUDP(recString);
+                            recString = new String(dp.getData(), 0, dp.getLength());
+
+                            // Send UDP packet information to MainActivity through interface
+                            updateUI.run();
+
+                        }
+
 
                     } catch (Exception ex) {
                         System.out.println("Exception: " + ex.toString());
@@ -109,4 +115,10 @@ public class UDPListen extends Service {
         }
     });
 
+    Thread updateUI = new Thread(new Runnable() {
+        public void run()
+        {
+            serviceCallbacks.getUDP(recString);
+        }
+    });
 }
