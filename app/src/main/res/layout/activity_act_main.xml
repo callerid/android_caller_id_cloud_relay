@@ -440,10 +440,6 @@
             android:id="@+id/lbDevSection"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="16dp"
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp"
-            android:layout_marginStart="16dp"
             android:layout_marginTop="8dp"
             android:editable="false"
             android:text="Developers Section - Build the relay URL by entering the Cloud Server address and mapping data fields"
@@ -452,7 +448,9 @@
             app:layout_constraintHorizontal_bias="0.446"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/dividerSuppliedAndDevSection" />
+            app:layout_constraintTop_toBottomOf="@+id/dividerSuppliedAndDevSection"
+            tools:layout_constraintRight_creator="1"
+            tools:layout_constraintLeft_creator="1" />
 
         <TextView
             android:id="@+id/lbExampleCallText"
@@ -527,10 +525,8 @@
 
         <EditText
             android:id="@+id/tbTime"
-            android:layout_width="190dp"
+            android:layout_width="0dp"
             android:layout_height="35dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginRight="8dp"
             android:layout_marginTop="8dp"
             android:ems="10"
             android:inputType="textPersonName"
@@ -538,7 +534,9 @@
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintLeft_toLeftOf="@+id/lbYourVar"
             app:layout_constraintRight_toRightOf="@+id/lbYourVar"
-            app:layout_constraintTop_toBottomOf="@+id/tbLine" />
+            app:layout_constraintTop_toBottomOf="@+id/tbLine"
+            tools:layout_constraintRight_creator="1"
+            tools:layout_constraintLeft_creator="1" />
 
         <EditText
             android:id="@+id/tbPhone"
@@ -644,7 +642,6 @@
             android:layout_width="690dp"
             android:layout_height="42dp"
             android:layout_marginLeft="8dp"
-            android:layout_marginRight="0dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="16dp"
             android:editable="false"
@@ -713,10 +710,8 @@
 
         <EditText
             android:id="@+id/tbLine"
-            android:layout_width="190dp"
+            android:layout_width="0dp"
             android:layout_height="35dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginRight="8dp"
             android:layout_marginTop="8dp"
             android:ems="10"
             android:inputType="textPersonName"
@@ -724,7 +719,9 @@
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintLeft_toLeftOf="@+id/lbYourVar"
             app:layout_constraintRight_toRightOf="@+id/lbYourVar"
-            app:layout_constraintTop_toBottomOf="@+id/lbYourVar" />
+            app:layout_constraintTop_toBottomOf="@+id/lbYourVar"
+            tools:layout_constraintRight_creator="1"
+            tools:layout_constraintLeft_creator="1" />
 
         <View
             android:layout_width="0dp"
@@ -739,7 +736,9 @@
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tbUsername"
-            android:id="@+id/dividerAuthAndSupplied" />
+            android:id="@+id/dividerAuthAndSupplied"
+            tools:layout_constraintRight_creator="1"
+            tools:layout_constraintLeft_creator="1" />
 
         <View
             android:id="@+id/dividerSuppliedAndDevSection"
@@ -753,7 +752,9 @@
             android:background="@android:color/darker_gray"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btnPaste" />
+            app:layout_constraintTop_toBottomOf="@+id/btnPaste"
+            tools:layout_constraintRight_creator="1"
+            tools:layout_constraintLeft_creator="1" />
 
         <View
             android:id="@+id/view"
@@ -763,12 +764,13 @@
             android:layout_marginLeft="8dp"
             android:layout_marginRight="8dp"
             android:layout_marginStart="8dp"
-            android:layout_marginTop="0dp"
             android:background="@android:color/darker_gray"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintTop_toTopOf="@+id/btnClearLog" />
+            app:layout_constraintTop_toTopOf="@+id/btnClearLog"
+            tools:layout_constraintRight_creator="1"
+            tools:layout_constraintLeft_creator="1" />
 
         <TextView
             android:id="@+id/lbExampleURL"
@@ -783,14 +785,16 @@
         <TableLayout
             android:id="@+id/tableLogContainer"
             android:layout_width="840dp"
-            android:layout_height="174dp"
-            android:layout_marginBottom="8dp"
+            android:layout_height="0dp"
+            android:layout_marginBottom="3dp"
             android:layout_marginLeft="32dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/btnClearLog"
             app:layout_constraintVertical_bias="0.0"
-            android:layout_marginStart="32dp">
+            android:layout_marginStart="32dp"
+            tools:layout_constraintTop_creator="1"
+            tools:layout_constraintBottom_creator="1">
 
             <TableRow
                 android:layout_width="match_parent"
@@ -847,26 +851,26 @@
                     android:textStyle="bold" />
             </TableRow>
 
-            <ScrollView
+            <android.support.v4.widget.NestedScrollView
                 android:id="@+id/svCallLog"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
-                <LinearLayout
+                <android.support.constraint.ConstraintLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="horizontal">
 
                     <TableLayout
                         android:id="@+id/tableCallLog"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
+                        android:layout_width="824dp"
+                        android:layout_height="0dp"
                         tools:layout_editor_absoluteX="8dp"
                         tools:layout_editor_absoluteY="8dp">
 
                     </TableLayout>
-                </LinearLayout>
-            </ScrollView>
+                </android.support.constraint.ConstraintLayout>
+            </android.support.v4.widget.NestedScrollView>
 
 
         </TableLayout>

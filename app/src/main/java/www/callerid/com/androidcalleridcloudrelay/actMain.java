@@ -16,6 +16,8 @@ import android.graphics.Color;
 import android.net.wifi.WifiManager;
 import android.os.IBinder;
 import android.os.Bundle;
+import android.support.v4.widget.NestedScrollView;
+import android.telecom.Call;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -26,6 +28,7 @@ import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
 
+import java.util.ArrayList;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -35,7 +38,13 @@ import www.callerid.com.androidcalleridcloudrelay.Classes.UDPListen;
 
 public class actMain extends Activity implements ServiceCallbacks {
 
+    // Debug-----------
+    private int CallLogEntries = 0;
+    private boolean debug = false;
+    //-----------------
+
     // UDP listen requirements
+    private ArrayList<String> previousReceptions;
     private UDPListen mService;
     private boolean mBound = false;
     private String inString = "Waiting for Calls.";
@@ -119,7 +128,7 @@ public class actMain extends Activity implements ServiceCallbacks {
     private TextView tbRingType;
 
     private TableLayout tableCallLog;
-    private ScrollView svCallLog;
+    private NestedScrollView svCallLog;
 
     private Button btnClearLog;
 
@@ -507,7 +516,7 @@ public class actMain extends Activity implements ServiceCallbacks {
         tbRingType = (TextView)findViewById(R.id.tbRingType);
 
         tableCallLog = (TableLayout)findViewById(R.id.tableCallLog);
-        svCallLog = (ScrollView)findViewById(R.id.svCallLog);
+        svCallLog = (NestedScrollView) findViewById(R.id.svCallLog);
 
         btnClearLog = (Button)findViewById(R.id.btnClearLog);
 
@@ -816,6 +825,12 @@ public class actMain extends Activity implements ServiceCallbacks {
 
     }
 
+    private void updateCallLogEntries(){
+
+        CallLogEntries +=1;
+        tbLine.setText("Packets Rec: " + CallLogEntries);
+
+    }
     // --------------------------------------------------------------------------------------------------- Call Log Features
 
     private void addCallToLog(String myLine,String myType,
@@ -1200,6 +1215,26 @@ public class actMain extends Activity implements ServiceCallbacks {
 
     private void handleUDP(String received, boolean isInFront){
 
+
+        // Code to ignore duplicates
+        if(previousReceptions.contains(received)) {
+            // If duplicate, ignore
+            return;
+        }
+        else{
+            // If not duplicate add to check buffer
+            if(previousReceptions.size()>30) {
+                // If check buffer is full, add one to the end and remove oldest
+                previousReceptions.add(received);
+                previousReceptions.remove(0);
+            }
+            else{
+                // If check buffer not full, simply add to end
+                previousReceptions.add(received);
+            }
+        }
+
+
         // Handle UDP
         // Setup variables for use
         String myData = received;
@@ -1218,7 +1253,21 @@ public class actMain extends Activity implements ServiceCallbacks {
         Pattern myPattern = Pattern.compile(".*(\\d\\d) ([IO]) ([ES]) (\\d{4}) ([GB]) (.)(\\d) (\\d\\d/\\d\\d \\d\\d:\\d\\d [AP]M) (.{8,15})(.*)");
         Matcher matcher = myPattern.matcher(myData);
 
-        if(matcher.find()){
+        // Check to see if call information is from a DETAILED record
+        Pattern myPatternDetailed = Pattern.compile(".*(\\d\\d) ([NFR]) {13}(\\d\\d/\\d\\d \\d\\d:\\d\\d:\\d\\d)");
+        Matcher matcherDetailed = myPatternDetailed.matcher(myData);
+
+        boolean isCallRecord = matcher.find();
+        boolean isDetailedRecord = matcherDetailed.find();
+
+        if(debug){
+            if(!matcher.find() && !matcherDetailed.find()){
+                updateCallLogEntries();
+                return;
+            }
+        }
+
+        if(isCallRecord){
 
             myLine = matcher.group(1);
             myType = matcher.group(2);
@@ -1250,13 +1299,9 @@ public class actMain extends Activity implements ServiceCallbacks {
 
         }
 
-        // Check to see if call information is from a DETAILED record
-        Pattern myPatternDetailed = Pattern.compile(".*(\\d\\d) ([NFR]) {13}(\\d\\d/\\d\\d \\d\\d:\\d\\d:\\d\\d)");
-        Matcher matcherDetailed = myPatternDetailed.matcher(myData);
-
         boolean isDetailed = false;
 
-        if(matcherDetailed.find()){
+        if(isDetailedRecord){
 
             myLine = matcherDetailed.group(1);
             myType = matcherDetailed.group(2);

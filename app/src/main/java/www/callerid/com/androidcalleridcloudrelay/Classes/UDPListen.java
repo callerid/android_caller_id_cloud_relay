@@ -19,6 +19,8 @@ public class UDPListen extends Service {
     private final IBinder mBinder = new LocalBinder();
     private ServiceCallbacks serviceCallbacks;
     String recString = "";
+    String previousRecString = "waiting";
+    private boolean debug = false;
     DatagramSocket socket = null;
     PowerManager pm = null;
     PowerManager.WakeLock pLock = null;
@@ -51,6 +53,7 @@ public class UDPListen extends Service {
         *///------------------------------------------------------------------------
 
         // Listening thread start
+        idle.setPriority(10);
         if(!idle.isAlive()) {
             idle.start();
         }
@@ -90,12 +93,18 @@ public class UDPListen extends Service {
                     try {
 
                         socket.receive(dp);
-                        if(dp.getLength() == 52 || dp.getLength() == 83){
+                        if((dp.getLength() == 52 || dp.getLength() == 83) || debug){
 
                             recString = new String(dp.getData(), 0, dp.getLength());
 
-                            // Send UDP packet information to MainActivity through interface
-                            updateUI.run();
+                            if(!previousRecString.equals(recString)){
+
+                                // Send UDP packet information to MainActivity through interface
+                                previousRecString = recString;
+                                updateUI.run();
+
+
+                            }
 
                         }
 
