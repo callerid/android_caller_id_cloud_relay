@@ -1198,6 +1198,25 @@ public class actMain extends Activity implements ServiceCallbacks {
 
     // ------------------------------------------------------------------------------------------------ UDP LOWER Level Code
 
+    private void removeReceptionFromBuffer(String reception){
+
+        ArrayList<Integer> indexes = new ArrayList<>();
+        int cnt = 0;
+
+        for(String pReception : previousReceptions) {
+
+            if(pReception.contains(reception.substring(reception.length()-20))){
+                indexes.add(cnt);
+            }
+            cnt++;
+        }
+
+        for(int i = indexes.size()-1; i >= 0; i--){
+            int remove = indexes.get(i);
+            previousReceptions.remove(remove);
+        }
+    }
+
     @Override
     public void getUDP(String rString){
 
@@ -1295,6 +1314,10 @@ public class actMain extends Activity implements ServiceCallbacks {
                 // Insert to database
                 insertIntoDatabase(theLineNumber,myType,myIndicator,myDuration,myCheckSum,myRings,myDateTime,myNumber,myName);
 
+            }
+
+            if(myIndicator.equals("E")){
+                removeReceptionFromBuffer(myData);
             }
 
         }
