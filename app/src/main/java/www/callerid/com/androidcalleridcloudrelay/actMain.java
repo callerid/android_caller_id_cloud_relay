@@ -16,6 +16,7 @@ import android.graphics.Color;
 import android.net.wifi.WifiManager;
 import android.os.IBinder;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v4.widget.NestedScrollView;
 import android.telecom.Call;
 import android.util.Log;
@@ -29,6 +30,12 @@ import android.widget.TableRow;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Set;
+import java.util.Timer;
+import java.util.TimerTask;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -44,7 +51,7 @@ public class actMain extends Activity implements ServiceCallbacks {
     //-----------------
 
     // UDP listen requirements
-    private ArrayList<String> previousReceptions;
+    private Map<String, Integer> previousReceptions;
     private UDPListen mService;
     private boolean mBound = false;
     private String inString = "Waiting for Calls.";
@@ -170,6 +177,23 @@ public class actMain extends Activity implements ServiceCallbacks {
         ckbRequiresAuth_Click.onClick(new View(this));
         changeURL(rbUseSuppliedURL.isChecked());
         changeUnit(rbDeluxeUnit.isChecked());
+
+
+        // Duplicates
+        previousReceptions = new HashMap<String, Integer>();
+
+        Timer myTimer = new Timer();
+        myTimer.schedule(new TimerTask() {
+
+            @Override
+            public void run() {
+                actMain.this.runOnUiThread(new Runnable() {
+                    public void run() {
+                        previousReceptions_timer_tick();
+                    }
+                });
+            }
+        },0, 1000);
 
     }
 
@@ -827,9 +851,10 @@ public class actMain extends Activity implements ServiceCallbacks {
 
     private void updateCallLogEntries(){
 
-        CallLogEntries +=1;
-        tbLine.setText("Packets Rec: " + CallLogEntries);
-
+        if(debug){
+            CallLogEntries +=1;
+            tbLine.setText("Packets Rec: " + CallLogEntries);
+        }
     }
     // --------------------------------------------------------------------------------------------------- Call Log Features
 
@@ -1198,25 +1223,6 @@ public class actMain extends Activity implements ServiceCallbacks {
 
     // ------------------------------------------------------------------------------------------------ UDP LOWER Level Code
 
-    private void removeReceptionFromBuffer(String reception){
-
-        ArrayList<Integer> indexes = new ArrayList<>();
-        int cnt = 0;
-
-        for(String pReception : previousReceptions) {
-
-            if(pReception.contains(reception.substring(reception.length()-20))){
-                indexes.add(cnt);
-            }
-            cnt++;
-        }
-
-        for(int i = indexes.size()-1; i >= 0; i--){
-            int remove = indexes.get(i);
-            previousReceptions.remove(remove);
-        }
-    }
-
     @Override
     public void getUDP(String rString){
 
@@ -1232,11 +1238,38 @@ public class actMain extends Activity implements ServiceCallbacks {
 
     }
 
+    private void previousReceptions_timer_tick(){
+
+        if(previousReceptions.size()<1)return;
+
+        ArrayList<String> keysToRemove = new ArrayList<>();
+        ArrayList<String> keysToIncrement = new ArrayList<>();
+
+        for(String key : previousReceptions.keySet()){
+
+            if(previousReceptions.get(key) > 4){
+                keysToRemove.add(key);
+            }
+            else {
+                keysToIncrement.add(key);
+            }
+        }
+
+        for(String key : keysToIncrement){
+            previousReceptions.put(key,previousReceptions.get(key)+1);
+        }
+
+        for(String key : keysToRemove){
+            previousReceptions.remove(key);
+        }
+
+    }
+
     private void handleUDP(String received, boolean isInFront){
 
 
         // Code to ignore duplicates
-        if(previousReceptions.contains(received)) {
+        if(previousReceptions.containsKey(received)) {
             // If duplicate, ignore
             return;
         }
@@ -1244,12 +1277,12 @@ public class actMain extends Activity implements ServiceCallbacks {
             // If not duplicate add to check buffer
             if(previousReceptions.size()>30) {
                 // If check buffer is full, add one to the end and remove oldest
-                previousReceptions.add(received);
+                previousReceptions.put(received,0);
                 previousReceptions.remove(0);
             }
             else{
                 // If check buffer not full, simply add to end
-                previousReceptions.add(received);
+                previousReceptions.put(received,0);
             }
         }
 
@@ -1314,10 +1347,6 @@ public class actMain extends Activity implements ServiceCallbacks {
                 // Insert to database
                 insertIntoDatabase(theLineNumber,myType,myIndicator,myDuration,myCheckSum,myRings,myDateTime,myNumber,myName);
 
-            }
-
-            if(myIndicator.equals("E")){
-                removeReceptionFromBuffer(myData);
             }
 
         }
