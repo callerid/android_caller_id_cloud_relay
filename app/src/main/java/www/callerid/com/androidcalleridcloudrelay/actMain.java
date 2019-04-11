@@ -618,6 +618,8 @@ public class actMain extends Activity implements ServiceCallbacks {
             rbUseSuppliedURL.setChecked(true);
             rbUseBuiltURL.setChecked(false);
             toggleDevSection(false);
+            rbDeluxeUnit.setEnabled(false);
+            rbBasicUnit.setEnabled(false);
 
         }
         else{
@@ -625,6 +627,8 @@ public class actMain extends Activity implements ServiceCallbacks {
             rbUseSuppliedURL.setChecked(false);
             rbUseBuiltURL.setChecked(true);
             toggleDevSection(true);
+            rbDeluxeUnit.setEnabled(true);
+            rbBasicUnit.setEnabled(true);
 
         }
 
