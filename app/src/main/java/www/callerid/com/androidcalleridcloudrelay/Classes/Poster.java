@@ -1,6 +1,12 @@
 package www.callerid.com.androidcalleridcloudrelay.Classes;
 
+import android.app.ActivityManager;
+import android.app.AlertDialog;
+import android.content.Context;
 import android.net.Uri;
+import android.os.Handler;
+import android.os.Looper;
+import android.os.Message;
 import android.util.Base64;
 import java.io.BufferedWriter;
 import java.io.OutputStream;
@@ -12,6 +18,8 @@ import java.nio.charset.StandardCharsets;
 
 import javax.net.ssl.HttpsURLConnection;
 
+import www.callerid.com.androidcalleridcloudrelay.actMain;
+
 
 /*
         |  Poster.java  |
@@ -22,7 +30,10 @@ import javax.net.ssl.HttpsURLConnection;
  */
 public class Poster implements Runnable {
 
+    Context context;
+
     Boolean isSecure;
+    String postType;
 
     String urlFull;
     String line;
@@ -63,10 +74,14 @@ public class Poster implements Runnable {
                   String pUserVarStatus, String pUserVarDuration,
                   String pUserVarRingNumber, String pUserVarRingType,
 
-                  Boolean pRequireAuth, String pUsername, String pPassword)
+                  Boolean pRequireAuth, String pUsername, String pPassword,
+                  Context pContext, String pPostType)
     {
 
+        context = pContext;
+
         isSecure = pIsSecure;
+        postType = pPostType;
 
         urlFull = pUrlFull;
         line = pLine;
@@ -95,13 +110,106 @@ public class Poster implements Runnable {
         password = pPassword;
 
     }
+
+    private Handler mHandlerFinished = new Handler(){
+
+        public void handleMessage(Message msg)
+        {
+            String title;
+            String message;
+
+            if(postType == "Supplied"){
+
+                title = "Example Call Sent to Supplied URL";
+                message = "An example Start of call record was sent to the Supplied URL.";
+
+            }
+            else if(postType == "Built"){
+
+                title = "Example Call Sent to Built URL";
+                message = "An example Start of call record was sent to your custom built URL.";
+
+            }
+            else{
+                return;
+            }
+
+            AlertDialog.Builder builder = new AlertDialog.Builder(context);
+            builder.setTitle(title);
+            builder.setMessage(message);
+
+            // add a button
+            builder.setPositiveButton("OK", null);
+
+            // create and show the alert dialog
+            AlertDialog dialog = builder.create();
+            dialog.show();
+        }
+    };
+
+    private Handler mHandlerUrlError = new Handler()
+    {
+        public void handleMessage(Message msg)
+        {
+            AlertDialog.Builder builder = new AlertDialog.Builder(context);
+            builder.setTitle("Posting Error");
+            builder.setMessage("Url not in correct format.");
+
+            // add a button
+            builder.setPositiveButton("OK", null);
+
+            // create and show the alert dialog
+            AlertDialog dialog = builder.create();
+            dialog.show();
+        }
+    };
+
+    private Handler mHandlerUrlNotFoundError = new Handler()
+    {
+        public void handleMessage(Message msg)
+        {
+            AlertDialog.Builder builder = new AlertDialog.Builder(context);
+            builder.setTitle("URL Error");
+            builder.setMessage("Url not found.");
+
+            // add a button
+            builder.setPositiveButton("OK", null);
+
+            // create and show the alert dialog
+            AlertDialog dialog = builder.create();
+            dialog.show();
+        }
+    };
+
+    private Handler mHandlerPostingError = new Handler()
+    {
+        public void handleMessage(Message msg)
+        {
+            // setup the alert builder
+            AlertDialog.Builder builder = new AlertDialog.Builder(context);
+            builder.setTitle("Posting Error");
+            builder.setMessage("Error posting to URL. Double check URL string.");
+
+            // add a button
+            builder.setPositiveButton("OK", null);
+
+            // create and show the alert dialog
+            AlertDialog dialog = builder.create();
+            dialog.show();
+        }
+    };
+
     public void run() {
 
         if(!urlFull.contains("?")){
 
-            // TODO -- cannot post, show popup
+            // setup the alert builder
+            mHandlerUrlError.sendEmptyMessage(0);
+            return;
 
         }
+
+        String errors = "";
 
         try{
 
@@ -188,6 +296,7 @@ public class Poster implements Runnable {
 
                 String response = conn.getResponseMessage();
                 System.out.println(response);
+                errors+=response;
 
             }
             else{
@@ -218,16 +327,26 @@ public class Poster implements Runnable {
 
                 String response = conn.getResponseMessage();
                 System.out.println(response);
+                errors+=response;
 
             }
 
         }catch (Exception ex){
 
-            // TODO -- there was a problem posting
-
-            System.out.println("Exception: " + ex.toString());
+            mHandlerPostingError.sendEmptyMessage(0);
+            return;
 
         }
+
+        // Finished message for postType == supplied or built
+        if(errors.contains("Not Found")){
+
+            mHandlerUrlNotFoundError.sendEmptyMessage(0);
+            return;
+
+        }
+
+        mHandlerFinished.sendEmptyMessage(0);
 
     }
 

@@ -14,8 +14,10 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Color;
 import android.net.wifi.WifiManager;
+import android.os.Handler;
 import android.os.IBinder;
 import android.os.Bundle;
+import android.os.Message;
 import android.support.annotation.NonNull;
 import android.support.v4.widget.NestedScrollView;
 import android.telecom.Call;
@@ -30,7 +32,9 @@ import android.widget.TableRow;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Collection;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
@@ -261,7 +265,7 @@ public class actMain extends Activity implements ServiceCallbacks {
 
     // ------------------------------------------------------------------------------------------------------ Popup Functions
 
-    private void popupMessage(String message,String title){
+    public void popupMessage(String message,String title){
         dlgAlert  = new AlertDialog.Builder(this);
         dlgAlert.setMessage(message);
         dlgAlert.setTitle(title);
@@ -720,7 +724,7 @@ public class actMain extends Activity implements ServiceCallbacks {
                 lbGeneratedURL.setTextColor(Color.RED);
             }
             else{
-                lbGeneratedURL.setTextColor(Color.GREEN);
+                lbGeneratedURL.setTextColor(Color.rgb(23,115,20));
             }
 
             lbDevSection.setTextColor(Color.BLACK);
@@ -944,7 +948,7 @@ public class actMain extends Activity implements ServiceCallbacks {
     // ------------------------------------------------------------------------------------------- Actual POST to Cloud code
 
     private void postToCloud(String urlFull, String line, String dateTime, String number, String name, String io,
-                             String se, String status, String duration, String ring){
+                             String se, String status, String duration, String ring, String postType){
 
         Boolean secured = urlFull.contains("https://");
 
@@ -952,7 +956,7 @@ public class actMain extends Activity implements ServiceCallbacks {
         Thread post = new Thread(new Poster(secured,urlFull,line,dateTime,number,name,io,se,status,duration,ring,
                 tbLine.getText().toString(),tbTime.getText().toString(),tbPhone.getText().toString(),tbName.getText().toString(),
                 tbIO.getText().toString(),tbSE.getText().toString(),tbStatus.getText().toString(),tbDuration.getText().toString(),tbRingNumber.getText().toString(),
-                tbRingType.getText().toString(),ckbRequiresAuth.isChecked(),tbUsername.getText().toString(),tbPassword.getText().toString()));
+                tbRingType.getText().toString(),ckbRequiresAuth.isChecked(),tbUsername.getText().toString(),tbPassword.getText().toString(), this, postType));
 
         post.start();
 
@@ -962,17 +966,32 @@ public class actMain extends Activity implements ServiceCallbacks {
 
         String url = rbUseSuppliedURL.isChecked() ? tbSuppliedURL.getText().toString() : lbGeneratedURL.getText().toString();
 
-        postToCloud(url, "01", "01/01 12:00 PM", "770-263-7111", "CallerID.com", "I", "S", "n/a", "0000", "A0");
+        Calendar calendar = Calendar.getInstance();
 
-        if (rbUseSuppliedURL.isChecked())
-        {
-            popupMessage("An example Start of call record was sent to the Supplied URL.","Example Call Sent to Supplied URL");
+        int pm = calendar.get(Calendar.AM_PM);
 
-        }
-        else
-        {
-            popupMessage("An example Start of call record was sent to your custom built URL.","Example Call Sent to Built URL");
-        }
+        String am_pm = "AM";
+        if(pm==1) am_pm = "PM";
+
+        String month = String.valueOf(calendar.get(Calendar.MONTH));
+        if(month.length()==1)month="0"+month;
+
+        String day = String.valueOf(calendar.get(Calendar.DAY_OF_MONTH));
+        if(day.length()==1)day="0"+day;
+
+        String hour = String.valueOf(calendar.get(Calendar.HOUR));
+        if(hour.length()==1)hour="0"+hour;
+
+        String minute = String.valueOf(calendar.get(Calendar.MINUTE));
+        if(minute.length()==1)minute="0"+minute;
+
+        String date_string = "" + month + "/" +
+                day + " " +
+                hour + ":" +
+                minute + " " +
+                am_pm;
+
+        postToCloud(url, "01", date_string, "770-263-7111", "CallerID.com", "I", "S", "n/a", "0000", "A0", (rbUseSuppliedURL.isChecked()?"Supplied":"Built") );
     }
 
     // ------------------------------------------------------------------------------- Regex Patterns for Parsing Pasted URL
@@ -1085,12 +1104,12 @@ public class actMain extends Activity implements ServiceCallbacks {
 
         if (parameters < 1)
         {
-            popupMessage("There were no parameters that could be parsed.","No Parameters Parsed.");
+            popupMessage("Supplied URL populated.","Paste Complete");
 
         }
         else
         {
-            popupMessage("Clipboard text succesfully parsed into your Developer Section.","Paste Complete.");
+            popupMessage("Supplied URL and developer's section populated.","Paste Complete.");
 
             tbSuppliedURL.setText(fullURL);
         }
@@ -1153,52 +1172,56 @@ public class actMain extends Activity implements ServiceCallbacks {
             genUrl.append(combo);
         }
 
-        // IO
-        if (!tbIO.getText().toString().isEmpty())
-        {
-            parameters++;
-            String combo = tbIO.getText().toString() + "=%IO&";
-            genUrl.append(combo);
-        }
+        if(rbDeluxeUnit.isChecked()){
 
-        // SE
-        if (!tbSE.getText().toString().isEmpty())
-        {
-            parameters++;
-            String combo = tbSE.getText().toString() + "=%SE&";
-            genUrl.append(combo);
-        }
+            // IO
+            if (!tbIO.getText().toString().isEmpty())
+            {
+                parameters++;
+                String combo = tbIO.getText().toString() + "=%IO&";
+                genUrl.append(combo);
+            }
 
-        // Status
-        if (!tbStatus.getText().toString().isEmpty())
-        {
-            parameters++;
-            String combo = tbStatus.getText().toString() + "=%Status&";
-            genUrl.append(combo);
-        }
+            // SE
+            if (!tbSE.getText().toString().isEmpty())
+            {
+                parameters++;
+                String combo = tbSE.getText().toString() + "=%SE&";
+                genUrl.append(combo);
+            }
 
-        // Duration
-        if (!tbDuration.getText().toString().isEmpty())
-        {
-            parameters++;
-            String combo = tbDuration.getText().toString() + "=%Duration&";
-            genUrl.append(combo);
-        }
+            // Status
+            if (!tbStatus.getText().toString().isEmpty())
+            {
+                parameters++;
+                String combo = tbStatus.getText().toString() + "=%Status&";
+                genUrl.append(combo);
+            }
 
-        // RingNumber
-        if (!tbRingType.getText().toString().isEmpty())
-        {
-            parameters++;
-            String combo = tbRingNumber.getText().toString() + "=%RingNumber&";
-            genUrl.append(combo);
-        }
+            // Duration
+            if (!tbDuration.getText().toString().isEmpty())
+            {
+                parameters++;
+                String combo = tbDuration.getText().toString() + "=%Duration&";
+                genUrl.append(combo);
+            }
 
-        // RingType
-        if (!tbRingType.getText().toString().isEmpty())
-        {
-            parameters++;
-            String combo = tbRingType.getText().toString() + "=%RingType&";
-            genUrl.append(combo);
+            // RingNumber
+            if (!tbRingType.getText().toString().isEmpty())
+            {
+                parameters++;
+                String combo = tbRingNumber.getText().toString() + "=%RingNumber&";
+                genUrl.append(combo);
+            }
+
+            // RingType
+            if (!tbRingType.getText().toString().isEmpty())
+            {
+                parameters++;
+                String combo = tbRingType.getText().toString() + "=%RingType&";
+                genUrl.append(combo);
+            }
+
         }
 
         if (parameters == 0)
@@ -1212,7 +1235,7 @@ public class actMain extends Activity implements ServiceCallbacks {
             return;
         }
 
-        lbGeneratedURL.setTextColor(Color.GREEN);
+        lbGeneratedURL.setTextColor(Color.rgb(23,115,20));
         lbGeneratedURL.setText(genUrl.toString().substring(0,genUrl.toString().length()-1));
 
     }
@@ -1390,7 +1413,7 @@ public class actMain extends Activity implements ServiceCallbacks {
         {
             if (myIndicator.equals("S") && !isDetailed)
             {
-                postToCloud(url,myLine,myDateTime,myNumber,myName,myType,myIndicator,"",myDuration,myRings);
+                postToCloud(url,myLine,myDateTime,myNumber,myName,myType,myIndicator,"",myDuration,myRings, "Post");
             }
         }
         else
@@ -1399,12 +1422,12 @@ public class actMain extends Activity implements ServiceCallbacks {
             {
                 if (!tbStatus.getText().toString().isEmpty())
                 {
-                    postToCloud(url,myLine,myDateTime,"","","","",myType,"","");
+                    postToCloud(url,myLine,myDateTime,"","","","",myType,"","", "Post");
                 }
             }
             else
             {
-                postToCloud(url,myLine,myDateTime,myNumber,myName,myType,myIndicator,"",myDuration,myRings);
+                postToCloud(url,myLine,myDateTime,myNumber,myName,myType,myIndicator,"",myDuration,myRings, "Post");
             }
         }
 
